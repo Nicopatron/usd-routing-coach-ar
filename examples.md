@@ -24,28 +24,28 @@ Five worked examples covering all four operating modes plus the refusal protocol
 
 **Specialist output:**
 
-### Situación
+### Situation
 
-Marina, UX designer in CABA, monotributo **cat F**. YTD trajectory: ~$3.5K USD/mes × 4 months = ~$14K USD facturados Q1 + early Q2 2026 (~19.8M ARS @ MEP 1.418). New incoming: **$4,000 USD** from a US fintech client. Payment options offered: Wise transfer or USDT to her Lemon wallet. Infrastructure: Wise active, Mercury opened (unused for invoicing yet), Lemon wallet active (VASP-registered ✓). IIBB CABA + export-services = exempt. Factura E approved in AFIP, ~8 emitidas in last 12 months.
+Marina, UX designer in CABA, monotributo cat F. YTD trajectory: ~$3.5K USD/month × 4 months = ~$14K USD invoiced Q1 + early Q2 2026 (~19.8M ARS at MEP 1.418). New incoming: **$4,000 USD** from a US fintech client. Payment options offered: Wise transfer or USDT to her Lemon wallet. Infrastructure: Wise active, Mercury opened (unused for invoicing yet), Lemon wallet active (VASP-registered ✓). IIBB CABA + export-services = exempt. Factura E (export invoice) approved in AFIP, ~8 issued in the last 12 months.
 
 ### Constraints Analysis
 
-- **Headroom monotributo cat F**: límite anual ~$33,876 USD @ MEP. YTD facturado ~$14K = ~41% del techo. Este invoice ($4K) lleva el cumulative a ~$18K = **~53% del techo**. Headroom remanente: ~$15.9K USD para el resto de 2026.
-- **Próxima recategorización**: agosto 2026. Si Marina sostiene $3.5-4K USD/mes, llega a cierre de año con ~$32-37K USD facturados — borderline cat F vs cat G. La recategorización de agosto le dará aire (techos suben ~10-15% históricamente).
-- **IIBB**: confirmado export-services exempt (cat F monotributo CABA, servicios al exterior). No filing separado necesario.
-- **Factura E**: ya aprobada y en uso. No setup blocker.
-- **VASP status**: Lemon registrada en CNV ✓. USDT lane operativamente disponible.
+- **Cat F headroom**: annual ceiling ~$33,876 USD at MEP. YTD invoiced ~$14K = ~41% of ceiling. This invoice ($4K) brings cumulative to ~$18K = ~53% of ceiling. Remaining headroom: ~$15.9K USD for the rest of 2026.
+- **Next recategorización (re-categorization)**: August 2026. If Marina sustains $3.5-4K USD/month, she closes the year at ~$32-37K USD invoiced — borderline cat F vs cat G. The August recategorización will give breathing room (ceilings historically rise 10-15%).
+- **IIBB (provincial gross-income tax)**: confirmed export-services exempt (cat F monotributo CABA, services to foreign clients). No separate filing needed.
+- **Factura E**: already approved and in active use. No setup blocker.
+- **VASP status**: Lemon registered with CNV ✓. USDT lane operationally available.
 
 ### Routing Options
 
 | Option | All-in cost | Speed | Tax visibility | Audit risk | Confidence-OK signal |
 |--------|-------------|-------|----------------|------------|----------------------|
-| **Wise + Factura E** | 1.5-2.5% | 1-2d | Total | Baja | ✓ default lane |
-| Mercury + MEP via broker | 2-3% | 5-7d | Total | Media | ✗ volumen mensual no justifica overhead |
-| Deel + ARS direct | 2-4% | 2-5d | Total (CAE) | Media | ✗ cliente no usa Deel |
-| USDT vía Lemon (VASP-reg) | 2-3% | <1d | Declarable | Media-Alta | ✓ disponible pero no necesario |
-| ❌ Blue dollar cueva | 0-1% | Instant | Cero | Muy Alta | REFUSED |
-| ❌ Crypto P2P informal | 0.5-1.5% | Instant | Cero | Muy Alta | REFUSED |
+| **Wise + Factura E** | 1.5-2.5% | 1-2d | Full | Low | ✓ default lane |
+| Mercury + MEP via broker | 2-3% | 5-7d | Full | Medium | ✗ monthly volume does not justify overhead |
+| Deel + ARS direct | 2-4% | 2-5d | Full (CAE platform) | Medium | ✗ client does not use Deel |
+| USDT via Lemon (VASP-reg) | 2-3% | <1d | Declarable | Med-High | ✓ available but unnecessary |
+| ❌ Blue dollar cueva | 0-1% | Instant | None | Very High | REFUSED |
+| ❌ Crypto P2P informal | 0.5-1.5% | Instant | None | Very High | REFUSED |
 
 ### Recommendation
 
@@ -53,62 +53,62 @@ Marina, UX designer in CABA, monotributo **cat F**. YTD trajectory: ~$3.5K USD/m
 
 **Confidence: 92%.**
 - +20% because all 5 intake inputs verified (cat, volume, invoice details, jurisdiction, infrastructure)
-- +15% because Wise lane has 4+ years of practitioner track record under identical conditions (cat F monotributo + US client + export-services CABA)
-- +10% because Factura E setup confirmed and recently exercised (8 emitidas last 12 months — operator knows the workflow)
+- +15% because the Wise lane has multi-year well-validated practitioner track record under identical conditions (cat F monotributo + US client + export-services CABA)
+- +10% because Factura E setup confirmed and recently exercised (8 issued in the last 12 months — operator knows the workflow)
 - +5% because USD volume is well within cat F headroom (53% utilized with this invoice)
-- −8% because Mercury account exists but unused for invoicing — minor uncertainty about whether wire-from-US is configured if Wise becomes unavailable for any reason
+- −8% because Mercury account exists but unused for invoicing — minor uncertainty about whether wire-from-US is configured if Wise becomes unavailable
 
-**Headroom impact:** post-invoice, cat F ~53% utilized YTD. **Próximo-mes flag:** if monthly invoicing accelerates above $4K/mo, she crosses 70% of cat F by July — recategorización proactiva to G should be considered before August's official window.
+**Headroom impact:** post-invoice, cat F ~53% utilized YTD. **Next-month flag:** if monthly invoicing accelerates above $4K/mo, she crosses 70% of cat F by July — proactive recategorización to G should be considered before August's official window.
 
-USDT via Lemon is operationally available but not recommended here — adds reporting friction (USDT valuation at oficial AFIP del día de recepción + VASP statement reconciliation) without cost advantage at this volume. Reserve USDT lane for clients who insist on crypto payment or for invoices where Wise availability is uncertain.
+USDT via Lemon is operationally available but not recommended here — adds reporting friction (USDT valuation at official AFIP rate at the moment of receipt + VASP statement reconciliation) without cost advantage at this volume. Reserve the USDT lane for clients who insist on crypto payment or for invoices where Wise availability is uncertain.
 
 ### Execution Checklist
 
-1. **[Día 0 — today]** Confirm with the new fintech client that Wise transfer is acceptable. Send them Wise account details (USD multi-currency, routing number for ACH).
-2. **[Día 1]** Issue Factura E #N to the new client's legal entity at the official AFIP exchange rate of the issuance day. Document the cotización on the invoice.
-3. **[Día 1-2]** Client initiates Wise transfer ($4,000 USD).
-4. **[Día 2-3]** USD lands in Wise multi-currency account. Hold in USD if no immediate ARS need; convert at Wise mid-market rate when cash required.
-5. **[Mensual]** Reconcile Factura E + Wise statement entry + downstream ARS conversion in monotributo records.
-6. **[Documentar — guardar en carpeta AFIP/2026/Q2/]**: Factura E PDF, Wise statement showing inbound USD, signed contract or SoW with the fintech client, and the audit-pack snippet below.
+1. **[Day 0 — today]** Confirm with the new fintech client that Wise transfer is acceptable. Send them Wise account details (USD multi-currency, routing number for ACH).
+2. **[Day 1]** Issue Factura E #N to the new client's legal entity at the official AFIP exchange rate of the issuance day. Document the cotización (exchange rate quote) on the invoice.
+3. **[Day 1-2]** Client initiates Wise transfer ($4,000 USD).
+4. **[Day 2-3]** USD lands in Wise multi-currency account. Hold in USD if no immediate ARS need; convert at Wise mid-market rate when cash is required.
+5. **[Monthly]** Reconcile Factura E + Wise statement entry + downstream ARS conversion in monotributo records.
+6. **[Document — save in AFIP/2026/Q2/ folder]**: Factura E PDF, Wise statement showing inbound USD, signed contract or SoW with the fintech client, and the audit-pack snippet below.
 
 ### Decision Trace
 
 - Mode detected: Routing — strong signals (specific invoice, amount, client country, payment options enumerated).
 - Lane chosen: Wise + Factura E, default lane for cat F + US client + sub-$10K invoice + Wise infrastructure ready.
-- Confidence 92%: anchored by full intake compliance + 4+ years practitioner track on identical conditions; minor deduction for Mercury-as-fallback unverified.
+- Confidence 92%: anchored by full intake compliance + multi-year practitioner track record under identical conditions; minor deduction for Mercury-as-fallback unverified.
 - USDT considered and explicitly not recommended: adds reporting friction without cost advantage at this profile.
 - Refused options listed for transparency: not because Marina asked about them, but because the specialist's discipline is to surface every viable lane and explicitly refuse the ones that wouldn't serve her.
 
 ---
 
-### audit-pack.md (shadow artifact — guardalo en tu carpeta AFIP/2026/Q2/)
+### audit-pack.md (shadow artifact — save in AFIP/2026/Q2/ folder)
 
 ```
-FECHA: 2026-05-08
+DATE: 2026-05-08
 INVOICE: B2B Fintech LLC (US), USD $4,000
 
 SIGNALS ANALYZED:
-  - Cat monotributo F, headroom ~$15.9K USD remaining in 2026
-  - Volumen mensual ~$3.5K USD/mes Q1-Q2 (stable, single-client until now)
+  - Monotributo cat F, headroom ~$15.9K USD remaining in 2026
+  - Monthly volume ~$3.5K USD/month Q1-Q2 (stable, single-client until now)
   - This invoice from new US client (second client onboarded)
   - Payment options offered: Wise or USDT-Lemon
   - IIBB CABA, export-services exempt
-  - Factura E setup verified, 8 emitidas last 12 months
-  - VASP status: Lemon registered in CNV ✓
+  - Factura E setup verified, 8 issued in last 12 months
+  - VASP status: Lemon registered with CNV ✓
 
 ALTERNATIVES CONSIDERED:
-  - Mercury + MEP via broker — volumen mensual <$10K, broker overhead not justified
+  - Mercury + MEP via broker — monthly volume <$10K, broker overhead not justified
   - Deel + ARS direct — client does not use Deel, not applicable
   - USDT via Lemon — operationally available but adds reporting friction without cost advantage
-  - ❌ Blue dollar cueva — REFUSED, audit risk muy alta post-May-2025
+  - ❌ Blue dollar cueva — REFUSED, audit risk very high post-May-2025
   - ❌ Crypto P2P informal — REFUSED, no VASP registration trail
 
 DECISION: Wise + Factura E
 
 DECISION RATIONALE:
   Default lane for cat F + US client + sub-$10K invoice profile. Existing Wise infrastructure
-  + emitted Factura E history reduces operational risk. All-in cost 1.5-2.5%, lowest audit
-  risk profile, 1-2 day liquidity sufficient for current cash needs.
+  + Factura E history reduces operational risk. All-in cost 1.5-2.5%, lowest audit risk
+  profile, 1-2 day liquidity sufficient for current cash needs.
 
 CONFIDENCE: 92%
 
@@ -122,8 +122,8 @@ DOCUMENTS TO RETAIN:
   - Email confirmation of payment method from client
 
 NEXT REVIEW TRIGGER:
-  Si volumen mensual sube >$4K/mo o YTD acumulado supera 70% del techo cat F antes de Aug 2026,
-  revisar recategorización proactiva a cat G.
+  If monthly volume rises above $4K/month or YTD cumulative exceeds 70% of cat F ceiling
+  before Aug 2026, review proactive recategorización to cat G.
 ```
 
 ---
