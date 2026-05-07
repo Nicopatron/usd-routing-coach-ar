@@ -121,7 +121,9 @@ Operator-protection over compliance theatre. This isn't an output template — i
 
 ```
 usd-routing-coach-ar/
-├── README.md                            ← read first
+├── README.md                            ← read first (humans)
+├── AGENTS.md                            ← agent-facing operational primer (auto-read by Codex / Cursor / Windsurf / etc.)
+├── CLAUDE.md                            ← minimal redirect to AGENTS.md for Claude Code
 ├── quickstart.md                        ← TL;DR, 5 numbered steps
 ├── identity.md                          ← who the specialist is
 ├── rules.md                             ← output contract: 4 modes, formats, calibration discipline
@@ -185,6 +187,8 @@ Every step is documented in `rules.md`. Nothing is hidden in prompt engineering 
 
 | File | Job |
 |------|-----|
+| `AGENTS.md` | Agent-facing operational primer — file-read order, default workflow, language policy, refusal discipline, confidence calibration. Auto-read by Codex / Cursor / Windsurf / Zed / Roo Code. |
+| `CLAUDE.md` | Minimal redirect to `AGENTS.md` for Claude Code (which doesn't auto-read `AGENTS.md` natively yet). |
 | `quickstart.md` | TL;DR for skim readers — 5 numbered steps from clone to first output. |
 | `identity.md` | Who the specialist is — Argentine operator persona, point of view on routing, scope boundaries. |
 | `rules.md` | Output contract — 4-mode triage, output format per mode, confidence calibration discipline, intake gate, length caps, bilingual policy, calibration date. |
@@ -202,8 +206,11 @@ Every step is documented in `rules.md`. Nothing is hidden in prompt engineering 
 
 ### Prerequisites
 
-- A Claude account (free or paid plan works) — for Path A
-- OR [Claude Code](https://claude.ai/code) installed locally — for Path B
+This folder is **agent-agnostic** — works with any AI agent that reads markdown files. Three documented paths:
+
+- **Path A:** Claude account (free or paid plan works) — browser-based, easiest first try
+- **Path B:** [Claude Code](https://claude.ai/code) — local CLI agent
+- **Path C:** Codex CLI / Cursor / Windsurf / Zed / Roo Code / Aider / Cline / Continue — any agent that auto-reads `AGENTS.md` (compatibility table below)
 
 ### Path A — Claude Project (3-minute setup)
 
@@ -230,6 +237,32 @@ Open the folder in Claude Code. Tell it:
 Claude Code reads `README.md` + `identity.md` + `rules.md` + `examples.md` + everything in `reference/` automatically. Same output contract as Path A.
 
 If you don't have a real invoice handy, paste any of the four worked syntheses from `examples.md` to test cold — they're synthetic and self-contained.
+
+### Path C — Codex CLI / Cursor / Windsurf / other agents
+
+This folder includes an `AGENTS.md` file following the [agents.md](https://agents.md) open convention. Most CLI agents auto-discover and read it on session start.
+
+```bash
+git clone https://github.com/Nicopatron/usd-routing-coach-ar.git
+cd usd-routing-coach-ar
+```
+
+Open the folder with your agent and paste your situation. Compatibility:
+
+| Agent | Auto-reads `AGENTS.md`? | Notes |
+|-------|-------------------------|-------|
+| Codex CLI (OpenAI) | ✅ Native | Reads on session start |
+| Cursor | ✅ Native | Replaces deprecated `.cursorrules` |
+| Windsurf | ✅ Native | Stable since 2025 |
+| Zed AI | ✅ Native | In fallback chain `.rules → .cursorrules → .clinerules → AGENTS.md` |
+| Roo Code | ✅ Native | Confirmed Jan 2026 |
+| Aider | ⚠️ Manual | `aider --read AGENTS.md` or add to `.aider.conf.yml` |
+| Cline / Continue | ⚠️ Manual | Paste `AGENTS.md` contents into chat at session start |
+| Claude Code | ✅ Via `CLAUDE.md` redirect | `CLAUDE.md` in repo points to `AGENTS.md` |
+
+Once the agent has the operational primer loaded, paste your situation: the 5 inputs from `reference/intake-checklist.md` (cat monotributo, monthly USD volume, this invoice details, IIBB jurisdiction, banking infrastructure). Ask: *"Synthesize this routing decision."*
+
+Same output contract as Path A and Path B.
 
 ---
 
