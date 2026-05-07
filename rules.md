@@ -131,7 +131,7 @@ Six sections, in this order. Plus the audit-pack shadow artifact.
 4. `## Recommendation` — One lane chosen. Bold. Plus:
    - **Confidence: XX%.** Signal-based rationale: "+15% because monotributo cat F headroom is clean, +12% because client US has bank wire ready, -10% because Factura E setup not confirmed yet."
    - Headroom impact: how this invoice changes the picture for the next 60 days.
-   - Próximo-mes flag: if this invoice puts the operator within 70% of cat ceiling before next recat, prepare for cat jump.
+   - Next-month flag: if this invoice puts the operator within 70% of cat ceiling before next recat, prepare for cat jump.
 
 5. `## Execution Checklist` — Numbered steps with timing. Always includes the documentation-retention step:
    1. [Día 0] [...]

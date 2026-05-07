@@ -1,6 +1,6 @@
 # Mode Triage — Signal Patterns + Decision Tree
 
-El specialist opera en 4 modes. Mode detection es lo primero que pasa en cada paste — antes del intake gate, antes del output. Este file documenta los signal patterns que disparan cada mode y el decision tree para cuando los signals son ambiguos.
+The specialist operates in 4 modes. Mode detection is the first thing that happens on every paste — before the intake gate, before the output. This file documents the signal patterns that trigger each mode and the decision tree for when signals are ambiguous.
 
 ---
 
@@ -8,8 +8,8 @@ El specialist opera en 4 modes. Mode detection es lo primero que pasa en cada pa
 
 | Mode | Trigger | Output shape |
 |------|---------|--------------|
-| **ROUTING** (default) | Invoice + amount + client country + payment options en discusión | 6 sections + audit-pack shadow |
-| **AUDIT RESPONSE** | Notificación AFIP / vista / intimación / requerimiento pasted o referenciado | Defensive playbook (no routing rec) |
+| **ROUTING** (default) | Invoice + amount + client country + payment options under discussion | 6 sections + audit-pack shadow |
+| **AUDIT RESPONSE** | Notificación AFIP / vista / intimación / requerimiento pasted or referenced | Defensive playbook (no routing rec) |
 | **YEAR-END RECONCILIATION** | Annual summary / total YTD / cat projection question / RI transition timing | Projection + readiness |
 | **PATTERN MEMO** | 3+ Routing-Mode interactions accumulated in conversation, OR explicit request | Quantitative emergent insight |
 
@@ -20,14 +20,14 @@ El specialist opera en 4 modes. Mode detection es lo primero que pasa en cada pa
 ### Routing Mode (default)
 
 **Strong signals (high-confidence trigger):**
-- Mention de un invoice específico con amount USD ("$5K", "8K USD", "five to ten K")
-- Mention de country del cliente ("US client", "cliente español", "cliente mexicano")
-- Mention de payment options ("paga por Wise", "tiene Deel", "preferiría USDT")
-- Pregunta directa: "¿cómo cobro este invoice?", "¿qué lane uso?", "¿conviene USDT o Wise?"
+- Mention of a specific invoice with a USD amount ("$5K", "8K USD", "five to ten K")
+- Mention of client country ("US client", "cliente español", "cliente mexicano")
+- Mention of payment options ("paga por Wise", "tiene Deel", "preferiría USDT")
+- Direct question: "¿cómo cobro este invoice?", "¿qué lane uso?", "¿conviene USDT o Wise?"
 
 **Weak signals (might be routing, might be other):**
-- Mention de monotributo cat sin invoice context → could be Year-End
-- Mention de Wise/Mercury sin invoice → setup question, not routing decision
+- Mention of monotributo cat without invoice context → could be Year-End
+- Mention of Wise/Mercury without an invoice → setup question, not routing decision
 
 ### Audit Response Mode
 
@@ -39,7 +39,7 @@ El specialist opera en 4 modes. Mode detection es lo primero que pasa en cada pa
 - Plazo mentioned: "tengo 10 días", "antes del [fecha]"
 
 **Weak signals:**
-- "Me llegó algo de AFIP" sin specifics → ask qué tipo
+- "Me llegó algo de AFIP" without specifics → ask which kind
 - "Tengo un quilombo con monotributo" → could be many things, ask
 
 ### Year-End Reconciliation Mode
@@ -48,16 +48,16 @@ El specialist opera en 4 modes. Mode detection es lo primero que pasa en cada pa
 - "Total facturado este año" / "YTD invoicing"
 - "¿En qué cat termino?" / "¿Tendría que recategorizar?"
 - "¿Conviene saltar a RI?"
-- Mes calendar específico Q4: "Es octubre y..."
-- Mention de projection / forecast / annual return
+- Specific Q4 calendar month: "Es octubre y..."
+- Mention of projection / forecast / annual return
 
 **Weak signals:**
-- Mention de cat solo → could be routing setup question
+- Mention of cat alone → could be routing setup question
 
 ### Pattern Memo Mode
 
 **Strong signals (auto-trigger):**
-- 3+ Routing-Mode outputs ya generados en la misma conversación
+- 3+ Routing-Mode outputs already generated in the same conversation
 - Explicit request: "show me my pattern", "mostrame mi patrón", "pattern memo", "¿cómo vengo facturando?"
 
 **Weak signals (might be requesting Pattern Memo, might just be Year-End):**
