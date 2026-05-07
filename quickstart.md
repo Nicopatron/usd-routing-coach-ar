@@ -13,6 +13,8 @@ For people who don't read READMEs.
 4. Ask: **`Synthesize this routing decision.`**
 5. Read the structured 6-section output + audit-pack shadow artifact (~900-1100 words). Iterate with: *"draft just the audit pack,"* *"compare MEP vs Wise for this volume,"* *"if I switch to RI next quarter, how does this change."*
 
+**Testing without a real invoice:** paste any of the worked syntheses from `examples.md` (Marina, Diego, Federica, Juan) into your project chat. Each is self-contained and produces the same output shape you'd get with your own invoice.
+
 ---
 
 **Bilingual auto-detect.** Spanish input → Spanish output (Rioplatense). English input → English output. Mixed-language with no dominant → English by default.

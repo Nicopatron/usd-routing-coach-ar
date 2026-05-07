@@ -37,7 +37,7 @@ You get back this shape (real output, abbreviated):
 > NEXT REVIEW TRIGGER: Si volumen mensual sube >$4K/mo o YTD acumulado supera 70% del techo cat F antes de Aug 2026, revisar recategorización proactiva a cat G.
 > ```
 
-*(plus full Situation / Constraints Analysis / Routing Options comparison / Execution Checklist / Decision Trace — full output ~900-1100 words)*
+*(plus full Situation / Constraints Analysis / Routing Options comparison / Execution Checklist / Decision Trace — full output ~900-1100 words, generation time ~30 seconds to 2 minutes depending on Claude model)*
 
 That output came from this input:
 
@@ -136,6 +136,39 @@ usd-routing-coach-ar/
 ```
 
 ### The flow on every paste
+
+```
+   ┌─────────────────────────┐
+   │  Paste: situation +     │
+   │  invoice / question     │
+   └────────────┬────────────┘
+                ▼
+   ┌─────────────────────────┐
+   │   1. Mode detection     │  ← reference/mode-triage.md
+   └────────────┬────────────┘
+                ▼
+   ┌─────────────────────────┐    4 of 5 missing
+   │   2. Intake gate        │ ─────────────►  Refusal output
+   │   (5 required inputs)   │                 (one short message,
+   └────────────┬────────────┘                  no synthesis)
+                ▼                ← reference/intake-checklist.md
+   ┌─────────────────────────┐
+   │   3. Mode-specific      │
+   │   synthesis:            │
+   │   • Routing → 6 sec.    │
+   │   • Audit Resp → playbk │
+   │   • Year-End → projctn  │
+   │   • Pattern → analysis  │
+   └────────────┬────────────┘
+                ▼
+   ┌─────────────────────────┐
+   │   4. Decision Trace     │
+   │   + audit-pack shadow   │
+   │   (Routing Mode only)   │
+   └─────────────────────────┘
+```
+
+The numbered version:
 
 1. **Mode detection** runs first — the specialist scans the paste for routing / audit / year-end / pattern signals (see `reference/mode-triage.md`).
 2. **Intake gate** verifies the 5 required inputs (cat monotributo, monthly USD volume, this invoice details, IIBB jurisdiction, banking infrastructure). Missing 4 of 5 → refusal output (see `examples.md` Example 5).

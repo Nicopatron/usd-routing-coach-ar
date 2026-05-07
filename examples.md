@@ -404,7 +404,7 @@ Cálculo costo-beneficio aproximado:
 
 ---
 
-## Example 5 — Refusal (Spanish-dominant input → Spanish refusal output, intake gate triggered)
+## Example 5 — Refusal: Intake Gate Triggered (Spanish-dominant input → Spanish refusal output)
 
 **Lo que pega el usuario:**
 
