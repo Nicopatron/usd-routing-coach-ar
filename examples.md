@@ -8,7 +8,7 @@ Five worked examples covering all four operating modes plus the refusal protocol
 | 2 | Routing | **Diego** — AI consultant cat I → K, $8K from EU client | Español | Confidence 78%, Mercury + MEP, RI transition flag |
 | 3 | Audit Response | **Federica** — copywriter, recibió vista AFIP por 2024 | Español | Mode switch announced, defensive playbook, contador trigger |
 | 4 | Year-End | **Juan** — dev cat G, October, $42K YTD | Español | Cat projection, recategorización Aug, RI transition deferred |
-| 5 | Refusal | Vague intake, 4 of 5 inputs missing | Mixed → English default | Intake gate triggered, 5-input list returned |
+| 5 | Refusal | Vague intake, 4-5 of 5 inputs missing/weak | ES (Spanish-dominant input) + variant for mixed → EN default | Intake gate triggered, 5-input list, Decision Trace, override option |
 
 ---
 
@@ -26,13 +26,13 @@ Five worked examples covering all four operating modes plus the refusal protocol
 
 ### Situation
 
-Marina, UX designer in CABA, monotributo cat F. YTD trajectory: ~$3.5K USD/month × 4 months = ~$14K USD invoiced Q1 + early Q2 2026 (~19.8M ARS at MEP 1.418). New incoming: **$4,000 USD** from a US fintech client. Payment options offered: Wise transfer or USDT to her Lemon wallet. Infrastructure: Wise active, Mercury opened (unused for invoicing yet), Lemon wallet active (VASP-registered ✓). IIBB CABA + export-services = exempt. Factura E (export invoice) approved in AFIP, ~8 issued in the last 12 months.
+Marina, UX designer in CABA, monotributo (Argentine simplified tax regime) cat F. YTD trajectory: ~$3.5K USD/month × 4 months = ~$14K USD invoiced Q1 + early Q2 2026 (~19.8M ARS at MEP 1.418). New incoming: **$4,000 USD** from a US fintech client. Payment options offered: Wise transfer or USDT to her Lemon wallet. Infrastructure: Wise active, Mercury opened (unused for invoicing yet), Lemon wallet active (VASP-registered ✓). IIBB (provincial gross-income tax) CABA + export-services = exempt. Factura E (export invoice) approved in AFIP, ~8 issued in the last 12 months.
 
 ### Constraints Analysis
 
 - **Cat F headroom**: annual ceiling ~$33,876 USD at MEP. YTD invoiced ~$14K = ~41% of ceiling. This invoice ($4K) brings cumulative to ~$18K = ~53% of ceiling. Remaining headroom: ~$15.9K USD for the rest of 2026.
 - **Next recategorización (re-categorization)**: August 2026. If Marina sustains $3.5-4K USD/month, she closes the year at ~$32-37K USD invoiced — borderline cat F vs cat G. The August recategorización will give breathing room (ceilings historically rise 10-15%).
-- **IIBB (provincial gross-income tax)**: confirmed export-services exempt (cat F monotributo CABA, services to foreign clients). No separate filing needed.
+- **IIBB**: confirmed export-services exempt (cat F monotributo CABA, services to foreign clients). No separate filing needed.
 - **Factura E**: already approved and in active use. No setup blocker.
 - **VASP status**: Lemon registered with CNV ✓. USDT lane operationally available.
 
@@ -404,42 +404,62 @@ Cálculo costo-beneficio aproximado:
 
 ---
 
-## Example 5 — Refusal (Mixed → English default, intake gate triggered)
+## Example 5 — Refusal (Spanish-dominant input → Spanish refusal output, intake gate triggered)
 
 **Lo que pega el usuario:**
 
-> Hola, soy de Argentina y necesito ayuda — un cliente del exterior me va a pagar en USD y no sé bien cómo recibirlo. ¿Cuál es la mejor manera?
+> Hola, vivo en Argentina y soy freelance designer. Un cliente del exterior me quiere pagar afuera. Cuál es la mejor manera de cobrar?
 
 **Output del specialist:**
 
-Detectaron signals de Routing Mode pero falta intake. Antes de routing, necesito 4 de estos 5 inputs (translating to English since input is mixed Spanish/English with no clear dominant — switch to ES if you prefer):
+Antes de routing necesito 4 de estos 5 inputs:
 
-1. **Monotributo category** — A through K, or "RI", or "unregistered".
-2. **USD volume / month — last 3 months** — a range is OK ($2-4K/mo, $500-1500/mo, etc.).
-3. **This invoice details** — amount in USD, country of the client, payment options the client offers (Wise / Deel / wire / USDT / etc.).
-4. **IIBB jurisdiction** — CABA / PBA / interior province / convenio multilateral / N/A if export-services only.
-5. **Available banking infrastructure** — Wise yes/no, Mercury yes/no, broker account yes/no, VASP-registered crypto exchange yes/no.
+1. **Cat monotributo actual** (A-K, RI, o todavía no estás inscripto)
+2. **Volumen USD/mes últimos 3 meses** (un rango está bien, ej: "$2-4K/mes")
+3. **Este invoice**: monto en USD + país del cliente + opciones de pago que te ofrece (Wise, wire, Deel, USDT, etc.)
+4. **Jurisdicción IIBB** (CABA / PBA / provincia interior / N/A si sos export-services puro)
+5. **Infraestructura bancaria**: Wise sí/no, Mercury sí/no, broker sí/no, exchange crypto registrado en CNV sí/no
 
-**What you provided:**
-- Country of operator: Argentina ✓ (input #4 partial — need province)
-- Foreign client paying USD ✓ (input #3 partial — need amount, country, payment options)
+**Tengo:** freelance designer en Argentina ✓ (parcial — falta provincia y cat); cliente externo que va a pagar en USD ✓ (parcial — falta monto + país + opciones)
 
-**What's missing:**
-- Input #1 (monotributo category)
-- Input #2 (USD volume history)
-- Input #3 (invoice amount + client country + payment options)
-- Input #4 (specific IIBB jurisdiction)
-- Input #5 (banking infrastructure)
+**Falta:** inputs #1, #2, #3 (monto + país + opciones), #4 (provincia específica), #5
 
-That's 5 of 5 missing/weak. I can't synthesize a routing recommendation without the basics — a guessed routing decision on a real invoice costs more than this clarification round.
+Si querés un best-effort con `⚠ guessed` markers en cada supuesto, decímelo explícito — pero la respuesta estándar con este nivel de info sería inútil. Mandame los faltantes en un mensaje y arranco.
 
-**Send me the missing inputs in one message and I'll produce the routing decision.** If you want a best-effort guess with explicit `⚠ guessed` markers on every assumption, say so explicitly — but the standard answer with this little context would be useless.
+## Trazabilidad de la Decisión
 
-### Decision Trace
+- Mode que hubiera aplicado: Routing
+- Inputs recibidos: 0 de 5 fully specified (2 partials: #3 country-only, #5 freelance-only)
+- Inputs missing: #1, #2, #3 (specifics), #4 (specifics), #5 (specifics)
+- Output language: español por input español-dominante ("freelance designer" como loanword no shifteao el dominio)
+- Override available: sí, on explicit request
 
-- Mode that would have applied: Routing.
-- Inputs received: 0 of 5 fully specified.
-- Inputs partial: #4 partial (country = Argentina, but no province), #3 partial (USD payment incoming, but no amount/country/options).
-- Disambiguation needed: no — refusal is the right response.
-- Override available: yes, on explicit request.
-- Output language: English default (mixed-language input with no clear dominant per `rules.md` bilingual policy).
+### Variant — same scenario but truly mixed-language input → English default
+
+**Input alternativo:**
+
+> Hi — I'm freelance from BA Argentina. Tengo un cliente del exterior que wants to pay me en dollars. ¿What's the best way para cobrar? Need compliant route.
+
+**Output del specialist** (heavy mixed-language input → EN default):
+
+Before routing I need 4 of these 5 inputs (defaulting to English; switch to Spanish on request):
+
+1. **Monotributo category** (A-K, RI, or unregistered)
+2. **USD volume / month, last 3 months** (a range is fine, e.g., "$2-4K/mo")
+3. **This invoice**: USD amount + client country + payment options the client offers (Wise, wire, Deel, USDT, etc.)
+4. **IIBB jurisdiction** (CABA / PBA / interior province / N/A if export-services only)
+5. **Banking infrastructure**: Wise yes/no, Mercury yes/no, broker yes/no, CNV-registered crypto exchange yes/no
+
+**Have:** freelance in Buenos Aires ✓ (partial — need province + cat); foreign client paying USD ✓ (partial — need amount, country, payment options); compliance-first preference ✓ (signal, not an input)
+
+**Missing:** #1, #2, #3 (specifics), #4 (specifics), #5
+
+If you want a best-effort guess with `⚠ guessed` markers on every assumption, say so explicitly — but the standard answer with this little context would be useless. Send me the missing inputs in one message and I'll produce the routing decision.
+
+## Decision Trace
+
+- Mode that would have applied: Routing
+- Inputs received: 0 of 5 fully specified (3 partials: #4 region-only, #5 freelance-only, plus a compliance-preference signal)
+- Inputs missing: #1, #2, #3 (specifics), #4 (specifics), #5 (specifics)
+- Output language: English default (mixed-language input with no clear dominant — Spanish and English alternating clauses)
+- Override available: yes, on explicit request
