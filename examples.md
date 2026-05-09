@@ -30,8 +30,8 @@ Marina, UX designer in CABA, monotributo (Argentine simplified tax regime) cat F
 
 ### Constraints Analysis
 
-- **Cat F headroom**: annual ceiling ~$33,876 USD at MEP. YTD invoiced ~$14K = ~41% of ceiling. This invoice ($4K) brings cumulative to ~$18K = ~53% of ceiling. Remaining headroom: ~$15.9K USD for the rest of 2026.
-- **Next recategorización (re-categorization)**: August 2026. If Marina sustains $3.5-4K USD/month, she closes the year at ~$32-37K USD invoiced — borderline cat F vs cat G. The August recategorización will give breathing room (ceilings historically rise 10-15%).
+- **Cat F headroom**: annual ceiling 38,642,048 ARS = ~$27,251 USD at MEP 1.418. YTD invoiced ~$14K = ~51% of ceiling. This invoice ($4K) brings cumulative to ~$18K = ~66% of ceiling. Remaining headroom: ~$9.3K USD for the rest of 2026.
+- **Next recategorización (re-categorization)**: August 2026. If Marina sustains $3.5-4K USD/month, she closes the year at ~$32-37K USD invoiced — over cat F ($27,251), well into cat G ($32,589) and possibly cat H ($49,446). The August recategorización will absorb part of that with the IPC adjustment, but proactive recat to G is already advisable given current trajectory.
 - **IIBB**: confirmed export-services exempt (cat F monotributo CABA, services to foreign clients). No separate filing needed.
 - **Factura E**: already approved and in active use. No setup blocker.
 - **VASP status**: Lemon registered with CNV ✓. USDT lane operationally available.
@@ -55,10 +55,11 @@ Marina, UX designer in CABA, monotributo (Argentine simplified tax regime) cat F
 - +20% because all 5 intake inputs verified (cat, volume, invoice details, jurisdiction, infrastructure)
 - +15% because the Wise lane has multi-year well-validated practitioner track record under identical conditions (cat F monotributo + US client + export-services CABA)
 - +10% because Factura E setup confirmed and recently exercised (8 issued in the last 12 months — operator knows the workflow)
-- +5% because USD volume is well within cat F headroom (53% utilized with this invoice)
+- +5% because cat F runway is still positive (66% utilized post-invoice; ~$9.3K USD remaining before forced jump)
 - −8% because Mercury account exists but unused for invoicing — minor uncertainty about whether wire-from-US is configured if Wise becomes unavailable
+- −5% because trajectory at $3.5-4K/mo already projects closing the year above cat F ceiling — the lane choice is right but cat-management urgency is higher than a clean cat F case
 
-**Headroom impact:** post-invoice, cat F ~53% utilized YTD. **Next-month flag:** if monthly invoicing accelerates above $4K/mo, she crosses 70% of cat F by July — proactive recategorización to G should be considered before August's official window.
+**Headroom impact:** post-invoice, cat F ~66% utilized YTD. **Next-month flag fires now:** at current $3.5-4K/mo trajectory, Marina crosses 70% of cat F next invoice — proactive recategorización to G is already advisable, do not wait for August's official window. Recategorizing to G keeps headroom up to $32,589 USD = ~14.6K USD additional runway.
 
 USDT via Lemon is operationally available but not recommended here — adds reporting friction (USDT valuation at official AFIP rate at the moment of receipt + VASP statement reconciliation) without cost advantage at this volume. Reserve the USDT lane for clients who insist on crypto payment or for invoices where Wise availability is uncertain.
 
@@ -88,7 +89,7 @@ DATE: 2026-05-08
 INVOICE: B2B Fintech LLC (US), USD $4,000
 
 SIGNALS ANALYZED:
-  - Monotributo cat F, headroom ~$15.9K USD remaining in 2026
+  - Monotributo cat F (ceiling 38.642M ARS / ~$27,251 USD @ MEP 1.418), headroom ~$9.3K USD remaining in 2026
   - Monthly volume ~$3.5K USD/month Q1-Q2 (stable, single-client until now)
   - This invoice from new US client (second client onboarded)
   - Payment options offered: Wise or USDT-Lemon
@@ -122,8 +123,9 @@ DOCUMENTS TO RETAIN:
   - Email confirmation of payment method from client
 
 NEXT REVIEW TRIGGER:
-  If monthly volume rises above $4K/month or YTD cumulative exceeds 70% of cat F ceiling
-  before Aug 2026, review proactive recategorización to cat G.
+  YTD cumulative is already at 66% of cat F ceiling post-invoice; one more
+  invoice at current pace crosses 70%. Recategorize to cat G proactively
+  this month — do not wait for Aug 2026 official window.
 ```
 
 ---
@@ -146,9 +148,10 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 
 ### Análisis de Constraints
 
-- **Headroom monotributo cat I**: límite ~$64,949 USD @ MEP. YTD facturado ~$58K = **~89% del techo**. Este invoice ($8K) lleva el cumulative a ~$66K = **~102% del techo cat I**. **Cruzaste cat I.**
-- **Cat K (techo absoluto)**: ~$76,479 USD. Post-invoice estás a ~$66K = ~86% de cat K. Headroom hasta cat K: ~$10.5K USD = ~14.9M ARS.
-- **Trayectoria proyectada**: facturando ~$13K USD/mes promedio (los $58K en 4-5 meses), el resto del año proyecta otros $84-100K → cierre $142-158K USD = **~186-207% de cat K. Salida forzada a RI inevitable Q3-Q4 2026.**
+- **Headroom monotributo cat I**: límite real 78.479M ARS = **~$55,345 USD @ MEP 1.418**. YTD facturado ~$58K = **~105% del techo cat I — ya estás afuera**. Este invoice ($8K) lleva el cumulative a ~$66K = **~119% del techo cat I**, te ubica adentro de cat J ($63,381) y cerca del techo cat K.
+- **Cat J**: techo 89.872M ARS = ~$63,381 USD. Post-invoice $66K = ~104% de cat J. **Cruzaste cat J también.**
+- **Cat K (techo absoluto)**: 108.357M ARS = ~$76,415 USD. Post-invoice $66K = ~86% de cat K. Headroom hasta cat K: ~$10.4K USD = ~14.7M ARS.
+- **Trayectoria proyectada**: facturando ~$13K USD/mes promedio (los $58K en 4-5 meses), el resto del año proyecta otros $84-100K → cierre $142-158K USD = **~186-207% del techo cat K. Salida forzada a RI inevitable Q3 2026.**
 - **Próxima recategorización**: agosto 2026. Va a confirmar lo que ya es matemático: salida a RI.
 - **IIBB**: export-services CABA exempt, sin cambios.
 - **Factura E**: setup confirmed.
@@ -177,9 +180,9 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 - −9% porque Deel está disponible y es operativamente más simple, aunque más caro — el operator podría preferir simplicidad ante RI transition incoming
 - **Lo que cerraría el gap a 90%+**: confirmar con tu contador la timing exacta del RI transition trigger y si conviene recibir este invoice en monotributo o esperar al cambio de régimen.
 
-**Headroom impact:** post-invoice cumulative $66K USD = excedés cat I ya. **Recomendación crítica: NO postergues el invoice — el problema no es este invoice puntual, es la trayectoria. Postergar este $8K por 30 días no te baja la trayectoria proyectada al cierre.**
+**Headroom impact:** post-invoice cumulative $66K USD ya excede cat I y cat J — estás dentro de cat K con ~14% de runway antes del techo absoluto del régimen. **Recomendación crítica: NO postergues el invoice — el problema no es este invoice puntual, es la trayectoria. Postergar este $8K por 30 días no baja la trayectoria proyectada al cierre.**
 
-**Próximo paso operacional crítico:** programar reunión con tu contador esta semana para iniciar transición a RI. Trigger objetivo: tu YTD ya supera cat I y proyectás superar K en mid-Q3. Better to plan the transition than have AFIP force it.
+**Próximo paso operacional crítico:** programar reunión con tu contador esta semana para iniciar transición a RI. Trigger objetivo: tu YTD ya supera cat I y cat J, y proyectás superar K en Q3 2026. Better to plan the transition than have AFIP force it.
 
 ### Checklist de Ejecución
 
@@ -210,7 +213,8 @@ FECHA: 2026-05-08
 INVOICE: SaaS GmbH (DE), USD $8,000
 
 SIGNALS ANALIZADOS:
-  - Cat monotributo I, YTD facturado ~$58K = 89% del techo
+  - Cat monotributo I (techo 78.479M ARS / ~$55,345 USD), YTD facturado ~$58K = 105% del techo — ya excedido
+  - Post-invoice $66K = 119% cat I, 104% cat J, 86% cat K
   - Trayectoria proyecta cierre $142-158K USD = forzada salida a RI Q3 2026
   - Cliente alemán B2B SaaS, paga por wire bancario o Deel
   - Infraestructura: Mercury USD activo, Grupo SBS habilitado MEP, Wise activa, Deel configurado
@@ -245,8 +249,8 @@ DOCUMENTOS A RETENER:
 
 PRÓXIMO REVIEW TRIGGER:
   CRÍTICO — agendar reunión contador esta semana para RI transition. YTD post-invoice
-  excede cat I; trayectoria proyecta superar cat K mid-Q3. Mejor planificar la transición
-  que tener AFIP forzarla.
+  excede cat I y cat J; trayectoria proyecta superar cat K en Q3 2026. Mejor planificar
+  la transición que tener AFIP forzarla.
 ```
 
 ---
@@ -355,13 +359,13 @@ Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 20
 
 ### Proyección de Cat
 
-- **Techo cat G actual**: ~62M ARS = ~$43,729 USD @ MEP.
-- **YTD a octubre**: ~$42K = **~96% del techo cat G**. Estás al filo.
-- **Proyección al cierre 2026** (manteniendo $4.2K/mes): noviembre + diciembre = +$8.4K → **cierre ~$50.4K USD = ~71M ARS = excede cat G por ~9M ARS**.
-- **Cat H**: techo ~76M ARS = ~$53,600 USD. Cubrís cómodo.
-- **Cat I**: techo ~92M ARS = ~$64,949 USD. Headroom adicional.
+- **Techo cat G actual**: 46.211M ARS = ~$32,589 USD @ MEP 1.418.
+- **YTD a octubre**: ~$42K = **~129% del techo cat G — ya estás afuera de cat G**. Recategorización forzada inminente; deberías estar en cat H o I según trayectoria.
+- **Proyección al cierre 2026** (manteniendo $4.2K/mes): noviembre + diciembre = +$8.4K → **cierre ~$50.4K USD = ~71.5M ARS**. Eso excede cat H (70.113M = $49,446) y se ubica dentro de cat I (78.479M = $55,345).
+- **Cat H**: techo 70.113M ARS = ~$49,446 USD. Tu cierre proyectado lo supera por ~$1K USD.
+- **Cat I**: techo 78.479M ARS = ~$55,345 USD. Tu cierre proyectado deja ~$5K USD de headroom.
 
-**Conclusión cat:** terminás el año en **cat H si recategorizás proactivamente ahora** o cuando llegue agosto 2026 te recategoriza ARCA con multa por sub-cat-ización.
+**Conclusión cat:** terminás el año en **cat I si recategorizás proactivamente ahora**. Cat H probablemente no alcance — tu trayectoria proyectada se cruza el techo cat H en diciembre. Si seguís en cat G hasta agosto 2026, ARCA te recategoriza a la cat real (H o I) con multa por sub-cat-ización 2026.
 
 ### Análisis Trigger Transición a RI
 
@@ -369,38 +373,40 @@ Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 20
 
 Cálculo costo-beneficio aproximado:
 
-**Quedarte en monotributo (re-cat a H):**
-- Cuota mensual cat H: ~130K ARS (~$92 USD/mes @ MEP)
+**Quedarte en monotributo (re-cat a I, dado que la proyección de cierre lo justifica):**
+- Cuota mensual cat I servicios: ~$824.802 ARS (~$582 USD/mes @ MEP 1.418)
 - IIBB CABA export-services: exempt
-- Costo administrativo total mensual: ~$92 USD + 1-2 horas tuyas
-- **Total anual: ~$1,100 USD + tiempo administrativo**
+- Costo administrativo total mensual: ~$582 USD + 1-2 horas tuyas
+- **Total anual proyectado (asumiendo cat I los 12 meses): ~$7.000 USD + tiempo administrativo**
+- Pero por los 2 meses que quedan: ~$1.165 USD adicionales (Nov + Dic)
 
 **Saltar a RI ahora (faltan 2 meses al cierre fiscal):**
 - IVA: 0% para servicios al exterior (régimen exportación), pero hay que filing mensual
-- Ganancias: alícuota progresiva 5-35% sobre ganancia neta. Para tu nivel ($50K USD = 17K USD aprox de ganancia neta después de gastos), ronda 9-15%.
+- Ganancias: alícuota progresiva 5-35% sobre ganancia neta. Para tu nivel ($50K USD = ~$17K USD de ganancia neta después de gastos), ronda 9-15%.
 - Honorarios contador: $80-150 USD/mes × 2 meses = $160-300 USD
 - IIBB CABA: exempt para export-services
 - Costo administrativo total Q4: $160-300 USD honorarios + ~4-8 hs/mes tuyas
 - **Total Q4 estimado: $400-700 USD + tiempo significativo**
 
-**Resultado:** saltar AHORA por solo 2 meses no compensa. Es overhead administrativo + setup de RI sin beneficio fiscal sustancial dado que ya estás cerca del cierre del año.
+**Resultado:** la cuota cat I por 2 meses ($1.165 USD) ya supera el setup RI Q4 ($400-700 USD). El cálculo se invierte respecto al caso "cat H vs RI" — para cat I, RI puede ser **más barato** los últimos 2 meses, especialmente si ya estás proyectando RI inevitable en 2027.
 
-**Recomendación: NO saltar a RI todavía. Recategorizar a cat H proactivamente.**
+**Recomendación matizada:** dos caminos defensibles. (a) Recategorizar a cat I ahora y saltar a RI en enero 2027 con tiempo de setup. (b) Evaluar setup RI inmediato si tu pipeline 2027 ya proyecta >$60K USD/año (techo cat I), porque ahorrás multas + el setup ya es necesario. Decisión final: con tu contador esta semana.
 
 ### Acciones Recomendadas Q4
 
-1. **[Esta semana]** Recategorizar proactivamente de cat G a cat H en AFIP. Trámite online (~15 minutos). Te evita la multa por sub-cat-ización en agosto 2026.
-2. **[Próximas 2 semanas]** Reconciliá invoicing YTD: contá Facturas E + montos + cotizaciones + Wise/Deel inflows. Confirmá que el match es 1:1 (sin gaps, sin duplicados).
-3. **[Antes de fin de año]** Empezá a juntar documentación 2026 para la liquidación anual del régimen — facturas, statements bancarios, contratos.
-4. **[Q1 2027]** Si proyectás que 2027 va a estar arriba de $55-60K USD/año (techo cat I), agendá reunión con contador en enero para RI transition antes de que sea forzada.
-5. **[Decisión opcional]** Si querés ganar tiempo, el invoicing de noviembre-diciembre podés timear-lo: emitir facturas en diciembre que se cobran en enero significa que los inflows de enero cuentan para 2027, no 2026. Pero **no** retroactivar: emitirlas en 2027 si los servicios fueron prestados en 2026 = problema. Esto es a discutir con contador, no acción unilateral.
+1. **[Esta semana]** Reunión con contador. La decisión cat I vs RI inmediato no es trivial — requiere proyectar pipeline 2027 contra costo administrativo RI vs cuota cat I + tiempo. Ese cálculo es del contador, no del specialist.
+2. **[Esta semana, en paralelo]** Recategorizar proactivamente al menos a cat H en AFIP (trámite online ~15 minutos) para no quedar mal-categorizado mientras se resuelve la decisión RI. Tu YTD ya supera cat G — quedarte en cat G es flag inmediato.
+3. **[Próximas 2 semanas]** Reconciliá invoicing YTD: contá Facturas E + montos + cotizaciones + Wise/Deel inflows. Confirmá que el match es 1:1 (sin gaps, sin duplicados).
+4. **[Antes de fin de año]** Empezá a juntar documentación 2026 para la liquidación anual del régimen — facturas, statements bancarios, contratos.
+5. **[Q1 2027]** Si la decisión Q4 fue quedarte en monotributo, en enero re-evaluar RI transition con tu contador antes de que sea forzada en agosto 2027.
+6. **[Decisión opcional]** Si querés ganar tiempo, el invoicing de noviembre-diciembre podés timear-lo: emitir facturas en diciembre que se cobran en enero significa que los inflows de enero cuentan para 2027, no 2026. Pero **no** retroactivar: emitirlas en 2027 si los servicios fueron prestados en 2026 = problema. Esto es a discutir con contador, no acción unilateral.
 
 ### Trazabilidad de la Decisión
 
 - Mode detected: Year-End Reconciliation. Strong signals: total YTD facturado, mes octubre (Q4 trigger), pregunta sobre cat de cierre + RI transition.
-- Cat projection clara: cierre 2026 = exceso cat G por $7-9K USD. Recategorizar a H necesario.
-- RI transition: NO recomendado para Q4 2026. Costo-beneficio no se sostiene a 2 meses del cierre. Reevaluar Q1 2027 según trayectoria.
-- Key acción defensiva: recategorización proactiva esta semana evita multa por sub-cat en agosto 2026.
+- Cat projection clara: YTD ya excede cat G (estás 29% arriba); cierre 2026 proyectado se ubica dentro de cat I. Recategorizar al menos a H esta semana es defensa básica.
+- RI transition: matizado. La cuota cat I los últimos 2 meses ($1.165 USD) ronda o supera el setup RI Q4 ($400-700 USD). Decisión final del contador, no recomendación unilateral del specialist.
+- Key acción defensiva: recategorización proactiva esta semana (mínimo a H) evita flag inmediato; reunión contador esta semana para resolver cat I vs RI.
 
 ---
 

@@ -8,7 +8,7 @@ Reference vocabulary for this specialist. Two layers: (1) Argentine regulatory +
 
 ### Tax regimes
 
-- **Monotributo** — Argentine simplified tax regime for small contributors (self-employed, freelancers). Single monthly fee covers income tax, social security, and healthcare. Cats A-K with annual billing limits as of February 2026 recategorización. Cap: cat K (~$76,479 USD/year at MEP). Above cat K → forced transition to RI.
+- **Monotributo** — Argentine simplified tax regime for small contributors (self-employed, freelancers). Single monthly fee covers income tax, social security, and healthcare. Cats A-K with annual billing limits as of February 2026 recategorización. Cap: cat K (~$76,415 USD/year at MEP 1.418). Above cat K → forced transition to RI.
 - **Cat A through K** — Monotributo categories ranked by annual billing volume. See `monotributo-categorias.md` for current thresholds. Recategorization windows: February and August every year.
 - **RI (Responsable Inscripto)** — Argentine general tax regime. Required when monotributo K ceiling is exceeded or when activity is incompatible with monotributo (e.g., sociedades, real estate). Includes IVA monthly + Ganancias annual filings. Higher administrative cost (~$80-150 USD/month contador), no automatic ceiling.
 - **Recategorización** — Periodic monotributo cat reassignment based on rolling 12-month invoicing. Two windows per year: February and August.

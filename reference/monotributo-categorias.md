@@ -8,19 +8,23 @@ Fuente primaria: [ARCA / AFIP — Monotributo Categorías](https://www.afip.gob.
 
 ## Categorías y límites (mayo 2026)
 
-| Cat | Límite anual ARS | USD equiv. @ MEP 1.418 | Cuota mensual ARS (estimada) |
-|-----|------------------|------------------------|------------------------------|
-| **A** | 10.277.988 | ~$7.250 | 42.387 |
-| **B** | 15.058.448 | ~$10.627 | 48.251 |
-| **C** | 20.088.597 | ~$14.173 | 56.502 |
-| **D** | 27.500.000 (est.) | ~$19.408 | ~66.000 |
-| **E** | 36.500.000 (est.) | ~$25.771 | ~80.000 |
-| **F** | 48.000.000 (est.) | ~$33.876 | ~95.000 |
-| **G** | 62.000.000 (est.) | ~$43.729 | ~110.000 |
-| **H** | 76.000.000 (est.) | ~$53.601 | ~130.000 |
-| **I** | 92.000.000 (est.) | ~$64.949 | ~145.000 |
-| **J** | 100.000.000 (est.) | ~$70.593 | ~160.000 |
-| **K (máxima)** | **108.357.084** | **~$76.479** | **~175.000-185.000** |
+Valores oficiales ARCA vigentes desde febrero 2026, confirmados para mayo 2026 (ajuste 14,28% IPC 2H 2025; próxima actualización agosto 2026).
+
+| Cat | Límite anual ARS | USD equiv. @ MEP 1.418 | Cuota mensual servicios ARS |
+|-----|------------------|------------------------|----------------------------|
+| **A** | 10.277.988 | ~$7.250 | ~42.386 |
+| **B** | 15.375.757 | ~$10.844 | ~48.250 |
+| **C** | 21.521.795 | ~$15.178 | ~56.501 |
+| **D** | 26.734.386 | ~$18.855 | ~72.414 |
+| **E** | 31.427.408 | ~$22.164 | ~102.548 |
+| **F** | 38.642.048 | ~$27.251 | ~129.045 |
+| **G** | 46.211.109 | ~$32.589 | ~197.108 |
+| **H** | 70.113.407 | ~$49.446 | ~447.300 |
+| **I** | 78.479.212 | ~$55.345 | ~824.802 |
+| **J** | 89.872.640 | ~$63.381 | ~874.069 |
+| **K (máxima)** | **108.357.084** | **~$76.415** | **~1.381.687** |
+
+Fuentes verificadas: [ARCA — Categorías oficiales](https://www.afip.gob.ar/monotributo/categorias.asp) · [iProfesional mayo 2026](https://www.iprofesional.com/impuestos/454000-monotributo-mayo-2026-arca-confirmo-cuanto-paga-cada-categoria-y-de-cuanto-son-cuotas) · [Ámbito mayo 2026](https://www.ambito.com/informacion-general/arca-confirmo-los-nuevos-topes-del-monotributo-y-cuanto-se-paga-mayo-2026-n6271407).
 
 **La categoría K es el techo absoluto del régimen.** Superar el límite K = salida obligatoria del monotributo y pase a Responsable Inscripto (RI).
 
@@ -43,7 +47,7 @@ ARCA hace recategorización oficial **dos veces al año**:
 
 ### Recategorización Feb 2026 (la que aplica hoy)
 
-Aumentó los topes ~13-14% por inflación. Cat K subió de ~94.8M ARS a 108.3M ARS. Esto le dio aire a consultores en cats H-K que estaban cerca del techo.
+Aumentó los topes ~14,28% por IPC del segundo semestre 2025. Cat K subió de ~94.8M ARS a 108.357M ARS. Esto le dio aire a consultores en cats H-K que estaban cerca del techo.
 
 ### Próxima recategorización Aug 2026
 
@@ -61,7 +65,7 @@ Podés recategorizar voluntariamente cualquier mes — no esperar Feb/Aug. Si en
 
 ### Cuándo es forzosa
 
-Superar el límite anual de cat K (108.3M ARS al cierre 2026, sujeto a actualización Aug). ARCA detecta automáticamente; te baja del régimen y entrás a RI desde el mes siguiente.
+Superar el límite anual de cat K (108.357M ARS Feb-Jul 2026, sujeto a actualización Aug). ARCA detecta automáticamente; te baja del régimen y entrás a RI desde el mes siguiente.
 
 ### Costo aproximado de operar como RI
 
@@ -119,7 +123,7 @@ ARCA mira últimos 12 meses móviles. Un consultor que ve "mi año fiscal está 
 
 ### Recategorización agosto 2026 (esperado)
 
-Aumento estimado de topes ~10-15% por inflación medida Feb-Jul 2026. Cat K probablemente subiría a ~120M ARS. Esto le da más aire a high-volume consultores antes del salto a RI.
+Aumento estimado de topes 10-15% por IPC medido Feb-Jul 2026. Cat K probablemente subiría a ~120-125M ARS. Esto le da más aire a high-volume consultores antes del salto a RI.
 
 ### RG 5824/2026 — Consumer-ID threshold (efectivo July 1, 2026)
 
