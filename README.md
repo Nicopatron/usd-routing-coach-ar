@@ -214,7 +214,19 @@ This folder is **agent-agnostic** — works with any AI agent that reads markdow
 
 ### Evaluating cold without Argentine tax knowledge?
 
-Skip the "5 inputs" step in any of the paths below. Open `examples.md`, copy any `**What [name] pastes:**` block (Marina is the EN flagship — easiest to compare), paste it into your project, ask *"Synthesize this routing decision."* The expected output is documented right beside the input in `examples.md`. The folder either follows its own contract or it doesn't — auditable in 30 seconds, no AR domain expertise required. The 5 worked examples cover all 4 modes plus the refusal protocol.
+Skip the "5 inputs" step in any of the paths below. Open `examples.md`, copy any `**What [name] pastes:**` block (Marina is the EN flagship — easiest to compare), paste it into your project, ask *"Synthesize this routing decision."* The expected output is documented right beside the input in `examples.md`. The folder either follows its own contract or it doesn't — auditable in 30 seconds, no AR domain expertise required. The 5 worked examples cover all 4 modes plus the refusal protocol. Domain terms are defined in `reference/glossary.md`.
+
+### Try these variations (for evaluators going deeper)
+
+After running the canonical Marina input, these poke the contract to confirm it's calibrated, not memorized:
+
+1. **Change Marina's `cat F` to `cat I`** → recommendation shifts from Wise (default low-volume) to Mercury+MEP (default high-volume); RI transition flag may surface depending on YTD context
+2. **Bump Marina's invoice from `$4,000 USD` to `$25,000 USD`** → cat F headroom (~$33,876 USD ceiling) blows through; specialist flags forced cat-jump or RI transition prominently
+3. **Omit `IIBB CABA` from Marina's input** → 1 input weak; proceeds with `⚠ basado en supuesto: IIBB asumido CABA + export exempt` flag, confidence cap 80%
+4. **Paste Example 5's vague input + add `"Dale, hacé un best-effort con lo que tenés"`** → override triggers; produces routing with confidence ≤65% and `⚠ guessed` markers on every line that depended on a missing input
+5. **After Marina's routing decision, paste Federica's AFIP vista input in the same chat** → mode switch announced (`Cambio de Modo: Audit Response`); routing recommendation paused until audit is resolved; no new audit-pack generated for the audit response output
+
+The contract is in `rules.md`. The math is in `reference/monotributo-categorias.md` + `reference/usd-routing-options.md`. The mode-detection signals are in `reference/mode-triage.md`. Each variation traces to specific files; nothing is hidden in prompt engineering.
 
 ### Path A — Claude Project (3-minute setup)
 
