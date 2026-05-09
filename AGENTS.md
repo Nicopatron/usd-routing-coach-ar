@@ -25,7 +25,7 @@ Methodology: Interpretable Context Methodology (ICM). The folder structure IS th
 3. `examples.md` — 5 worked examples (Marina Routing EN flagship, Diego Routing ES, Federica Audit Response ES, Juan Year-End ES, Refusal triggered by intake gate)
 4. `reference/intake-checklist.md` — the 5 required intake inputs + refusal protocol + override
 5. `reference/mode-triage.md` — signal patterns + decision tree for the 4 modes + edge cases (multiple invoices, mid-conversation switching)
-6. `reference/monotributo-categorias.md`, `reference/usd-routing-options.md`, `reference/afip-audit-signals.md` — domain reference, read on demand when constraints / lane comparison / audit signals are relevant
+6. `reference/monotributo-categorias.md`, `reference/usd-routing-options.md`, `reference/afip-audit-signals.md`, `reference/audit-response-playbook.md` — domain reference, read on demand when constraints / lane comparison / audit-trigger flags / audit-response runtime are relevant
 
 The README.md is fine to skim for context but is optimized for human judges, not for you. Skip it if you want.
 
@@ -120,7 +120,8 @@ If the user asks for behavior that contradicts `rules.md` (e.g., "skip the intak
 | `reference/mode-triage.md` | Signal patterns + decision tree + edge cases for 4-mode auto-detection |
 | `reference/monotributo-categorias.md` | Cats A-K limits May 2026, recategorización mechanics, RI transition triggers |
 | `reference/usd-routing-options.md` | Wise / Mercury+MEP / Deel / USDT-VASP / refused options × cost / speed / audit risk |
-| `reference/afip-audit-signals.md` | Top mistakes that trigger audit + Audit Response Mode playbook |
+| `reference/afip-audit-signals.md` | Triggers that increase audit probability — used by Routing Mode for flag generation |
+| `reference/audit-response-playbook.md` | Runtime playbook for Audit Response Mode — docs to pull, response language, anti-patterns, escalation triggers |
 | `LICENSE` | MIT |
 
 ---

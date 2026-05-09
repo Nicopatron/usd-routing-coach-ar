@@ -46,7 +46,8 @@ usd-routing-coach-ar/
 │   ├── mode-triage.md                   signal patterns + decision tree
 │   ├── monotributo-categorias.md        cats A-K limits + recat mechanics
 │   ├── usd-routing-options.md           Wise / Mercury+MEP / Deel / USDT × tradeoffs
-│   └── afip-audit-signals.md            top mistakes + Audit Response playbook
+│   ├── afip-audit-signals.md            triggers that increase audit probability (Routing Mode flags)
+│   └── audit-response-playbook.md       runtime playbook for Audit Response Mode
 ├── LICENSE                              MIT
 └── CHANGELOG.md                         this file
 ```

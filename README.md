@@ -131,7 +131,8 @@ usd-routing-coach-ar/
 ├── reference/
 │   ├── monotributo-categorias.md        ← cats A-K, recategorización mechanics, RI triggers
 │   ├── usd-routing-options.md           ← Wise / Mercury+MEP / Deel / USDT-VASP × tradeoffs + benchmarks
-│   ├── afip-audit-signals.md            ← top mistakes + Audit Response Mode playbook
+│   ├── afip-audit-signals.md            ← triggers that increase audit probability (Routing Mode flags)
+│   ├── audit-response-playbook.md       ← runtime playbook for Audit Response Mode (docs, language, escalation)
 │   ├── intake-checklist.md              ← 5-input gate + refusal protocol + override
 │   └── mode-triage.md                   ← signal patterns + 4-mode decision tree
 └── LICENSE
@@ -195,7 +196,8 @@ Every step is documented in `rules.md`. Nothing is hidden in prompt engineering 
 | `examples.md` | 5 worked examples: Marina (Routing EN flagship) + Diego (Routing ES with RI transition) + Federica (Audit Response ES) + Juan (Year-End ES) + 1 deliberate refusal. |
 | `reference/monotributo-categorias.md` | Cats A-K with current ARS limits + USD-equiv at MEP, recategorización mechanics (Feb / Aug), RI transition triggers, "what's about to change Q3-Q4 2026" appendix. |
 | `reference/usd-routing-options.md` | Wise / Mercury+MEP / Deel / USDT-VASP / refused options × all-in cost / speed / tax visibility / audit risk / setup checklists / failure modes. May 2026 cost benchmarks. |
-| `reference/afip-audit-signals.md` | Top 3 mistakes that trigger audit, other common triggers, full Audit Response Mode playbook (docs to pull, language to use, what NOT to say, contador / abogado escalation triggers). |
+| `reference/afip-audit-signals.md` | Top 3 mistakes that trigger audit + other common triggers. Used by Routing Mode to generate audit-risk flags. |
+| `reference/audit-response-playbook.md` | Runtime playbook for Audit Response Mode: documents to pull, suggested response language, what NOT to say, contador / abogado escalation triggers. |
 | `reference/intake-checklist.md` | The 5-input gate the specialist runs before synthesizing. Refusal protocol, override, registration-first subroute for unregistered consultores. |
 | `reference/mode-triage.md` | Signal patterns for the 4 modes, decision tree for ambiguity, mode lock persistence, edge cases (multiple invoices, mid-conversation switching). |
 | `LICENSE` | MIT. |
