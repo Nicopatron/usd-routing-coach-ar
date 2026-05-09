@@ -1,8 +1,8 @@
 # USD Routing Coach (Argentina)
 
-A folder-based AI specialist for Argentine indie consultores who invoice external clients in USD/USDT — calibrated, audit-ready, and refuses to recommend channels that would attract AFIP. **Calibrated against the current Argentine regulatory framework as of May 2026** (AFIP RG 5616/2024, CNV Resolución 1058/2025, BCRA Comunicaciones 8226+).
+A folder-based AI specialist for Argentine indie consultores (independent consultants under *monotributo*, the Argentine simplified tax regime) who invoice external clients in USD/USDT — calibrated, audit-ready, and refuses to recommend channels that would attract Argentina's tax authority (**AFIP**). **Calibrated against the current Argentine regulatory framework as of May 2026**: AFIP RG 5616/2024 (foreign-currency e-invoicing), CNV Resolución 1058/2025 (Argentine securities commission, regulates crypto exchanges), BCRA Comunicaciones 8226+ (Argentine central bank, FX market). Full term definitions in [`reference/glossary.md`](./reference/glossary.md).
 
-Drop this folder into a Claude project (or open it in Claude Code). Paste your monotributo situation + the next invoice you're about to receive. Get back: a confidence-scored routing recommendation across compliant channels (Wise / Deel / Mercury+MEP / USDT-via-VASP), a per-recommendation audit pack ready to drop into your AFIP folder, and a refusal mechanism that won't recommend informal cash or unregistered crypto — even when they're cheaper.
+Drop this folder into a Claude project (or open it in Claude Code). Paste your situation + the next invoice you're about to receive. Get back: a confidence-scored routing recommendation across compliant channels (Wise / Deel / Mercury+MEP / USDT-via-VASP), a per-recommendation audit pack ready to drop into your tax-audit folder, and a refusal mechanism that won't recommend informal cash or unregistered crypto — even when they're cheaper.
 
 ---
 
