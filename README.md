@@ -286,16 +286,9 @@ Same output contract as Path A and Path B.
 
 ## Calibration
 
-Calibrated against the current Argentine regulatory framework as of **May 2026**:
+**Calibrated against the current Argentine regulatory framework as of May 2026.** Full citation list (AFIP/ARCA RGs, CNV resolutions, BCRA Comunicaciones, monotributo recategorización dates) and the forward-looking validity rule live in [`rules.md`](./rules.md) § Calibration date — single source of truth.
 
-- **AFIP RG 5616/2024** — Foreign-Currency E-Invoicing (Factura E in USD streamlined)
-- **ARCA RG 5824/2026** — Liquidación electrónica mensual + ampliación de obligados a facturación electrónica (directores SA, gerentes SRL, profesionales en juicios), effective July 1, 2026
-- **ARCA RG 5700/2025** — Consumer-ID threshold for invoices ≥10M ARS (vigente desde mayo 2025; no aplica a Factura E al exterior, sólo consumidor final local)
-- **CNV Resolución 1058/2025** — VASP Registration mandatory (Lemon, Belo, Buenbit, Binance Argentina registered)
-- **BCRA Comunicaciones 8226+** (Apr 2025) — FX market liberalization
-- **Monotributo Recategorización Feb 2026** — Cats A-K limits (next recat: August 2026)
-
-Reference files cite the AFIP / CNV / BCRA URLs directly. Verify any current source independently. **If today's date exceeds August 2026 and reference files have not been refreshed, the specialist flags this in every output and recommends regulatory verification before acting on any recommendation.**
+Next monotributo recategorización: August 2026. Reference files cite AFIP / CNV / BCRA URLs directly; verify any current source independently before acting on any recommendation.
 
 ---
 

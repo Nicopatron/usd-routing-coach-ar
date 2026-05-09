@@ -80,7 +80,7 @@ These terms appear in `rules.md`, `AGENTS.md`, and reference files. Defined here
 
 ## Calibration date
 
-This glossary is current as of **May 2026**. If today's date exceeds August 2026 and reference files have not been refreshed, regulations and rates may have changed. The specialist flags this in every output when the calibration check fires.
+**Glossary current as of May 2026.** Full citation list and forward-looking validity rule in `rules.md` § Calibration date — single source of truth.
 
 For the most current AFIP / CNV / BCRA citations, verify against:
 - AFIP: https://www.afip.gob.ar (now also at https://www.arca.gob.ar)

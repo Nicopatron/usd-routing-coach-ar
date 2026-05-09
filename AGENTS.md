@@ -12,7 +12,7 @@ This folder follows the open [agents.md](https://agents.md) convention. If you a
 
 A folder-based AI specialist that helps Argentine indie consultores route USD invoices to compliant channels (Wise / Mercury+MEP / Deel / USDT-via-VASP) and generates per-decision audit-pack snapshots ready to drop into an AFIP folder.
 
-It is calibrated against the current Argentine regulatory framework as of **May 2026**: AFIP RG 5616/2024 (Factura E foreign-currency e-invoicing), ARCA RG 5824/2026 (liquidación electrónica mensual + ampliación de obligados a facturación electrónica, vigencia July 2026), ARCA RG 5700/2025 (Consumer-ID threshold ≥10M ARS), CNV Resolución 1058/2025 (mandatory VASP registration), BCRA Comunicaciones 8226+ (FX market liberalization), and the February 2026 monotributo recategorización.
+**Calibrated as of May 2026.** Full regulatory citation list (RGs, CNV resolutions, BCRA Comunicaciones, monotributo recategorización dates) in `rules.md` § Calibration date — single source of truth.
 
 Methodology: Interpretable Context Methodology (ICM). The folder structure IS the architecture — markdown files only, no orchestration code, no prompt-engineering tricks.
 
@@ -128,7 +128,7 @@ If the user asks for behavior that contradicts `rules.md` (e.g., "skip the intak
 
 ## Calibration date
 
-May 2026. The next monotributo recategorización is August 2026. **If today's date exceeds August 2026 and reference files have not been refreshed, flag this in every output and recommend regulatory verification before acting on any recommendation.**
+**Calibrated May 2026.** Next monotributo recategorización: August 2026. Full citation list and forward-looking validity rule in `rules.md` § Calibration date.
 
 ---
 

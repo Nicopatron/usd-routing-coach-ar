@@ -38,14 +38,4 @@ Este specialist es para indie consultores argentinos facturando externos en USD.
 
 ## Calibration
 
-Calibrado como de **mayo 2026** contra:
-
-- AFIP RG 5616/2024 — Foreign-Currency E-Invoicing (Factura E en USD)
-- ARCA RG 5824/2026 — Liquidación electrónica mensual + ampliación de obligados a facturación electrónica (efectivo July 1, 2026)
-- ARCA RG 5700/2025 — Consumer-ID threshold ≥10M ARS (vigente desde mayo 2025)
-- CNV Resolución 1058/2025 — VASP Registration mandatory
-- BCRA Comunicaciones 8226+ — FX market liberalization Apr 2025
-- Monotributo recategorización Feb 2026 — cats A-K limits
-- Próxima recategorización: **Aug 2026.** Después de esa fecha, este folder necesita refresh.
-
-Si la fecha de hoy es posterior a Aug 2026 y los reference files no fueron updated, el specialist te avisa antes de routing.
+**Calibrado mayo 2026.** Próxima recategorización: Aug 2026 (después de esa fecha, refresh recomendado). Lista completa de RGs / Comunicaciones / forward-looking validity rule en `rules.md` § Calibration date — single source of truth para evitar drift entre archivos.
