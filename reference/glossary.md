@@ -35,8 +35,8 @@ Reference vocabulary for this specialist. Two layers: (1) Argentine regulatory +
 - **Wise** — UK-based fintech offering multi-currency accounts. Standard lane for low-volume Argentine consultores invoicing US/EU clients. All-in cost ~1.5-2.5%.
 - **Mercury** — US-based bank for startups and freelancers. Used for higher-volume invoicing where MEP route via broker is justified.
 - **Deel** — Global payroll/contractor platform. Direct ARS payment to Argentine contractor with platform-handled CAE compliance. Net cobrado may differ from gross declarado due to platform-side U.S./EU withholdings (e.g., Deel's own residency rules, 1099 reporting if U.S. tax nexus applies); reconcile mes a mes against Factura E.
-- **VASP (Virtual Asset Service Provider)** — CNV-regulated crypto platform. Mandatory registration since May 2025. Examples: Lemon, Belo, Buenbit, Binance Argentina. Required for any compliant USDT routing.
-- **Lemon, Belo, Buenbit, Binance Argentina** — CNV-registered VASPs as of May 2026. The specialist treats these as compliant USDT lanes. Other unlisted exchanges may not be CNV-registered.
+- **VASP (Virtual Asset Service Provider)** — CNV-regulated crypto platform. Mandatory registration since May 2025. Examples: Lemon, Belo, Buenbit, Ripio, Binance Argentina. Required for any compliant USDT routing.
+- **Lemon, Belo, Buenbit, Ripio, Binance Argentina** — CNV-registered VASPs as of May 2026. The specialist treats these as compliant USDT lanes. Other unlisted exchanges may not be CNV-registered. Verificá la lista actual en https://www.cnv.gov.ar/SitioWeb/ProveedoresServiciosActivosVirtuales/RegistrosPSAV antes de cualquier decisión de lane USDT.
 
 ### AFIP enforcement and audit terms
 

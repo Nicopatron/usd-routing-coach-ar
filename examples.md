@@ -20,7 +20,7 @@ Five worked examples covering all four operating modes plus the refusal protocol
 >
 > Got a new invoice incoming this week: $4,000 USD from a different US client — a B2B fintech I just onboarded. Client offered to pay via Wise or USDT directly to my Lemon wallet. I have a Wise account active and a Mercury account I opened last quarter but haven't used yet for invoicing. IIBB CABA, but I'm export-services so I think that's exempt. Factura E is set up and approved in AFIP — I've emitted maybe 8 in the last 12 months.
 >
-> Should I just take Wise like always or is there a smarter move here? Synthesize this routing decision.
+> Should I just take Wise like always or is there a smarter move here?
 
 **Specialist output:**
 
@@ -138,7 +138,7 @@ NEXT REVIEW TRIGGER:
 >
 > Tengo cuenta Mercury con saldo USD activo, broker Grupo SBS habilitado para MEP, Wise activa, Deel configurado por el cliente alemán (CAE compliant). Estoy en CABA, export-services. Factura E aprobada hace tiempo.
 >
-> Estoy preocupado porque cat I aprieta — ¿debería tomar este invoice ya o postergarlo? ¿Y si lo tomo, qué lane uso? Synthesize.
+> Estoy preocupado porque cat I aprieta — ¿debería tomar este invoice ya o postergarlo? ¿Y si lo tomo, qué lane uso?
 
 **Output del specialist:**
 
