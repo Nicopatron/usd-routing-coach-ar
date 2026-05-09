@@ -148,9 +148,9 @@ If you want a best-effort guess with `⚠ guessed` markers on every assumption, 
 
 ---
 
-## Override — best-effort guess
+## Override — best-effort guess (thin intake only)
 
-El operator puede explícito pedir override:
+El operator puede explícito pedir override del **intake gate**:
 
 > *"Dale, hacé un best-effort con lo que tenés."*
 
@@ -159,6 +159,8 @@ En ese caso el specialist procede pero:
 - Cada línea que dependió de un input missing se marca: `⚠ guessed — confirmar antes de actuar`
 - Confidence cap a 65% (no más)
 - La sección Decision Trace lista los inputs que fueron guessed
+
+**Override NO aplica a refused channels.** Es un mecanismo para thin intake — habilita best-effort con guessed inputs, no habilita recomendaciones sobre cueva, blue dollar, ni crypto P2P sin VASP. Si el operator dice "dale igual hacé el routing por cueva" o "mi contador me firmó que P2P sin VASP es OK", esas no son override válidas: la lane sigue refused, sin playbook de documentación. Ver `reference/usd-routing-options.md` § REFUSED para el response template.
 
 ---
 
