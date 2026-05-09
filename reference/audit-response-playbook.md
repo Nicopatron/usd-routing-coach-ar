@@ -53,6 +53,17 @@ NO responder solo. Escalar a contador/abogado. Las discrepancias alegadas son la
 - **No firmes nada que no leyó tu contador o abogado primero.**
 - **No ofrezcas pagar para "cerrar" sin verificar el cálculo.** AFIP a veces inicia con cifras infladas — pagar lo reclamado sin cuestionar = caro.
 
+### Cuándo parar y llamar abogado tributarista (refuerzo bajo presión)
+
+Hay cuatro situaciones en las que cualquier cosa que presentes solo o con tu contador puede empeorar tu posición. Si alguna de estas dispara, frenás la respuesta, llamás abogado tributarista, y NO mandás documentación adicional hasta que el abogado revise.
+
+- **Los papeles no cierran el delta reclamado.** Juntaste facturas E, statements de Wise/Mercury/Deel, contratos del período, y el YTD que te da NO matchea el monto que AFIP imputó. Presentar reconciliación parcial o "lo que tenés" se puede leer como confesión de subdeclaración. STOP. Llamás abogado tributarista, le pasás el delta sin cerrar, y dejás que él decida qué se presenta y qué no. No mandes documentación incompleta para "ir ganando tiempo".
+- **AFIP cambia el lenguaje a dolo / evasión / defraudación.** En la primera vista AFIP habla de "diferencias", "ajustes" o "presunción". Si en una comunicación posterior aparece dolo, evasión o defraudación, el expediente dejó de ser administrativo puro y entró en zona de exposición penal tributaria. Tu contador NO alcanza ahí. Abogado tributarista YA, antes de presentar un solo papel más — incluso si el plazo corre. Una respuesta bien intencionada en esa instancia puede fijar hechos en tu contra.
+- **El plazo se acorta a menos de 5 días hábiles.** Si una re-notificación, prórroga denegada, o cambio de carátula reduce tu ventana a <5 días hábiles, no es momento de improvisar con el contador a último momento. Llamás abogado tributarista en el día — él sabe pedir prórroga formal, plantear nulidad por plazo insuficiente, o priorizar qué se presenta. Vos solo en una ventana corta = errores que después no se desarman.
+- **El monto reclamado sube entre comunicaciones.** Si AFIP recalcula y agrega intereses, multas, o reajusta el capital y el monto reclamado salta de forma significativa, el cálculo cambia: ya no es "presento y pago", es "negocio, discuto, o admito y armo plan". Esa decisión la toma un abogado tributarista con vos, no la tomás solo bajo presión de plazo. Hasta que esa conversación pase, no firmás allanamiento, no aceptás plan de pagos, no presentás escrito de fondo.
+
+Regla general bajo cualquiera de estas cuatro: la peor respuesta es la apurada. Pedir prórroga vía abogado siempre es preferible a presentar mal.
+
 ---
 
 ## Cuándo escalar a contador
