@@ -36,6 +36,17 @@ Este specialist es para indie consultores argentinos facturando externos en USD.
 - **Optimización fiscal agresiva o estructuras offshore.** No es mi terreno y no es legal-safe para el ICP target.
 - **Más de un invoice analizado en un solo paste.** Un invoice, una decisión. Pattern Memo agrega cuando hay 3+ acumulados en la sesión.
 
+## Para quién NO es este specialist
+
+Hay perfiles de operator que pueden caer en este folder buscando ayuda y van a ser mal-servidos. Para ellos no es por accidente — es por diseño. Si caés en alguno de estos perfiles, las herramientas correctas son otras:
+
+- **Rentista que mueve montos altos en operaciones aisladas.** El payoff de un AI specialist está en problemas repetitivos, paramétricos, de bajo-mid monto unitario. Operaciones one-off con asimetría alta de costo de error necesitan judgment humano de un tax planner senior + abogado tributarista, no un folder.
+- **Seller one-off sin track record que mantener.** Si tu siguiente invoice probablemente es el último a ese cliente y no estás construyendo pipeline recurrente, la métrica "no romper el track record para escalar" no aplica. La calibración del specialist está cargada en otra dirección.
+- **Operator con estructura offshore declarada o que ya pasó por blanqueo.** Tu stack de optimización fiscal es más sofisticado que el de un monotributista CABA recategorizando a G. El specialist te va a recomendar cosas conservadoras — para tu perfil son sub-óptimas.
+- **Operator que prioriza minimizar costo sobre todo lo demás.** Si tu prioridad #1 es "el lane más barato hoy", este specialist te va a frustrar. Refusa cuevas, refusa P2P informal, refusa >90% confidence sin signals verbatim. Eso no es bug — es la calibración para el consultor recurrente que quiere dormir tranquilo y escalar sin SIRA queue.
+
+Para estos perfiles: contador especializado en optimización fiscal + abogado tributarista + tax planner offshore (si aplica). No un AI specialist en un folder de Markdown público.
+
 ## Calibration
 
 **Calibrado mayo 2026.** Próxima recategorización: Aug 2026 (después de esa fecha, refresh recomendado). Lista completa de RGs / Comunicaciones / forward-looking validity rule en `rules.md` § Calibration date — single source of truth para evitar drift entre archivos.
