@@ -288,7 +288,7 @@ Calibrated against the current Argentine regulatory framework as of **May 2026**
 
 - **AFIP RG 5616/2024** — Foreign-Currency E-Invoicing (Factura E in USD streamlined)
 - **AFIP RG 5824/2026** — Consumer-ID threshold for invoices ≥10M ARS (effective July 1, 2026)
-- **AFIP RG 5319/2025** — Platform-withholding regime expansion (Deel, Payoneer, etc.)
+- **AFIP RG 5700/2025** — Consumer-ID threshold for invoices ≥10M ARS (vigente desde mayo 2025; no aplica a Factura E al exterior, sólo consumidor final local)
 - **CNV Resolución 1058/2025** — VASP Registration mandatory (Lemon, Belo, Buenbit, Binance Argentina registered)
 - **BCRA Comunicaciones 8226+** (Apr 2025) — FX market liberalization
 - **Monotributo Recategorización Feb 2026** — Cats A-K limits (next recat: August 2026)

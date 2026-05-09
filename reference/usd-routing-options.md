@@ -14,7 +14,7 @@
 | **Deel → ARS direct (CAE platform)** | 2-4% | 2-5 días | Total (CAE) | Media | 1-3 días | ✓ Si Deel ya integrado por cliente |
 | **USDT vía Lemon/Belo/Buenbit (VASP-registrada)** | 2-3% | <1 día | Declarable | Media-Alta | Instantánea | ✓ Solo si VASP registrado + valuación al oficial documentada |
 | **Western Union** | 4-6% | 1-3 días | Declarable | Media | 1-2 días | Raro para freelancers — costo alto |
-| **Payoneer** | 2-4% | 2-4 días | Declarable (con withholding 2025+) | Media | 1-3 días | OK pero verifica platform-withholding RG 5319/2025 |
+| **Payoneer** | 2-4% | 2-4 días | Declarable | Media | 1-3 días | OK pero verifica net cobrado vs bruto declarado mes a mes (withholdings de la plataforma) |
 | **❌ Blue dollar cueva** | 0-1% | Instantáneo | Cero | **Muy Alta** | Inmediata | **REFUSED** — ver sección Refused |
 | **❌ Crypto P2P informal (cueva crypto, sin VASP)** | 0.5-1.5% | Instantáneo | Cero | **Muy Alta** | Inmediata | **REFUSED** — ver sección Refused |
 
@@ -132,7 +132,7 @@ Invoice $20.000 USD → Mercury → wire ($20 fee) → AR bank USD account → M
 **Failure modes:**
 
 - **Tax-class mismatch en Deel:** si tu cat monotributo cambió y no actualizaste en Deel, el CAE emitido puede tener errores.
-- **Platform-withholding RG 5319/2025:** desde 2025 las plataformas digitales (incluida Deel) están sujetas a withholding regimes ampliados. Verifica el net actual mes a mes.
+- **Platform-side withholdings:** Deel y otras plataformas pueden aplicar withholdings propios según residencia y reporting interno (p.ej. 1099 si hay U.S. tax nexus). No hay un RG argentino específico que extienda withholding a Deel/Payoneer; la fricción real viene de la lógica de la plataforma + BCRA Comm 8226+ en la liquidación AR-side. Verificá el net actual mes a mes contra el bruto declarado.
 - **Costo Deel vs Wise:** Deel es 2-4%, vs Wise 1.5-2.5%. Deel gana en convenience (no setup Factura E), pierde en costo.
 
 ---
@@ -191,7 +191,7 @@ Invoice $5.000 USDT → Lemon → P2P sell at 1.445 ARS/USDT, fee 0.5% → 7.189
 
 **Costo:** 2-4% (fee + FX). Comparable a Deel.
 
-**Failure mode 2025+:** RG 5319/2025 expandió platform-withholding. Verificar net mes-a-mes.
+**Failure mode 2025+:** la plataforma puede aplicar withholdings propios (no hay RG argentino específico ampliando withholding a Payoneer/Deel; la fricción real es lógica interna de la plataforma + reglas U.S./EU). Verificá el net mes a mes contra el bruto declarado.
 
 **Recomendación specialist:** OK pero validar withholding actual. Si volumen >$5K/mo, comparar contra Wise direct.
 

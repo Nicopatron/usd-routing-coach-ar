@@ -199,7 +199,7 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 - Lane chosen: Mercury + MEP via broker. Volumen ($8K invoice + $13K/mes trajectory) justifica el broker overhead vs Wise. Spread MEP vs oficial = ~$240-280 USD por invoice = más que el broker fee.
 - Confidence 78%: alta intake compliance + infraestructura lista, pero RI transition timing dentro de 60-90 días introduce documentación-uncertainty.
 - Crítica más importante NO es la lane — es la trayectoria. Specialist flagea RI transition como acción prioritaria, no como observación tangencial.
-- Deel descartado: cliente lo ofrece pero MEP via broker da mejor cost-of-funds y Deel agrega platform-withholding RG 5319/2025 que reduce el net.
+- Deel descartado: cliente lo ofrece pero MEP via broker da mejor cost-of-funds y Deel puede aplicar withholdings de plataforma (lógica interna, no RG argentino específico) que reducen el net.
 
 ---
 

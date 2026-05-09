@@ -34,7 +34,7 @@ Reference vocabulary for this specialist. Two layers: (1) Argentine regulatory +
 
 - **Wise** — UK-based fintech offering multi-currency accounts. Standard lane for low-volume Argentine consultores invoicing US/EU clients. All-in cost ~1.5-2.5%.
 - **Mercury** — US-based bank for startups and freelancers. Used for higher-volume invoicing where MEP route via broker is justified.
-- **Deel** — Global payroll/contractor platform. Direct ARS payment to Argentine contractor with platform-handled CAE compliance. Subject to RG 5319/2025 platform withholding.
+- **Deel** — Global payroll/contractor platform. Direct ARS payment to Argentine contractor with platform-handled CAE compliance. Net cobrado may differ from gross declarado due to platform-side U.S./EU withholdings (e.g., Deel's own residency rules, 1099 reporting if U.S. tax nexus applies); reconcile mes a mes against Factura E.
 - **VASP (Virtual Asset Service Provider)** — CNV-regulated crypto platform. Mandatory registration since May 2025. Examples: Lemon, Belo, Buenbit, Binance Argentina. Required for any compliant USDT routing.
 - **Lemon, Belo, Buenbit, Binance Argentina** — CNV-registered VASPs as of May 2026. The specialist treats these as compliant USDT lanes. Other unlisted exchanges may not be CNV-registered.
 
@@ -50,7 +50,6 @@ Reference vocabulary for this specialist. Two layers: (1) Argentine regulatory +
 
 - **RG 5616/2024** — AFIP regulation on Foreign-Currency E-Invoicing. Streamlined Factura E in USD.
 - **RG 5824/2026** — AFIP regulation on Consumer-ID threshold for invoices ≥ 10M ARS. Effective July 1, 2026.
-- **RG 5319/2025** — AFIP regulation on Platform-Withholding regime expansion (Deel, Payoneer, etc.).
 - **CNV Resolución 1058/2025** — CNV regulation mandating VASP registration.
 - **BCRA Comunicaciones 8226+** — BCRA series since April 2025 on FX market liberalization.
 

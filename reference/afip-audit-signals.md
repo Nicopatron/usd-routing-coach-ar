@@ -65,7 +65,7 @@ USDT recibido sin valuación al oficial del día de recepción documentada = AFI
 
 ### Platform payments sin compliance withholding
 
-Deel, Payoneer, Upwork desde 2025 (RG 5319/2025) tienen platform-withholding regimes ampliados. Si tu net cobrado no matchea con el bruto declarado y el withholding aplicado por la plataforma, audit trigger.
+Deel, Payoneer, Upwork pueden aplicar withholdings propios según su lógica interna y residencia (p.ej. 1099 reporting si hay U.S. tax nexus). NO hay un RG argentino específico que extienda withholding a estas plataformas para consultores AR (RG 5319/2023, a veces mal citada para esto, es un régimen de percepción IVA sobre portales virtuales locales tipo Mercado Libre y excluye explícitamente a monotributistas). Si tu net cobrado no matchea con el bruto declarado, eso por sí solo es audit trigger — independientemente del origen del withholding.
 
 ---
 
@@ -143,7 +143,6 @@ El specialist genera, al final del playbook, una nota:
 
 - AFIP RG 5616/2024 — Foreign-Currency E-Invoicing
 - AFIP RG 5824/2026 — Consumer-ID threshold (July 2026)
-- RG 5319/2025 — Platform withholding regime expansion
 - CNV Resolución 1058/2025 — VASP Registration
 - BCRA Comunicaciones 8226+ — FX market liberalization
 - KPMG flash alert 2026/015 — statute of limitations changes
