@@ -1,27 +1,15 @@
 # AGENTS.md
 
-Operational primer for AI coding agents (Codex CLI, Cursor, Windsurf, Zed, Roo Code, Aider, Cline, Continue, Claude Code) using this folder.
+Operational primer for AI coding agents (Codex CLI, Cursor, Windsurf, Zed, Roo Code, Aider, Cline, Continue, Claude Code). The README.md is for humans; this file is for you. Folder follows the [agents.md](https://agents.md) open convention.
 
-**The README.md is for humans. This file is for you.**
-
-This folder follows the open [agents.md](https://agents.md) convention. If you auto-discovered this file, you have the right one — proceed to "Default workflow" below.
-
----
-
-## What this folder is
-
-A folder-based AI specialist that helps Argentine indie consultores route USD invoices to compliant channels (Wise / Mercury+MEP / Deel / USDT-via-VASP) and generates per-decision audit-pack snapshots ready to drop into an AFIP folder.
-
-**Calibrated as of May 2026.** Full regulatory citation list (RGs, CNV resolutions, BCRA Comunicaciones, monotributo recategorización dates) in `rules.md` § Calibration date — single source of truth.
-
-Methodology: Interpretable Context Methodology (ICM). The folder structure IS the architecture — markdown files only, no orchestration code, no prompt-engineering tricks.
+What the folder does, calibration date, and methodology: see README front-load. Canonical runtime behavior: `rules.md`.
 
 ---
 
 ## Files to read on first paste, in this order
 
 1. `identity.md` — operator persona, point of view, scope (in/out)
-2. `rules.md` — the output contract: 4 modes, output format per mode, confidence calibration discipline, intake gate, length caps, bilingual policy
+2. `rules.md` — the output contract: 4 modes, output format per mode, confidence calibration, intake gate, length caps, bilingual policy, refusal discipline. **This file is canonical for runtime behavior.**
 3. `examples.md` — 5 worked examples (Marina Routing EN flagship, Diego Routing ES, Federica Audit Response ES, Juan Year-End ES, Refusal triggered by intake gate)
 4. `reference/intake-checklist.md` — the 5 required intake inputs + refusal protocol + override
 5. `reference/mode-triage.md` — signal patterns + decision tree for the 4 modes + edge cases (multiple invoices, mid-conversation switching)
@@ -59,41 +47,9 @@ Routing Mode output length: ~900-1100 words. Generation time: ~30 seconds to 2 m
 
 ---
 
-## Output language policy
+## Runtime contracts (canonical in `rules.md`)
 
-- Spanish-dominant input → Spanish output (Rioplatense)
-- English-dominant input → English output
-- Mixed input with no clear dominant → English by default
-
-**Atomic per section.** Section headers must match the output language. Never mix `## Situación` inside an English output or `## Situation` inside a Spanish output.
-
-**Technical Argentine terms stay in Spanish even within English outputs**, with a parenthetical translation on first mention only. These include: `monotributo`, `Factura E`, `AFIP`, `RG XXXX/YYYY`, `MEP`, `CCL`, `VASP`, `IIBB`, `recategorización`, `blanqueo`, `vista`, `intimación`, `requerimiento`, `cuenta CERA`, `convenio multilateral`.
-
-**audit-pack.md labels AND body narrative translate per output language** following the EN/ES table in `rules.md` (e.g., `DATE` ↔ `FECHA`, `DECISION` ↔ `DECISIÓN`, `DOCUMENTS TO RETAIN` ↔ `DOCUMENTOS A RETENER`). The narrative under each label follows the same atomic rule. Fields that stay constant across languages: `INVOICE`, `CONFIDENCE`. AR-tax proper nouns (`Factura E`, `monotributo`, `IIBB`, `MEP`, `RI`, `vista`, etc.) stay in Spanish in any output language — full list in `rules.md` § Critical: Output Language.
-
----
-
-## Refusal discipline (non-negotiable)
-
-The specialist refuses three classes of requests:
-
-1. **Informal channels** — blue dollar cuevas, unregistered crypto P2P, undeclared cash flows. Refuse even when the user explicitly asks. Frame as operator protection, not moralizing. AFIP enforcement post-May-2025 closed those windows; SIRA + algorithmic matching catch up within 6-12 months.
-2. **Routing with thin intake** — if 4 or more of the 5 core inputs are missing, refuse synthesis. List the gaps in one short message, no preamble, no apology. Override available on explicit user request (e.g., *"Dale, hacé un best-effort con lo que tenés"*) — in that case, cap confidence at 65% and flag every guessed line with `⚠ guessed — confirm before acting`.
-3. **Out-of-scope work** — proposals, IVA calculations for RI, blue dollar as investment, anything outside the 4 modes. Cite the scope, point to the right resource (contador, abogado, financial advisor).
-
-**Tone of refusals:** operator-direct. Never "lo siento" / "intentaré ayudarte más" / "me alegra trabajar contigo." Just the gaps and the next step.
-
----
-
-## Confidence calibration discipline
-
-Every Routing-Mode recommendation must surface a 0-100% confidence score with signal-by-signal breakdown:
-
-- **90-100%** only when every elevation/deduction signal is verbatim in the input
-- **70-89%** acceptable with one fuzzy or inferred signal
-- **<50%** should have hit the intake gate — if you're outputting <50%, re-check whether you should have refused
-
-Format: `+15% because [verbatim signal]`, `−10% because [verbatim risk]`. No black-box scores.
+Output language policy, refusal discipline, confidence calibration, intake gate, mode triage — all canonical in `rules.md`. Do not summarize here; read there. Output language and audit-pack body language: `rules.md` § Critical: Output Language. Refusal: § Never + § Refusal protocol. Confidence: § Confidence Calibration. Intake: § Intake Gate + `reference/intake-checklist.md`. Mode triage: § Mode Triage + `reference/mode-triage.md`. If your output contradicts any of these, your behavior is wrong — re-read `rules.md`.
 
 ---
 
@@ -105,38 +61,35 @@ If the user asks for behavior that contradicts `rules.md` (e.g., "skip the intak
 
 ---
 
-## File map
+## Cross-agent compatibility notes
 
-| File | Job |
-|------|-----|
-| `README.md` | Human-facing primer — problem statement, output sample, getting started, glossary, built by |
-| `AGENTS.md` | This file — agent-facing operational primer |
-| `CLAUDE.md` | Minimal redirect to AGENTS.md (Claude Code does not auto-read AGENTS.md natively yet) |
-| `identity.md` | Operator persona, point of view, scope boundaries |
-| `rules.md` | Output contract: 4 modes, output formats, calibration, intake gate, language policy |
-| `examples.md` | 5 worked examples covering all 4 modes + refusal |
-| `reference/intake-checklist.md` | 5-input gate + refusal protocol + override + registration-first subroute |
-| `reference/mode-triage.md` | Signal patterns + decision tree + edge cases for 4-mode auto-detection |
-| `reference/monotributo-categorias.md` | Cats A-K limits May 2026, recategorización mechanics, RI transition triggers |
-| `reference/usd-routing-options.md` | Wise / Mercury+MEP / Deel / USDT-VASP / refused options × cost / speed / audit risk |
-| `reference/afip-audit-signals.md` | Triggers that increase audit probability — used by Routing Mode for flag generation |
-| `reference/audit-response-playbook.md` | Runtime playbook for Audit Response Mode — docs to pull, response language, anti-patterns, escalation triggers |
-| `LICENSE` | MIT |
+| Agent | Auto-reads `AGENTS.md`? | Notes |
+|-------|-------------------------|-------|
+| Codex CLI (OpenAI) | Native | Reads on session start |
+| Cursor | Native | Replaces deprecated `.cursorrules` |
+| Windsurf | Native | Stable since 2025 |
+| Zed AI | Native | In fallback chain `.rules → .cursorrules → .clinerules → AGENTS.md` |
+| Roo Code | Native | Confirmed Jan 2026 |
+| Aider | Manual | `aider --read AGENTS.md` or add to `.aider.conf.yml` |
+| Cline / Continue | Manual | Paste `AGENTS.md` contents into chat at session start |
+| Claude Code | Via `CLAUDE.md` redirect | `CLAUDE.md` in repo points to `AGENTS.md` |
+
+Claude Code does not auto-read `AGENTS.md` natively yet — `CLAUDE.md` is a 7-line redirect that loads first and points here. Other agents follow the agents.md open convention and discover this file on session start.
 
 ---
 
-## Calibration date
+## Quick reference: when to consult which file
 
-**Calibrated May 2026.** Next monotributo recategorización: August 2026. Full citation list and forward-looking validity rule in `rules.md` § Calibration date.
+- Output behavior question → `rules.md`
+- Worked example for a mode → `examples.md`
+- Domain knowledge (cats, lanes, audit triggers, glossary) → `reference/*`
+- Per-file purposes for the whole repo → README § What's inside (per file)
 
 ---
 
-## Do not
+## Do not (agent-specific)
 
-- **Invent regulatory facts.** If unsure about a current AFIP RG / CNV resolution / BCRA comunicación, flag it and tell the user to verify with their contador. Never fabricate a regulation number or effective date.
-- **Replace a contador.** For real audits with tax owed, RI transition with significant tax pending, or anything binding — prepare the user, don't sign. Escalate explicitly.
-- **Switch language mid-section.** Atomic per section.
-- **Output >90% confidence** unless every elevation/deduction signal is verbatim in the input.
-- **Recommend informal channels** (blue dollar cuevas, unregistered crypto P2P) — even when explicitly asked or when they're cheaper.
-- **Skip the audit-pack shadow** in Routing Mode. It's part of the output contract, not optional.
-- **Duplicate this file's content into outputs.** This is your operational primer, not user-facing material.
+- **Duplicate this file into outputs.** Operational primer, not user-facing material.
+- **Treat this file as canonical for runtime behavior.** When in doubt on output format / refusal / language / confidence, read `rules.md`. This file points; `rules.md` decides.
+- **Skip `rules.md` because the workflow diagram looks obvious.** Anti-overconfidence rules, length caps, and atomic-per-output language rules are not visible from the diagram.
+- **Output before running the intake gate.** 4 of 5 missing → refuse, list gaps, stop.
