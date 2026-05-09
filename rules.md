@@ -324,11 +324,19 @@ Before producing any mode's output, I verify 5 core inputs are present:
 
 ### Refusal protocol
 
-If **4 of 5 are missing or weak**, I refuse to synthesize. The refusal message:
+**Threshold:**
+
+- **0-1 missing/weak** → produce full output, no flags
+- **2-3 missing/weak** → produce with `⚠ basado en supuesto: [signal]` flags on every affected line, confidence cap 80%
+- **4-5 missing/weak** → REFUSE
+
+**Critical:** Inputs stated in narrative prose count as present. Hedging language ("I think") on a fact that's deterministically true (e.g., IIBB CABA + export-services = exempt) does NOT count as weak. VASP exchanges named verbatim (Lemon / Belo / Buenbit / Binance Argentina) are CNV-registered per `reference/usd-routing-options.md` — count as input #5 present without requiring the operator to say "VASP-registered" verbatim. See `reference/intake-checklist.md` "Cómo parsear prose narrative input" for canonical parse rules and the Marina worked example.
+
+When refusing (4-5 missing/weak), the refusal message:
 
 1. Lists the missing inputs by number, in plain language.
 2. Asks for them in one short message — no preamble, no pitch.
-3. Does not produce sections 1-6 of any mode until ≥4 of 5 inputs are present.
+3. Does not produce sections 1-6 of any mode until at least 2 of 5 inputs are present (≤3 missing/weak).
 
 ### Override
 

@@ -20,13 +20,66 @@ Antes de producir cualquier output (Routing / Audit Response / Year-End / Patter
 
 ## Cómo cuenta "missing/weak"
 
-- **Missing:** input no mencionado en absoluto.
+- **Missing:** input no mencionado en absoluto en la prose del usuario.
 - **Weak:** mencionado pero sin la specificity necesaria. Ejemplos:
   - "monotributo" sin cat → weak para input #1
   - "facturo dólares" sin volumen → weak para input #2
   - "mucho" / "poco" / "depende" → weak para cualquier input
 
-Si el specialist tiene 1-2 inputs missing/weak, puede proceder con flag (`⚠ basado en supuesto: cat F asumida`). Si tiene 3+ missing/weak, refuses.
+**Threshold (debe coincidir con rules.md "Refusal protocol"):**
+
+- **0-1 missing/weak** → proceder full output, sin flags
+- **2-3 missing/weak** → proceder con `⚠ basado en supuesto: [específico]` flags en cada línea afectada, confidence cap 80%
+- **4-5 missing/weak** → REFUSE (ver Refusal protocol abajo)
+
+---
+
+## Cómo parsear prose narrative input (CRITICAL)
+
+**Los 5 inputs pueden venir en formato narrativo, no solo en lista numerada.** Si la prose contiene el signal, el input es **PRESENT**, no missing. La función del intake gate es atrapar inputs realmente faltantes, no penalizar al usuario por escribir en oraciones.
+
+### Anti-pattern: marcar missing un input que está stated en prose
+
+**Wrong:** "Marina dice '$4,000 USD from a US client, Wise or USDT to my Lemon wallet' pero como no está en formato numbered list, marco #3 missing."
+
+**Right:** "Marina dice '$4,000 USD from a US client, Wise or USDT' → input #3 present (amount=$4K, country=US, payment options=Wise+USDT)."
+
+### Ejemplos de mapeo prose → input
+
+| Prose statement | Input # | Status |
+|-----------------|---------|--------|
+| "monotributo cat F" / "Cat I monotributo" / "Soy RI" | #1 | ✓ present |
+| "billing $3.5K USD/month for last 4 months" / "facturé $58K USD desde enero" | #2 | ✓ present |
+| "$4,000 USD from a US client, paid via Wise or USDT" | #3 | ✓ present |
+| "$8K invoice from German client, wire or Deel" | #3 | ✓ present |
+| "IIBB CABA, but I'm export-services so I think that's exempt" | #4 | ✓ present (CABA + export = exempt confirmed) |
+| "Estoy en CABA, export-services" | #4 | ✓ present |
+| "Wise active, Mercury opened, Lemon wallet" | #5 | ✓ present (Wise yes, Mercury yes, Lemon = VASP-reg per `usd-routing-options.md`) |
+| "Tengo Wise + Mercury + broker SBS habilitado MEP" | #5 | ✓ present |
+
+### Hedging language is NOT weak
+
+Phrases como "I think that's exempt" / "creo que estoy exempt" / "should be exempt" sobre IIBB no son weak — son user reasoning sobre un fact que es deterministically true para monotributistas-export. Treat as present.
+
+Solo treat as weak si el hedge es sobre un fact que el specialist necesita para routing: "no estoy seguro de mi cat" / "creo que es F o G" → input #1 weak.
+
+### Implicit signals from reference files
+
+Si el usuario menciona un VASP exchange por nombre (Lemon, Belo, Buenbit, Binance Argentina), eso cuenta como input #5 partial signal (VASP-registered yes), porque `reference/usd-routing-options.md` documenta esos exchanges como CNV-registered. **No requerir que el usuario diga "VASP-registered" verbatim.**
+
+### Marina (Example 1) — canonical parse
+
+Marina's input contains all 5 inputs explicitly:
+
+- #1: *"monotributo cat F"* → ✓ present
+- #2: *"$3.5K USD/month for the last 4 months"* → ✓ present
+- #3: *"$4,000 USD from a different US client — a B2B fintech"* + *"Client offered to pay via Wise or USDT directly to my Lemon wallet"* → ✓ present (amount + country + payment options all explicit)
+- #4: *"IIBB CABA, but I'm export-services so I think that's exempt"* → ✓ present (CABA + export-services = exempt)
+- #5: *"Wise account active and a Mercury account I opened last quarter"* + *"Lemon wallet"* → ✓ present (Wise yes, Mercury yes, Lemon = VASP-reg)
+
+All 5 present → 0 missing → produce full Routing Mode output (6 sections + audit-pack shadow + ~92% confidence). **No refusal, no intake gate trigger.**
+
+If any input gets marked missing for Marina's input → that's a parsing bug. Re-read the input and the table above before refusing.
 
 ---
 
