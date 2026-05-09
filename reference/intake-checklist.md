@@ -12,7 +12,7 @@ Antes de producir cualquier output (Routing / Audit Response / Year-End / Patter
 |---|-------|---------------------|--------------------------|----------------------------|
 | 1 | **Cat monotributo (o RI, o unregistered)** | Determina headroom available + cuotas mensuales + jump triggers | *"Cat F monotributo"* / *"Soy RI"* / *"No estoy registrado todavía"* | *"Tengo monotributo"* sin cat / *"Pago algo a AFIP cada mes"* |
 | 2 | **Volumen USD/mes últimos 3 meses** | Anchors el rolling-12 trajectory + indica si MEP es viable | *"~$3.5K USD/mes Q1 2026"* / *"$2-4K range"* / *"$8K mes pasado, $3K antes"* | *"Más o menos lo mismo"* / *"Depende del mes"* / no mention |
-| 3 | **Este invoice/situación** — amount + client country + payment options del cliente | Define qué lanes son viables + decision shape | *"$5K USD desde cliente US, paga por Wise o ACH"* / *"$8K EUR cliente UK, Deel integrado"* | *"Me van a pagar"* sin amount / sin country / sin payment options |
+| 3 | **Este invoice/situación** — amount + país de la **contraparte legal** (entidad que firma el contrato y aparece como buyer en la Factura E, NO la ubicación operativa del equipo, NO la cuenta desde donde sale el wire, NO la billing address) + payment options del cliente | Define qué lanes son viables + decision shape. La contraparte legal determina si es export-services (Factura E, IIBB exempt) o local services (Factura A/B, IIBB aplica). | *"$5K USD desde Stripe Inc. (Delaware US), paga por Wise"* / *"$8K EUR cliente UK Ltd, Deel integrado"* | *"Me van a pagar"* sin amount / sin entidad / sin opciones; *"cliente US"* sin nombre de la entidad cuando hay tells de passthrough (ver guardrail abajo) |
 | 4 | **Jurisdicción IIBB** — CABA / PBA / interior / convenio multilateral / N/A | Filtra IIBB exemption (la mayoría de monotributista-export están exempt) | *"Monotributo CABA, export-services"* / *"PBA, mixed local + export"* | No mention de provincia / no mention si export o mix |
 | 5 | **Infraestructura bancaria disponible** — Wise / Mercury / broker / VASP-registered | Determina qué lanes son operativamente posibles | *"Wise activa, Mercury sí, broker SBS"* / *"Solo Wise por ahora"* / *"USDT en Lemon"* | *"Tengo cuenta en el banco"* sin specifics / no mention |
 
@@ -66,6 +66,27 @@ Solo treat as weak si el hedge es sobre un fact que el specialist necesita para 
 ### Implicit signals from reference files
 
 Si el usuario menciona un VASP exchange por nombre (Lemon, Belo, Buenbit, Binance Argentina), eso cuenta como input #5 partial signal (VASP-registered yes), porque `reference/usd-routing-options.md` documenta esos exchanges como CNV-registered. **No requerir que el usuario diga "VASP-registered" verbatim.**
+
+### Guardrail input #3 — AR-led entity con foreign legal wrapper
+
+La contraparte legal NO siempre coincide con la ubicación del cliente "real". Tells comunes de passthrough que requieren clarificación antes de routing:
+
+- *"AR-led pero facturado a través de una LLC en Delaware/Florida"*
+- *"El equipo está en Argentina pero la entidad cobradora es US"*
+- *"Es mi propia LLC US que le factura al cliente AR"*
+- *"Cliente argentino que mudó la sede a [Delaware/Miami] el año pasado"*
+- *"Le facturo a la subsidiaria US del grupo, pero el contrato real es con la matriz argentina"*
+
+**Si aparece un tell:** treat input #3 como ⚠ ambiguous. Antes de routing, una pregunta corta:
+
+> *"Está firmado el contrato con la entidad [foreign] o con su parent/sister AR? Si la entidad foreign es genuinamente la contraparte (no un passthrough para servicios prestados a un cliente AR-resident), seguimos export-services + Factura E. Si la entidad foreign es un vehículo de cobro para un cliente AR, eso es local services — Factura A/B, IIBB aplica, monotributo cat math distinta."*
+
+Mini-ejemplo de la distinción:
+
+> ✓ **Stripe Inc. (Delaware US)** = contraparte legal real, export-services genuina.
+> ✗ **AR-team-DBA-LLC** (LLC US fundada por el operator AR, le emite factura a un cliente AR final) = local services con foreign legal wrapper. Recategorizar a Factura A/B + IIBB jurisdiction operativa.
+
+Mis-routing en este punto = audit-pack frozen con wrong evidence (export claimed where it was local) → bomba de tiempo a 2 años cuando AFIP cross-referencia SIRA + CUIT del cliente AR final.
 
 ### Marina (Example 1) — canonical parse
 
