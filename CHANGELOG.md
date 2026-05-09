@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.1 — Brief-alignment patch (2026-05-09)
+
+Front-loaded the README with a 3-beat opening paragraph (what / who / how-to-use-in-60s) plus a quick acronym key, per the brief's "one paragraph someone could follow with no other context" requirement. Folded `quickstart.md` into the README opening and deleted the separate file (its job — TL;DR 5 steps — is now done by the front-load). Bilingual policy now explicitly covers audit-pack body narrative (was implicit; cold-stranger audit flagged the ambiguity). README dropped from 345 → ~315 lines while gaining the cold-reader on-ramp.
+
 ## v1.0 — Clief Notes Weekly Comp #3 (2026-05-09)
 
 Initial public release.
@@ -37,7 +41,6 @@ usd-routing-coach-ar/
 ├── README.md                            human primer
 ├── AGENTS.md                            agent operational primer
 ├── CLAUDE.md                            Claude Code redirect → AGENTS.md
-├── quickstart.md                        TL;DR 5 numbered steps
 ├── identity.md                          operator persona + scope
 ├── rules.md                             4-mode output contract + calibration discipline
 ├── examples.md                          5 worked examples (4 modes + refusal)

@@ -112,7 +112,6 @@ If the user asks for behavior that contradicts `rules.md` (e.g., "skip the intak
 | `README.md` | Human-facing primer — problem statement, output sample, getting started, glossary, built by |
 | `AGENTS.md` | This file — agent-facing operational primer |
 | `CLAUDE.md` | Minimal redirect to AGENTS.md (Claude Code does not auto-read AGENTS.md natively yet) |
-| `quickstart.md` | TL;DR for skim readers — 5 numbered steps |
 | `identity.md` | Operator persona, point of view, scope boundaries |
 | `rules.md` | Output contract: 4 modes, output formats, calibration, intake gate, language policy |
 | `examples.md` | 5 worked examples covering all 4 modes + refusal |

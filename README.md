@@ -1,14 +1,28 @@
 # USD Routing Coach (Argentina)
 
-A folder-based AI specialist for Argentine indie consultores (independent consultants under *monotributo*, the Argentine simplified tax regime) who invoice external clients in USD/USDT — calibrated, audit-ready, and refuses to recommend channels that would attract Argentina's tax authority (**AFIP**). **Calibrated against the current Argentine regulatory framework as of May 2026**: AFIP RG 5616/2024 (foreign-currency e-invoicing), CNV Resolución 1058/2025 (Argentine securities commission, regulates crypto exchanges), BCRA Comunicaciones 8226+ (Argentine central bank, FX market). Full term definitions in [`reference/glossary.md`](./reference/glossary.md).
+**What this is.** A folder-based AI specialist for Argentine indie consultores who get paid in USD and need to pick the right payment channel — Wise vs Mercury+MEP vs Deel vs USDT-via-VASP — and want a paper trail in case AFIP audits them. Drop the folder into a Claude project, paste an invoice (or an AFIP notice), get back a structured routing decision (or an audit-response playbook) plus a parallel audit-pack snapshot for your defensive folder.
 
-Drop this folder into a Claude project (or open it in Claude Code). Paste your situation + the next invoice you're about to receive. Get back: a confidence-scored routing recommendation across compliant channels (Wise / Deel / Mercury+MEP / USDT-via-VASP), a per-recommendation audit pack ready to drop into your tax-audit folder, and a refusal mechanism that won't recommend informal cash or unregistered crypto — even when they're cheaper.
+**Who it's for.** Argentine independent consultores invoicing external clients in dollars, $1K–$15K USD per invoice, on monotributo cat A–K or RI. Calibrated to the Argentine regulatory framework as of May 2026 — full reg-citation list in [`rules.md`](./rules.md) § Calibration date.
+
+**How to use it in 60 seconds.** (1) Clone the repo (or download the folder). (2) Drag every `.md` file (root + `reference/`) into a new claude.ai Project's knowledge base. (3) In a new chat in that project, paste your situation with the 5 inputs (cat monotributo · monthly USD volume · this invoice + client country + payment options · IIBB jurisdiction · banking infra) and ask **`Synthesize this routing decision.`** (4) Read the 6-section output + the audit-pack shadow. Iterate with *"draft just the audit pack"* / *"compare MEP vs Wise"* / *"if I switch to RI next quarter."*
+
+**Quick acronym key for non-AR readers** (full list in [`reference/glossary.md`](./reference/glossary.md)):
+
+- **AFIP / ARCA** — Argentina's federal tax authority (renamed AFIP→ARCA in 2025; both names in use).
+- **monotributo** — Argentine simplified tax regime; categories A–K with annual USD-equivalent billing ceilings (cat F ~$27K, cat I ~$55K, cat K top, then RI).
+- **Factura E** — Argentine export invoice type for non-resident clients (IVA-exempt under export regime).
+- **MEP / CCL** — legal Argentine FX routes via sovereign bonds (AL30 / GD30); MEP = local market, CCL = offshore settlement.
+- **VASP** — Virtual Asset Service Provider — CNV-registered crypto exchange (Lemon, Belo, Buenbit, etc.); required for compliant USDT routing.
+- **IIBB (Ingresos Brutos)** — Argentine provincial gross-income tax; most monotributistas-export are exempt.
+- **vista / intimación / requerimiento** — escalation tiers of AFIP audit notices, lightest to heaviest.
+
+**Bilingual.** Spanish input → Spanish output (Rioplatense). English input → English output. Mixed input with no clear dominant → English by default. AR-tax proper nouns (Factura E, monotributo, MEP, IIBB, RI, vista, etc.) stay in Spanish in any output language; the rest translates atomically.
+
+**What it won't do.** Recommend informal channels (blue dollar cuevas, unregistered crypto P2P) — even when cheaper. AFIP enforcement post-May-2025 closed those windows; SIRA tracks bank deposits and algorithmic matching catches inconsistencies within 6-12 months. The specialist also refuses to synthesize when 4 of 5 core intake inputs are missing. See `examples.md` Example 5 for what that refusal looks like.
 
 ---
 
 ## What you get back
-
-**Drop this folder into a Claude project. Paste your situation. Ask:** *"Synthesize this routing decision."*
 
 You get back this shape (real output, abbreviated):
 
@@ -22,19 +36,19 @@ You get back this shape (real output, abbreviated):
 > −8% because Mercury account exists but unused for invoicing — minor fallback uncertainty
 >
 > Headroom impact: post-invoice, cat F ~53% utilized YTD.
-> Next-month flag: if monthly invoicing accelerates above $4K/mo, recategorización proactiva to G should be considered before August 2026.
+> Next-month flag: if monthly invoicing accelerates above $4K/mo, proactive recategorización to cat G should be considered before August 2026.
 
-> ### audit-pack.md (shadow artifact — guardalo en tu carpeta AFIP/2026/Q2/)
+> ### audit-pack.md (shadow artifact — save in AFIP/2026/Q2/ folder)
 >
 > ```
-> FECHA: 2026-05-08
+> DATE: 2026-05-08
 > INVOICE: B2B Fintech LLC (US), USD $4,000
 > DECISION: Wise + Factura E
 > DECISION RATIONALE: Default lane for cat F + US client + sub-$10K invoice.
 > CONFIDENCE: 92%
 > FX RATE SNAPSHOT: Oficial 1,395 / MEP 1,418 / Wise mid 1,385
 > DOCUMENTS TO RETAIN: Factura E #N, Wise statement, signed contract, payment confirmation
-> NEXT REVIEW TRIGGER: Si volumen mensual sube >$4K/mo o YTD acumulado supera 70% del techo cat F antes de Aug 2026, revisar recategorización proactiva a cat G.
+> NEXT REVIEW TRIGGER: If monthly volume rises above $4K/mo or YTD cumulative exceeds 70% of the cat F ceiling before Aug 2026, revisit proactive recategorización to cat G.
 > ```
 
 *(plus full Situation / Constraints Analysis / Routing Options comparison / Execution Checklist / Decision Trace — full output ~900-1100 words, generation time ~30 seconds to 2 minutes depending on Claude model)*
@@ -44,8 +58,6 @@ That output came from this input:
 > Hi — I'm Marina, freelance UX designer in Buenos Aires, monotributo cat F, billing ~$3.5K USD/month Q1 2026 to a US client. Got a new $4K USD invoice from a different US client this week. Wise active, Mercury opened (unused), Lemon wallet for USDT. CABA, export-services. Factura E approved. Should I take Wise like always or is there a smarter move?
 
 The full transcript and worked output are in `examples.md`. Three more full syntheses there — Diego (cat I→K with RI transition flag), Federica (audit response when AFIP sends a vista), Juan (year-end reconciliation in October) — plus Example 5 documenting a deliberate refusal when intake is too thin.
-
-**What it won't do:** recommend informal channels (blue dollar cuevas, unregistered crypto P2P) — even when cheaper. AFIP enforcement post-May-2025 closed those windows; SIRA tracks bank deposits and algorithmic matching catches inconsistencies within 6-12 months. The specialist also refuses to synthesize a routing decision when 4 of 5 core intake inputs are missing. See `examples.md` Example 5 for what that refusal looks like.
 
 ---
 
@@ -78,7 +90,7 @@ The five-slot contract:
 - `rules.md` — *how* the operator responds (4 modes, output formats, confidence calibration, intake gate).
 - `examples.md` — *what* good looks like, including deliberate refusal and audit response.
 - `reference/` — *what* the operator knows (monotributo categories, routing lanes, audit signals, intake gate, mode triage).
-- `README.md` + `quickstart.md` — *how* to use the folder.
+- `README.md` — *how* to use the folder (front-loaded one-paragraph primer + deeper sections).
 
 That's *interpretable* in ICM — not "the model is mysterious," but "the operator's logic is visible and traceable to a regulatory source."
 
@@ -124,7 +136,6 @@ usd-routing-coach-ar/
 ├── README.md                            ← read first (humans)
 ├── AGENTS.md                            ← agent-facing operational primer (auto-read by Codex / Cursor / Windsurf / etc.)
 ├── CLAUDE.md                            ← minimal redirect to AGENTS.md for Claude Code
-├── quickstart.md                        ← TL;DR, 5 numbered steps
 ├── identity.md                          ← who the specialist is
 ├── rules.md                             ← output contract: 4 modes, formats, calibration discipline
 ├── examples.md                          ← 5 worked examples (1 EN flagship + 3 ES + 1 refusal)
@@ -190,7 +201,6 @@ Every step is documented in `rules.md`. Nothing is hidden in prompt engineering 
 |------|-----|
 | `AGENTS.md` | Agent-facing operational primer — file-read order, default workflow, language policy, refusal discipline, confidence calibration. Auto-read by Codex / Cursor / Windsurf / Zed / Roo Code. |
 | `CLAUDE.md` | Minimal redirect to `AGENTS.md` for Claude Code (which doesn't auto-read `AGENTS.md` natively yet). |
-| `quickstart.md` | TL;DR for skim readers — 5 numbered steps from clone to first output. |
 | `identity.md` | Who the specialist is — Argentine operator persona, point of view on routing, scope boundaries. |
 | `rules.md` | Output contract — 4-mode triage, output format per mode, confidence calibration discipline, intake gate, length caps, bilingual policy, calibration date. |
 | `examples.md` | 5 worked examples: Marina (Routing EN flagship) + Diego (Routing ES with RI transition) + Federica (Audit Response ES) + Juan (Year-End ES) + 1 deliberate refusal. |
@@ -312,18 +322,7 @@ The methodology travels. To fork this for a different operator-decision speciali
 
 ## Glossary
 
-- **Monotributo** — Argentine simplified tax regime for small contributors. Cats A-K with annual billing limits + monthly fees.
-- **RI (Responsable Inscripto)** — Argentine general tax regime. Required when monotributo K limit is exceeded; includes IVA + Ganancias filings.
-- **Factura E** — Argentine export invoice type, used for non-resident clients. IVA-exempt (export regime).
-- **AFIP / ARCA** — Argentine federal tax authority (recently renamed from AFIP to ARCA in 2025; both names still in use).
-- **CNV** — Argentine Securities Commission, regulator for VASPs (crypto exchanges) since 2025.
-- **BCRA** — Argentine Central Bank, regulator of FX market access.
-- **IIBB (Ingresos Brutos)** — Argentine provincial gross-income tax. Most monotributistas-export are exempt.
-- **MEP / CCL** — Argentine FX market routes via securities (AL30/GD30) for legal USD conversion at better-than-official rates. MEP = local market; CCL = Contado con Liquidación for offshore settlement.
-- **VASP (Virtual Asset Service Provider)** — CNV-regulated crypto platform (Lemon, Belo, Buenbit, Binance Argentina). Required for compliant USDT routing post-May-2025.
-- **SIRA** — AFIP system that tracks bank deposits and matches against declared income. Algorithmic flagging of inconsistencies.
-- **Blanqueo Milei** — One-time tax amnesty 2024, closed for residents May 7, 2025. Funds liberated from CERA accounts Jan 1, 2026.
-- **Convenio Multilateral** — Cross-jurisdictional IIBB allocation when services are rendered in multiple Argentine provinces.
+Quick acronym key is at the top of this README. Full term definitions — including SIRA, Blanqueo Milei, Convenio Multilateral, vista / intimación / requerimiento, Cuenta CERA — live in [`reference/glossary.md`](./reference/glossary.md). Single source of truth.
 
 ---
 
