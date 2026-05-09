@@ -144,7 +144,7 @@ NEXT REVIEW TRIGGER:
 
 Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD desde enero (~82.2M ARS @ MEP). Nuevo invoice incoming: **$8,000 USD** de cliente alemán B2B SaaS. Payment options: wire bancario o Deel. Infraestructura: Mercury (saldo USD activo), Grupo SBS broker (MEP habilitado), Wise activa, Deel configurado por el cliente. IIBB CABA + export-services = exempt. Factura E aprobada y en uso desde hace tiempo.
 
-### Constraints Analysis
+### Análisis de Constraints
 
 - **Headroom monotributo cat I**: límite ~$64,949 USD @ MEP. YTD facturado ~$58K = **~89% del techo**. Este invoice ($8K) lleva el cumulative a ~$66K = **~102% del techo cat I**. **Cruzaste cat I.**
 - **Cat K (techo absoluto)**: ~$76,479 USD. Post-invoice estás a ~$66K = ~86% de cat K. Headroom hasta cat K: ~$10.5K USD = ~14.9M ARS.
@@ -154,10 +154,10 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 - **Factura E**: setup confirmed.
 - **VASP status**: no aplica este invoice (cliente paga wire o Deel, no USDT).
 
-### Routing Options
+### Opciones de Routing
 
-| Option | All-in cost | Speed | Tax visibility | Audit risk | Confidence-OK signal |
-|--------|-------------|-------|----------------|------------|----------------------|
+| Opción | Costo all-in | Velocidad | Visibilidad fiscal | Riesgo de auditoría | Señal Confidence-OK |
+|--------|-------------|-----------|--------------------|---------------------|---------------------|
 | Wise + Factura E | 1.5-2.5% | 1-2d | Total | Baja | ✓ pero subóptimo a este volumen |
 | **Mercury + MEP via broker** | 2-3% | 5-7d | Total | Media | ✓ **volumen justifica el overhead** |
 | Deel + ARS direct (cliente lo ofrece) | 2-4% | 2-5d | Total (CAE platform) | Media | ✓ pero costo más alto que MEP |
@@ -165,7 +165,7 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 | ❌ Blue dollar cueva | 0-1% | Instant | Cero | Muy Alta | REFUSED |
 | ❌ Crypto P2P informal | 0.5-1.5% | Instant | Cero | Muy Alta | REFUSED |
 
-### Recommendation
+### Recomendación
 
 **Mercury + MEP via broker para este invoice.**
 
@@ -181,7 +181,7 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 
 **Próximo paso operacional crítico:** programar reunión con tu contador esta semana para iniciar transición a RI. Trigger objetivo: tu YTD ya supera cat I y proyectás superar K en mid-Q3. Better to plan the transition than have AFIP force it.
 
-### Execution Checklist
+### Checklist de Ejecución
 
 1. **[Hoy]** Llamar a tu contador. Agendar reunión esta semana específicamente para RI transition timing.
 2. **[Día 0]** Confirmar con el cliente alemán que wire bancario a Mercury es viable (vs Deel). Pasarle datos Mercury (US ABA + account number).
@@ -193,7 +193,7 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 8. **[Documentar — carpeta AFIP/2026/Q2/]**: Factura E PDF, Mercury statement, wire confirmation, broker statements MEP buy + sell, contrato firmado.
 9. **[Q3 — pendiente reunión contador]** Iniciar formalización RI transition. Costo estimado: $1-2K USD/año en honorarios + IVA filing mensual. Beneficio: eliminás el cap de monotributo y ganás crédito fiscal por insumos.
 
-### Decision Trace
+### Trazabilidad de la Decisión
 
 - Mode detected: Routing — invoice específico + payment options + cliente country.
 - Lane chosen: Mercury + MEP via broker. Volumen ($8K invoice + $13K/mes trajectory) justifica el broker overhead vs Wise. Spread MEP vs oficial = ~$240-280 USD por invoice = más que el broker fee.
@@ -209,7 +209,7 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 FECHA: 2026-05-08
 INVOICE: SaaS GmbH (DE), USD $8,000
 
-SIGNALS ANALYZED:
+SIGNALS ANALIZADOS:
   - Cat monotributo I, YTD facturado ~$58K = 89% del techo
   - Trayectoria proyecta cierre $142-158K USD = forzada salida a RI Q3 2026
   - Cliente alemán B2B SaaS, paga por wire bancario o Deel
@@ -217,25 +217,25 @@ SIGNALS ANALYZED:
   - IIBB CABA, export-services exempt
   - Factura E aprobada y en uso
 
-ALTERNATIVES CONSIDERED:
+ALTERNATIVAS CONSIDERADAS:
   - Wise + Factura E — funciona pero subóptimo a este volumen (~$240 dejados sobre la mesa)
   - Deel + ARS direct — operativamente más simple pero costo más alto + platform withholding
   - USDT via VASP — cliente no ofrece USDT, no aplicable
   - ❌ Blue dollar / crypto informal — REFUSED
 
-DECISION: Mercury + MEP via broker (Grupo SBS)
+DECISIÓN: Mercury + MEP via broker (Grupo SBS)
 
-DECISION RATIONALE:
+RATIONALE DE DECISIÓN:
   Volumen del invoice + trajectory mensual justifica overhead del MEP route. Spread MEP vs oficial
   estimado $240-280 USD por invoice supera el broker fee + wire fee (~$25-90 total). Critical
   flag adyacente: RI transition imminent — Q3 2026.
 
 CONFIDENCE: 78%
 
-FX RATE SNAPSHOT (May 2026 calibration):
+SNAPSHOT TIPO DE CAMBIO (calibración mayo 2026):
   Oficial 1,395 | MEP 1,418 | Wise mid 1,385 | USDT VASP 1,445
 
-DOCUMENTS TO RETAIN:
+DOCUMENTOS A RETENER:
   - Factura E #N
   - Mercury statement showing $8,000 USD inbound + outbound wire to AR bank
   - Wire confirmation Mercury → cuenta argentina USD
@@ -243,7 +243,7 @@ DOCUMENTS TO RETAIN:
   - Contrato firmado con SaaS GmbH
   - Email confirmación payment method del cliente
 
-NEXT REVIEW TRIGGER:
+PRÓXIMO REVIEW TRIGGER:
   CRÍTICO — agendar reunión contador esta semana para RI transition. YTD post-invoice
   excede cat I; trayectoria proyecta superar cat K mid-Q3. Mejor planificar la transición
   que tener AFIP forzarla.
@@ -263,11 +263,11 @@ NEXT REVIEW TRIGGER:
 
 **Output del specialist:**
 
-### Mode Switch Notice
+### Cambio de Modo
 
 He detectado señales de notificación AFIP — vista por inconsistencias 2024. **Cambio a modo Audit Response — no voy a recomendar routing hasta que esto esté resuelto.** Vos primero respondés a esta vista, después armamos routing futuro.
 
-### Trigger Identified
+### Trigger Identificado
 
 - **Tipo**: Vista (comunicación inicial de revisión, NO intimación con monto reclamado todavía).
 - **Fundamento**: análisis de inconsistencias entre declaraciones juradas 2024 y movimientos bancarios detectados via SIRA.
@@ -277,7 +277,7 @@ He detectado señales de notificación AFIP — vista por inconsistencias 2024. 
 
 **Severity assessment: media-alta.** Es vista (no intimación con monto), o sea AFIP está pidiendo aclaraciones — todavía no afirma evasión. Pero las inconsistencias SIRA son lo que normalmente precede a una intimación si la respuesta es débil o incompleta.
 
-### Documents to Pull (priority-ordered)
+### Documentos a Recopilar (orden de prioridad)
 
 1. **Facturas E emitidas durante 2024** (PDFs + records del sistema AFIP). Si hubo Facturas C o B también, todas.
 2. **Statements de cuentas bancarias 2024** — todos los bancos donde recibiste fondos. Si tenés Wise, Payoneer, Mercury, Deel — descargá CSVs anuales.
@@ -288,7 +288,7 @@ He detectado señales de notificación AFIP — vista por inconsistencias 2024. 
 7. **Comprobantes de pagos cuotas mensuales monotributo 2024**.
 8. **Si hubo conversiones ARS** — comprobantes de cualquier broker, exchange, casa de cambio que hayas usado.
 
-### Suggested Response Language
+### Lenguaje de Respuesta Sugerido
 
 Empezá la respuesta formal con esto, ajustá los datos específicos:
 
@@ -308,7 +308,7 @@ Empezá la respuesta formal con esto, ajustá los datos específicos:
 
 > Quedo a disposición para cualquier aclaración adicional que se requiera. Saludos cordiales."
 
-### What NOT to Say
+### Lo Que NO Hay Que Decir
 
 - **NO mencionar** detalles de tu lógica de routing (por qué elegiste Wise vs MEP, por qué USDT en algún momento). AFIP no preguntó eso.
 - **NO ofrecer** información de períodos fiscales anteriores ni futuros. Solo 2024.
@@ -317,7 +317,7 @@ Empezá la respuesta formal con esto, ajustá los datos específicos:
 - **NO mencionar** voluntad de "cerrar" el caso pagando algo. Si AFIP escala a intimación con monto, el cálculo se hace en ese momento, no preventivo.
 - **NO pasar más documentación de la que pidieron**. Pidieron facturas, cobros, conciliación bancaria — eso. Si hay otras cosas que podrían explicar inconsistencias, esperá a que las pregunten.
 
-### Contador / Abogado Trigger
+### Trigger Contador / Abogado
 
 **Contador (sí, ahora):**
 - Mejor que la respuesta sea revisada por contador antes de presentarla. Costo $50-150 USD por la consulta + revisión del escrito y la documentación.
@@ -331,7 +331,7 @@ Empezá la respuesta formal con esto, ajustá los datos específicos:
 
 **No es necesario abogado para esta vista todavía.** Si la respuesta es completa y bien documentada, lo más probable es que AFIP cierre el procedimiento sin escalar.
 
-### Decision Trace
+### Trazabilidad de la Decisión
 
 - Mode switch detectado: keywords "vista", "inconsistencias", "intima", "plazo", "SIRA", "documentación".
 - Severity assessment: media-alta. Es vista (etapa inicial), no intimación con monto, pero las inconsistencias SIRA son trigger que precede a intimaciones formales.
@@ -349,11 +349,11 @@ Empezá la respuesta formal con esto, ajustá los datos específicos:
 
 **Output del specialist:**
 
-### YTD Summary
+### Resumen YTD
 
 Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 2026: **~$42,000 USD** (~59.5M ARS @ MEP 1.418). Distribución: Wise (mayoría) + algún Deel. Promedio mensual: ~$4,200 USD/mes.
 
-### Cat Projection
+### Proyección de Cat
 
 - **Techo cat G actual**: ~62M ARS = ~$43,729 USD @ MEP.
 - **YTD a octubre**: ~$42K = **~96% del techo cat G**. Estás al filo.
@@ -363,7 +363,7 @@ Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 20
 
 **Conclusión cat:** terminás el año en **cat H si recategorizás proactivamente ahora** o cuando llegue agosto 2026 te recategoriza ARCA con multa por sub-cat-ización.
 
-### RI Transition Trigger Analysis
+### Análisis Trigger Transición a RI
 
 **¿Conviene saltar a RI ahora?**
 
@@ -387,7 +387,7 @@ Cálculo costo-beneficio aproximado:
 
 **Recomendación: NO saltar a RI todavía. Recategorizar a cat H proactivamente.**
 
-### Recommended Actions Q4
+### Acciones Recomendadas Q4
 
 1. **[Esta semana]** Recategorizar proactivamente de cat G a cat H en AFIP. Trámite online (~15 minutos). Te evita la multa por sub-cat-ización en agosto 2026.
 2. **[Próximas 2 semanas]** Reconciliá invoicing YTD: contá Facturas E + montos + cotizaciones + Wise/Deel inflows. Confirmá que el match es 1:1 (sin gaps, sin duplicados).
@@ -395,7 +395,7 @@ Cálculo costo-beneficio aproximado:
 4. **[Q1 2027]** Si proyectás que 2027 va a estar arriba de $55-60K USD/año (techo cat I), agendá reunión con contador en enero para RI transition antes de que sea forzada.
 5. **[Decisión opcional]** Si querés ganar tiempo, el invoicing de noviembre-diciembre podés timear-lo: emitir facturas en diciembre que se cobran en enero significa que los inflows de enero cuentan para 2027, no 2026. Pero **no** retroactivar: emitirlas en 2027 si los servicios fueron prestados en 2026 = problema. Esto es a discutir con contador, no acción unilateral.
 
-### Decision Trace
+### Trazabilidad de la Decisión
 
 - Mode detected: Year-End Reconciliation. Strong signals: total YTD facturado, mes octubre (Q4 trigger), pregunta sobre cat de cierre + RI transition.
 - Cat projection clara: cierre 2026 = exceso cat G por $7-9K USD. Recategorizar a H necesario.

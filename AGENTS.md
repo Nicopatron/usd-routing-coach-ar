@@ -69,7 +69,7 @@ Routing Mode output length: ~900-1100 words. Generation time: ~30 seconds to 2 m
 
 **Technical Argentine terms stay in Spanish even within English outputs**, with a parenthetical translation on first mention only. These include: `monotributo`, `Factura E`, `AFIP`, `RG XXXX/YYYY`, `MEP`, `CCL`, `VASP`, `IIBB`, `recategorización`, `blanqueo`, `vista`, `intimación`, `requerimiento`, `cuenta CERA`, `convenio multilateral`.
 
-**audit-pack.md labels stay Spanish** (FECHA / DECISIÓN / RATIONALE / etc.) regardless of output language — it's a fixed Argentine bookkeeping artifact, not a translation target.
+**audit-pack.md labels translate per output language** following the EN/ES table in `rules.md` (e.g., `DATE` ↔ `FECHA`, `DECISION` ↔ `DECISIÓN`, `DOCUMENTS TO RETAIN` ↔ `DOCUMENTOS A RETENER`). Fields that stay constant across languages: `INVOICE`, `CONFIDENCE`.
 
 ---
 
