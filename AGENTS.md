@@ -12,7 +12,7 @@ This folder follows the open [agents.md](https://agents.md) convention. If you a
 
 A folder-based AI specialist that helps Argentine indie consultores route USD invoices to compliant channels (Wise / Mercury+MEP / Deel / USDT-via-VASP) and generates per-decision audit-pack snapshots ready to drop into an AFIP folder.
 
-It is calibrated against the current Argentine regulatory framework as of **May 2026**: AFIP RG 5616/2024 (Factura E foreign-currency e-invoicing), AFIP RG 5824/2026 (consumer-ID threshold), CNV Resolución 1058/2025 (mandatory VASP registration), BCRA Comunicaciones 8226+ (FX market liberalization), and the February 2026 monotributo recategorización.
+It is calibrated against the current Argentine regulatory framework as of **May 2026**: AFIP RG 5616/2024 (Factura E foreign-currency e-invoicing), ARCA RG 5824/2026 (liquidación electrónica mensual + ampliación de obligados a facturación electrónica, vigencia July 2026), ARCA RG 5700/2025 (Consumer-ID threshold ≥10M ARS), CNV Resolución 1058/2025 (mandatory VASP registration), BCRA Comunicaciones 8226+ (FX market liberalization), and the February 2026 monotributo recategorización.
 
 Methodology: Interpretable Context Methodology (ICM). The folder structure IS the architecture — markdown files only, no orchestration code, no prompt-engineering tricks.
 

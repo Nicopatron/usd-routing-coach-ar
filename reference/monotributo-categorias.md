@@ -125,9 +125,13 @@ ARCA mira últimos 12 meses móviles. Un consultor que ve "mi año fiscal está 
 
 Aumento estimado de topes 10-15% por IPC medido Feb-Jul 2026. Cat K probablemente subiría a ~120-125M ARS. Esto le da más aire a high-volume consultores antes del salto a RI.
 
-### RG 5824/2026 — Consumer-ID threshold (efectivo July 1, 2026)
+### RG 5824/2026 — Liquidación electrónica mensual + ampliación de obligados (efectivo July 1, 2026)
 
-Para Facturas a final-consumers ≥10M ARS hay que reportar DNI/CUIL/CDI del receptor. Para consultores monotributistas facturando export-services a clientes externos esto **NO aplica** directamente (Factura E a empresa externa no es a final consumer). Pero si tenés algún cliente local mayor a esa cifra, corresponde.
+ARCA RG 5824/2026 (BO 2026-02-13) introduce la modalidad de comprobante de liquidación electrónica mensual y amplía el universo de obligados a emitir comprobantes electrónicos (directores SA, gerentes SRL, profesionales en juicios pierden la excepción). Para consultores monotributistas exportando servicios el impacto operativo es bajo — Factura E ya es electrónica.
+
+### RG 5700/2025 — Consumer-ID threshold ≥10M ARS (vigente desde mayo 2025)
+
+Para Facturas a consumidor final ≥10M ARS hay que identificar al receptor con DNI/CUIL/CDI o pasaporte. Para consultores monotributistas facturando export-services a clientes externos esto **NO aplica** directamente (Factura E a empresa externa no es a consumidor final). Si tenés algún cliente local mayor a esa cifra, corresponde.
 
 ### Pre-llenado de declaraciones IVA (rollout July 2026)
 

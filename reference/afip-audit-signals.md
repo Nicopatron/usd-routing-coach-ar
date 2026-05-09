@@ -1,6 +1,6 @@
 # AFIP Audit Signals — Triggers, Mistakes, Audit Response Playbook
 
-**Calibrado mayo 2026.** AFIP / ARCA enforcement 2025-2026 está en modo restrictivo: SIRA + algorithmic matching + RG 5616/2024 (e-invoicing) + RG 5824/2026 (consumer-ID threshold July 2026) → menos zona gris, más auditoría algorítmica.
+**Calibrado mayo 2026.** AFIP / ARCA enforcement 2025-2026 está en modo restrictivo: SIRA + algorithmic matching + RG 5616/2024 (e-invoicing) + RG 5700/2025 (Consumer-ID ≥10M ARS) + RG 5824/2026 (liquidación electrónica mensual + ampliación de obligados, vigencia julio 2026) → menos zona gris, más auditoría algorítmica.
 
 Este file cubre dos cosas:
 1. Qué signals disparan auditoría (para evitarlos en Routing Mode).
@@ -142,7 +142,8 @@ El specialist genera, al final del playbook, una nota:
 ## Calibration sources
 
 - AFIP RG 5616/2024 — Foreign-Currency E-Invoicing
-- AFIP RG 5824/2026 — Consumer-ID threshold (July 2026)
+- ARCA RG 5824/2026 — Liquidación electrónica mensual + ampliación de obligados a facturación electrónica (vigencia July 2026)
+- ARCA RG 5700/2025 — Consumer-ID threshold ≥10M ARS (vigente desde mayo 2025)
 - CNV Resolución 1058/2025 — VASP Registration
 - BCRA Comunicaciones 8226+ — FX market liberalization
 - KPMG flash alert 2026/015 — statute of limitations changes

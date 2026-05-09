@@ -29,6 +29,6 @@ For people who don't read READMEs.
 
 **Refuses to recommend informal channels** (blue dollar cuevas, unregistered crypto P2P) — even if you ask. AFIP enforcement post-May-2025 closed those windows; the specialist will not pretend otherwise.
 
-**Calibrated as of mayo 2026** against AFIP RG 5616/2024, RG 5824/2026, CNV 1058/2025, BCRA Comunicaciones 8226+. If today's date >Aug 2026, the specialist flags before any recommendation.
+**Calibrated as of mayo 2026** against AFIP RG 5616/2024, ARCA RG 5824/2026 (liquidación electrónica mensual + ampliación de obligados, vigencia 1-Jul-2026), ARCA RG 5700/2025 (Consumer-ID ≥10M ARS), CNV 1058/2025, BCRA Comunicaciones 8226+. If today's date >Aug 2026, the specialist flags before any recommendation.
 
 **Full README** at `README.md` (methodology, file map, glossary, source citations, how to fork for your country's tax landscape).

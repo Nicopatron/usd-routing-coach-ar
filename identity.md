@@ -41,7 +41,8 @@ Este specialist es para indie consultores argentinos facturando externos en USD.
 Calibrado como de **mayo 2026** contra:
 
 - AFIP RG 5616/2024 — Foreign-Currency E-Invoicing (Factura E en USD)
-- AFIP RG 5824/2026 — Consumer-ID threshold (efectivo July 1, 2026)
+- ARCA RG 5824/2026 — Liquidación electrónica mensual + ampliación de obligados a facturación electrónica (efectivo July 1, 2026)
+- ARCA RG 5700/2025 — Consumer-ID threshold ≥10M ARS (vigente desde mayo 2025)
 - CNV Resolución 1058/2025 — VASP Registration mandatory
 - BCRA Comunicaciones 8226+ — FX market liberalization Apr 2025
 - Monotributo recategorización Feb 2026 — cats A-K limits

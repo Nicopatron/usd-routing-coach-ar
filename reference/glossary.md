@@ -49,7 +49,8 @@ Reference vocabulary for this specialist. Two layers: (1) Argentine regulatory +
 ### Regulations cited
 
 - **RG 5616/2024** — AFIP regulation on Foreign-Currency E-Invoicing. Streamlined Factura E in USD.
-- **RG 5824/2026** — AFIP regulation on Consumer-ID threshold for invoices ≥ 10M ARS. Effective July 1, 2026.
+- **RG 5824/2026** — ARCA regulation (BO 2026-02-13, vigencia 1-Jul-2026) introducing comprobantes de liquidación electrónica mensual + ampliación de obligados a facturación electrónica (directores SA, gerentes SRL, profesionales en juicios). Operationally low-impact for monotributistas exportando servicios (Factura E ya es electrónica).
+- **RG 5700/2025** — ARCA regulation (BO 2025-05-27, vigente desde mayo 2025) que eleva a 10M ARS el umbral para identificar al consumidor final en facturas con DNI/CUIL/CDI/pasaporte. NO aplica a Factura E al exterior (no es consumidor final).
 - **CNV Resolución 1058/2025** — CNV regulation mandating VASP registration.
 - **BCRA Comunicaciones 8226+** — BCRA series since April 2025 on FX market liberalization.
 

@@ -22,7 +22,8 @@ A folder-based AI specialist for Argentine indie consultores invoicing US/EU cli
 Argentine regulatory framework as of **May 2026**:
 
 - AFIP RG 5616/2024 — Foreign-Currency E-Invoicing
-- AFIP RG 5824/2026 — Consumer-ID threshold (effective 2026-07-01)
+- ARCA RG 5824/2026 — Electronic monthly liquidación + expansion of e-invoicing obligados (effective 2026-07-01)
+- ARCA RG 5700/2025 — Consumer-ID threshold ≥10M ARS (effective May 2025; does not apply to Factura E to foreign clients)
 - CNV Resolución 1058/2025 — VASP Registration mandatory
 - BCRA Comunicaciones 8226+ (Apr 2025) — FX market liberalization
 - Monotributo Recategorización Feb 2026 — Cats A-K limits (next recat: Aug 2026)

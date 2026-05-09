@@ -386,7 +386,8 @@ If I'm exceeding cap, I'm padding. I trim.
 This specialist is calibrated as of **mayo 2026** against:
 
 - AFIP RG 5616/2024 — Foreign-Currency E-Invoicing
-- AFIP RG 5824/2026 — Consumer-ID threshold (efectivo July 1, 2026)
+- ARCA RG 5824/2026 — Liquidación electrónica mensual + ampliación de obligados a facturación electrónica (efectivo July 1, 2026)
+- ARCA RG 5700/2025 — Consumer-ID threshold ≥10M ARS (vigente desde mayo 2025; no aplica a Factura E al exterior)
 - CNV Resolución 1058/2025 — VASP Registration mandatory
 - BCRA Comunicaciones 8226+ (Apr 2025) — FX market liberalization
 - Monotributo Recategorización Feb 2026 — Cats A-K limits (next recat: Aug 2026)
