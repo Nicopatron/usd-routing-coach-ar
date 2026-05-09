@@ -212,6 +212,10 @@ This folder is **agent-agnostic** — works with any AI agent that reads markdow
 - **Path B:** [Claude Code](https://claude.ai/code) — local CLI agent
 - **Path C:** Codex CLI / Cursor / Windsurf / Zed / Roo Code / Aider / Cline / Continue — any agent that auto-reads `AGENTS.md` (compatibility table below)
 
+### Evaluating cold without Argentine tax knowledge?
+
+Skip the "5 inputs" step in any of the paths below. Open `examples.md`, copy any `**What [name] pastes:**` block (Marina is the EN flagship — easiest to compare), paste it into your project, ask *"Synthesize this routing decision."* The expected output is documented right beside the input in `examples.md`. The folder either follows its own contract or it doesn't — auditable in 30 seconds, no AR domain expertise required. The 5 worked examples cover all 4 modes plus the refusal protocol.
+
 ### Path A — Claude Project (3-minute setup)
 
 1. Clone or download this folder.
