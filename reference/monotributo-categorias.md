@@ -28,6 +28,16 @@ Fuentes verificadas: [ARCA — Categorías oficiales](https://www.afip.gob.ar/mo
 
 **La categoría K es el techo absoluto del régimen.** Superar el límite K = salida obligatoria del monotributo y pase a Responsable Inscripto (RI).
 
+### Servicios vs venta de cosas muebles — dual-track de límites
+
+Monotributo tiene **dos sets de límites distintos**: el de **prestaciones de servicios** (la tabla de arriba) y el de **venta de cosas muebles**, que tiene topes más altos por categoría. La distinción importa si el operator vende productos digitales (plug-ins, templates, licencias de software, SaaS):
+
+- **Servicios profesionales, consultoría, desarrollo, copywriting, diseño** → cae bajo prestaciones de servicios. Aplica la tabla de arriba.
+- **Cesión de licencias de software (plug-ins, templates, SaaS, productos digitales)** → convención predominante en AR practice = servicios (cesión de derechos = service-like activity). Algunos contadores categorizan bajo venta de cosas muebles si el producto es "off-the-shelf" sin servicio asociado. **Antes de routing en estos casos: confirmar con contador la categorización aplicable** — la elección afecta el techo y el concepto que va en la Factura E.
+- **Productos físicos** → fuera del scope target del folder (indie consultores facturando services/intangibles a clientes externos).
+
+Si un consultor argumenta una operación bajo "venta de cosas muebles", los límites de cat pueden ser ~25-35% más altos que la tabla de servicios — pero la mis-categorización para AFIP es un audit trigger fuerte. Practice predominante para developers AR vendiendo productos digitales: **servicios** (más simple, menos sujeto a interpretación AFIP).
+
 ### Cómo se calcula el límite
 
 El límite es **facturación bruta acumulada en los últimos 12 meses móviles** — no calendario. ARCA mira invoice-por-invoice contra los 12 meses anteriores, no Jan-Dec del año fiscal. Esto matters para el routing: un invoice grande en julio puede empujar el rolling-12 sobre el límite incluso si Jan-Dec todavía da bien.
