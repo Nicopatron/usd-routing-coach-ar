@@ -66,7 +66,7 @@ USDT via Lemon is operationally available but not recommended here — adds repo
 ### Execution Checklist
 
 1. **[Day 0 — today]** Confirm with the new fintech client that Wise transfer is acceptable. Send them Wise account details (USD multi-currency, routing number for ACH).
-2. **[Day 1]** Issue Factura E #N to the new client's legal entity at the official AFIP exchange rate of the issuance day. Document the cotización (exchange rate quote) on the invoice.
+2. **[Day 1]** Issue Factura E #N to the new client's legal entity at the official AFIP exchange rate of the issuance day. Document the exchange rate quote on the invoice.
 3. **[Day 1-2]** Client initiates Wise transfer ($4,000 USD).
 4. **[Day 2-3]** USD lands in Wise multi-currency account. Hold in USD if no immediate ARS need; convert at Wise mid-market rate when cash is required.
 5. **[Monthly]** Reconcile Factura E + Wise statement entry + downstream ARS conversion in monotributo records.

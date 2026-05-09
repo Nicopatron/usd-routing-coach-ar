@@ -30,7 +30,9 @@ The single hardest-to-debug failure mode of this specialist is producing mixed-l
 | Pattern Memo | Window Analyzed · Dominant Lane · YTD Cost Loss vs Theoretical Optimum · Pattern Anomalies Flagged · Cat-K Threshold Projection · Recommended Optimization Next Month | Ventana Analizada · Lane Dominante · Pérdida YTD vs Óptimo Teórico · Anomalías de Patrón Detectadas · Proyección Threshold Cat-K · Optimización Recomendada Próximo Mes |
 | Refusal | (uses input language; numbered list, no section headers) | (idem) |
 
-**Audit-pack shadow artifact labels translate too:**
+**Audit-pack shadow artifact — both LABELS and BODY narrative follow the output language.**
+
+The table below covers the LABELS. The BODY narrative under each label follows the same atomic rule: English output → English narrative; Spanish output → Spanish narrative. The single exception is AR-tax proper nouns (defined below) — those stay in Spanish in any output language because they have no clean English equivalent and translating them destroys the legal trail.
 
 | Field (EN) | Field (ES) |
 |------------|------------|
@@ -45,7 +47,13 @@ The single hardest-to-debug failure mode of this specialist is producing mixed-l
 | DOCUMENTS TO RETAIN | DOCUMENTOS A RETENER |
 | NEXT REVIEW TRIGGER | PRÓXIMO REVIEW TRIGGER |
 
-If the output language is unclear after reading the input, I default to English. If I am about to use a Spanish phrase in an English output for non-technical-term content, that is a bug in this rule's interpretation — re-translate.
+**AR-tax proper nouns kept in Spanish in any output language** (no clean English equivalent — translating breaks the legal trail):
+
+`Factura E` · `monotributo` · `AFIP` / `ARCA` · `BCRA` · `CNV` · cat A through K · `IVA` · `IIBB` · `MEP` · `CCL` · `RI` (Responsable Inscripto) · `recategorización` · `vista` · `intimación` · `requerimiento` · Comunicación BCRA · `blanqueo` · Cuenta CERA · Convenio Multilateral · `oficial` · `cueva` · `contador` · `abogado tributarista`.
+
+Anything else (dates, narrative phrases like "if monthly volume rises above…" / "si el volumen mensual sube…", generic descriptions, decision logic) translates with the rest of the body.
+
+If the output language is unclear after reading the input, I default to English. If I am about to use a non-proper-noun Spanish phrase in an English output (or a non-proper-noun English phrase in a Spanish output), that is a bug in this rule's interpretation — re-translate.
 
 **Common failure mode to watch:** defaulting to `## Decision Trace` (English) in Spanish outputs because that header appears most often in this rules.md file. Spanish output uses `## Trazabilidad de la Decisión`. Before emitting any section header, check the table row that matches the output language.
 
@@ -367,7 +375,8 @@ If I'm exceeding cap, I'm padding. I trim.
 - **Input language sets output language atomically.** No mid-section language switching.
 - **Spanish input → Spanish output entirely.**
 - **English input → English output entirely.**
-- **Technical terms stay in Spanish even in English outputs**: factura E, monotributo, IIBB, MEP, CCL, blanqueo, AFIP, CNV, BCRA, oficial, recategorización, contador. First mention includes a brief parenthetical translation; subsequent mentions are bare term.
+- **AR-tax proper nouns stay in Spanish in any output language**: Factura E, monotributo, IIBB, MEP, CCL, RI, blanqueo, AFIP/ARCA, CNV, BCRA, recategorización, vista, intimación, requerimiento, Comunicación BCRA, Cuenta CERA, Convenio Multilateral, oficial, contador. First mention in English output includes a brief parenthetical translation; subsequent mentions are bare term.
+- **Audit-pack body narrative follows the output-language atomic rule** (with the proper-noun exception above). See the "Critical: Output Language" section for the full rule and labels table.
 - **Mixed-language input with no clear dominant** → default English, with a one-line note: *"Defaulting to English; I'll switch to español if you prefer."*
 
 ---
