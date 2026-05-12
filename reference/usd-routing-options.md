@@ -51,7 +51,13 @@
 
 **Cost example (May 2026):**
 
-Invoice $5.000 USD → Wise convierte a 1.385 ARS/USD (mid-market) – 0.8% Wise fee → 6.870.000 ARS netos. Si hubieras hecho oficial-bank-direct: 6.975.000 ARS pero con audit overhead. Si MEP: 7.090.000 ARS pero con broker overhead. Para invoices <$10K, Wise gana en cost-vs-friction.
+Invoice $5.000 USD → Wise convierte a 1.385 ARS/USD (mid-market) – 0.8% Wise fee → **6.870.000 ARS netos**.
+
+Comparativa cruda contra alternativas (mismas $5K, sin contar tiempo):
+- **Oficial-bank-direct (sin Wise):** 5.000 × 1.395 = 6.975.000 ARS gross. Bank wire fee típico US→AR $15-25 USD + AR-side liquidación bank fee 0,5-1,5% → ~6.900.000 ARS netos. Rate nominal mejor que Wise (1.395 > 1.385), pero el fee absorbe la diferencia. **Por qué no es default:** el AR-side bank pide documentación cada vez (Factura E + contrato + override de cliente AML), settlement 5-10 días, friction operacional alta para invoices ad-hoc.
+- **MEP via broker (Mercury+SBS path):** 5.000 × 1.418 × 0.995 − $20 wire = ~7.040.000 ARS netos. **+170.000 ARS (~$120 USD) vs Wise**, pero requires Mercury USD account funded + broker compliance + 5-10 días wire + 1-2 días MEP settlement. **Por qué no es default <$10K:** el time-cost del operator (resolver compliance docs cada vez) > el spread captado en este band.
+
+**Para invoices <$10K, Wise gana en cost-vs-friction** — no porque el rate sea mejor (no lo es), sino porque el friction (1 click, 1-2 días settlement, audit-clean) supera la diferencia de spread. A partir de $10-15K mensuales recurrentes, MEP supera porque el spread captado amortiza el setup-once. Decisión real es: ¿este invoice es ad-hoc o parte de pattern recurrente?
 
 ---
 
@@ -68,7 +74,7 @@ Mantener USD en Wise no es "ingreso no declarado" — el ingreso lo declarás cu
 
 **Failure modes:**
 
-- **Bienes Personales si superás threshold de activos en exterior:** Wise USD account cuenta como activo en exterior. Threshold 2026: ~$50K USD acumulado.
+- **Bienes Personales si tu patrimonio total supera el mínimo no imponible:** Wise USD account cuenta como activo en exterior. **Mínimo no imponible 2026 (fiscal year 2025): ARS 384.728.044,57** (~$271K USD @ MEP 1.418, ~$276K USD @ oficial). Si tu patrimonio total (Wise + AR bank + propiedades + auto + crypto) supera ese monto al 31/12, te inscribís en Bienes Personales y declarás. Casa habitación exenta hasta ARS 1.346.548.155,99. Para alícuotas y escalas: [ARCA Bienes Personales](https://www.afip.gob.ar/gananciasYBienes/bienes-personales/conceptos-basicos/alicuotas.asp). Verificá con contador antes del 31/12 si te aproximás al threshold.
 - **Devaluación inversa (poco probable May 2026):** Si ARS se aprecia inesperadamente, mantener USD pierde plata vs convertir.
 
 ---
@@ -104,7 +110,11 @@ Mantener USD en Wise no es "ingreso no declarado" — el ingreso lo declarás cu
 
 **Cost example:**
 
-Invoice $20.000 USD → Mercury → wire ($20 fee) → AR bank USD account → MEP via broker (1.418 ARS/USD, 0.5% broker fee) → ~28.221.500 ARS netos. Wise alternativo daría ~27.700.000. **Diferencia: ~520.000 ARS (~$370 USD) a favor de MEP.** Solo justifica el friction si vas a hacer esto cada mes y >$15K mensuales.
+Invoice $20.000 USD → Mercury → wire ($20 fee, ARS-equivalent ~28K) → AR bank USD account ($19.980 USD net) → MEP via broker (1.418 ARS/USD gross, 0.5% broker fee). Math: 19.980 × 1.418 × 0.995 = **~28.190.000 ARS netos**.
+
+Wise alternativo ($20.000 USD): mid 1.385 × (1 − 0.008 Wise fee) = **~27.478.000 ARS netos**.
+
+**Diferencia: ~712.000 ARS (~$502 USD a MEP 1.418) a favor de MEP.** Solo justifica el friction si vas a hacer esto cada mes y >$15K mensuales — y si tu cushion de tiempo absorbe los 5-10 días de wire + 1-2 días extra de MEP settlement. Para invoices ad-hoc < $15K, Wise gana en cost-vs-friction trade-off (ver siguiente sección sobre Wise vs MEP rate detail).
 
 ---
 
@@ -231,16 +241,26 @@ Decision Trace registra: `override declined — refused channel, no playbook`. S
 
 ## Decision tree resumen para Routing Mode
 
+Volumen + recurrencia decide PRIMERO; medio de pago del cliente decide SEGUNDO. Esto evita el bug de rutear a Wise un consultor con >$10K/mo solo porque el cliente ofrece USDT y no hay urgencia.
+
 ```
-Invoice viene → ¿VASP-registered crypto disponible?
-                ├─ Sí → ¿Cliente paga en USDT?
-                │       ├─ Sí, urgencia → USDT-VASP lane
-                │       └─ No urgencia → Wise lane (default)
-                └─ No → ¿Volumen mensual >$10K Y broker disponible?
-                        ├─ Sí → Mercury+MEP lane
-                        └─ No → Wise lane (default)
-                
+Invoice viene
+   │
+   ├─ ¿Volumen mensual recurrente >$10K Y broker MEP disponible Y Mercury USD account funded?
+   │     ├─ Sí → ¿Cliente paga en USDT con urgencia explícita?
+   │     │        ├─ Sí, urgencia + VASP-registered → USDT-VASP lane
+   │     │        └─ No → Mercury+MEP lane
+   │     └─ No → siguiente branch
+   │
+   ├─ ¿Cliente paga en USDT con urgencia explícita (settlement <48h)?
+   │     ├─ Sí + VASP-registered → USDT-VASP lane
+   │     └─ No → siguiente branch
+   │
+   └─ Default → Wise + Factura E lane
+
 Cualquier branch → Confidence calibration + Audit pack shadow + Decision Trace
 ```
 
 **Default 80% del tiempo:** Wise + Factura E. El specialist tiene que justificar específicamente cuando recomienda otra lane.
+
+**Por qué volumen va primero:** un operator con $15K/mo recurrente captura ~$370 USD/invoice de diferencia vs Wise via MEP (per cost example arriba). Esa diferencia justifica el setup overhead Mercury+MEP. Rutear a Wise por defecto en ese band tira plata. La urgencia USDT es la excepción: si el cliente ya está pagando USDT y necesita settlement <48h, USDT-VASP gana al MEP (que toma 5-10 días wire + 1-2 settlement).

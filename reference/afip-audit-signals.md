@@ -57,7 +57,7 @@ Tener múltiples actividades dentro de monotributo es legal pero requiere coding
 
 ### Holding USD sustancial sin justificación
 
-Mantener Wise USD account con saldo >$50K USD acumulado puede triggerear Bienes Personales review si no está declarado como activo en exterior. Pre-BCRA-liberalization 2025 era más estricto; post liberalization es más permisivo pero el threshold sigue.
+Mantener Wise USD account (o cualquier activo en exterior) sin declarar en Bienes Personales cuando tu patrimonio total supera el mínimo no imponible es audit trigger. **Mínimo no imponible 2026 (fiscal year 2025): ARS 384.728.044,57** (~$271K USD @ MEP 1.418), oficializado por ARCA en el marco de actualización automática por inflación. Patrimonio total = Wise + AR bank balances + propiedades + auto + crypto en VASP + otros activos al 31/12. Casa habitación exenta hasta ARS 1.346.548.155,99. Pre-BCRA-liberalization 2025 era más estricto (Cuenta CERA reporting + percepción 35% RG 4815); post-liberalization el régimen de Bienes Personales sigue vigente con los thresholds actuales. Source: [ARCA Bienes Personales — Alícuotas](https://www.afip.gob.ar/gananciasYBienes/bienes-personales/conceptos-basicos/alicuotas.asp). Vencimiento DDJJ 2025: junio 2026.
 
 ### Crypto receipts sin tax basis documentation
 

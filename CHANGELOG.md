@@ -1,5 +1,45 @@
 # Changelog
 
+## v1.0.4 — Phase L deferred items resolved + Bienes Personales fix (2026-05-12)
+
+Patch release que cierra los 5 LOW items deferred al cerrar v1.0.3 Phase L. Mismo ciclo de trabajo, ~60 min wall-clock incluyendo WebSearch verification de regulación.
+
+### Critical regulatory fix
+
+- **BUG-013** `reference/usd-routing-options.md:71` + `reference/afip-audit-signals.md:60` — "$50K USD acumulado" Bienes Personales threshold era **factualmente wrong por factor 5x**. WebSearch verificó valor correcto contra ARCA: **mínimo no imponible 2026 (fiscal year 2025) = ARS 384.728.044,57 (~$271K USD @ MEP 1.418, ~$276K @ oficial)**. Casa habitación exenta hasta ARS 1.346.548.155,99. Vencimiento DDJJ junio 2026. Source: [ARCA Bienes Personales — Alícuotas](https://www.afip.gob.ar/gananciasYBienes/bienes-personales/conceptos-basicos/alicuotas.asp). Updated ambos files con cifra correcta + cita verificable + framing operacional (patrimonio total al 31/12, no solo USD acumulado).
+
+### Math precision fixes
+
+- **BUG-008** `reference/usd-routing-options.md:107` — $20K Mercury+MEP cost example recomputado con orden de operaciones explícito. Old: "~28.221.500 ARS netos" (math no cerraba ~30K off). New: "$19.980 USD (post wire fee) × 1.418 × 0.995 = ~28.190.000 ARS netos". Wise alternativo también recomputado con 0.8% Wise fee aplicado (vs original missing): $20.000 × 1.385 × 0.992 = ~27.478.000 ARS. Diferencia corregida: ~712.000 ARS (~$502 USD), reemplaza el "~520.000 ARS (~$370 USD)" inconsistente.
+
+### Logic / structural improvements
+
+- **BUG-007** `reference/mode-triage.md` table + heading — "ROUTING (default)" reframed a "ROUTING (primary mode)" para resolver semantic tension con `rules.md:72` "Never silently default". Added nota explícita: "primary describe frecuencia esperada (~70-80% pastes), NO una rule de 'if uncertain, route to Routing Mode'". Same reframe aplicado a heading § Routing Mode (default) → (primary).
+- **BUG-011** `reference/usd-routing-options.md:54` — Wise cost example expandido con comparativa cruda contra 2 alternativas (oficial-bank-direct + MEP via broker). Explicito: Wise gana <$10K NO por rate (oficial 1.395 > Wise mid 1.385) sino por friction (1 click, 1-2 días settlement, audit-clean) que supera diferencia de spread. A partir de $10-15K/mo recurrente, MEP supera porque setup-once amortiza. Decisión real es ad-hoc vs recurrente, no rate.
+- **BUG-014** `reference/usd-routing-options.md:235-241` — Decision tree restructured. Volumen + recurrencia decide PRIMERO; medio de pago del cliente decide SEGUNDO. Esto evita el bug original de rutear a Wise un consultor con >$10K/mo solo porque cliente ofrece USDT y no hay urgencia. Added nota explicativa: "$15K/mo recurrente captura ~$370 USD/invoice de diferencia via MEP; rutear a Wise default en ese band tira plata. La urgencia USDT es la excepción: si cliente paga USDT y necesita settlement <48h, USDT-VASP gana al MEP".
+
+### Files modified
+
+- `reference/usd-routing-options.md` — 4 fixes: BUG-008 (math), BUG-011 (cost-vs-friction), BUG-013 (Bienes Personales), BUG-014 (decision tree).
+- `reference/afip-audit-signals.md` — 1 fix: BUG-013 (Bienes Personales threshold + source).
+- `reference/mode-triage.md` — 1 fix: BUG-007 (primary mode reframe + clarifying note).
+- `identity-examples/MARINA-AUDIT.md` — Phase L "deferred" subsection promoted to "resolved" with detail per bug; final verdict updated.
+
+### Total Phase K + Phase L + v1.0.4 cycle
+
+- 9 council findings (Phase K, identity.md) → resolved via delete + merge
+- 18 adversarial findings (Phase L, 9 files) → ALL 18 resolved (13 in v1.0.3, 5 in v1.0.4)
+- 18 false positives (Phase L) → catalogados
+- 0 issues outstanding post-v1.0.4
+
+**Wall-clock total**: ~4 hs (Phase K 45 min + Phase L 60 min + v1.0.4 patch ~60 min + write-up + commits).
+
+### Lesson nueva (acumulado 26 → 27)
+
+**27. "Deferred LOW" puede ser deferred-en-context (no deferred-de-verdad)**. Phase L cerró con 5 LOW deferred argumentando "interpretive / minor / no bloquea Pareto contact". Pero la primera review post-commit reveló que uno de los "minor" (BUG-013) era un error factual 5x off (Bienes Personales $50K USD vs real $271K USD) — el tipo de error que un consultor AR real flagea en 30 segundos. **Pattern**: si un audit produce "deferred LOW", correr al menos un cross-check rápido (WebSearch + recompute) ANTES de aceptar el defer. Cost: ~60 min para los 5 acá. ROI: 1 error factual 5x off detectado = paga el cost solo. Defer real es solo para items que requieren scope nuevo (4to identity file, refactor templates), no para math o regulatory citations.
+
+---
+
 ## v1.0.3 — identity.md council audit (Phase K) + adversarial regression sweep (Phase L) (2026-05-13)
 
 Re-auditoría comp-3 con dos lentes complementarios:

@@ -652,17 +652,17 @@ No pasa cold-read AR consultor cat F→G. Dos razones:
 | BUG-024 | `monotributo-categorias.md:11` | Clarified "ajuste 14,28% IPC 2H 2025 — la fila K refleja la 14,30% aritmética post-redondeo". |
 | BUG-034 | `afip-audit-signals.md:22` | Rewrote "libro IVA digital opcional" clause — monotributistas NO están obligados a Libro IVA Digital; el desvío FX queda en reconciliación interna. |
 
-### REAL bugs deferred (5 de 18 — interpretive / minor)
+### REAL bugs deferred → todos resueltos en v1.0.4 (2026-05-12, mismo día)
 
-Documentados acá para promoción a v1.0.4 si surge bandwidth o si próximo external review los flagea:
+Originalmente deferred al cierre de Phase L. Promovidos a fix en el mismo ciclo de trabajo. Documentación detallada en CHANGELOG v1.0.4.
 
-| Bug | File:Line | Razón de defer |
-|-----|-----------|----------------|
-| BUG-007 | `mode-triage.md:9-11` + `rules.md:72` | "Routing Mode (default)" vs "Never silently default" — interpretive semantic tension. Resolver requiere decidir si "default" significa "fallback cuando ambigüedad permanece post-clarification" (compatible con never-silently-default) o "fallback silencioso" (incompatible). Decisión de diseño, no fix mechanical. |
-| BUG-008 | `usd-routing-options.md:107` | $20K Mercury arithmetic ~7K ARS off post-recompute. Within typical rounding ("~" notation) pero math estricta no cierra exacto. Defer recomputación full a v1.0.4. |
-| BUG-011 | `usd-routing-options.md:54` | Wise mid (1.385) shown below oficial (1.395) sin explicación sobre por qué Wise sigue siendo default si oficial da más ARS. Trade-off real está documentado a la siguiente línea ("audit overhead") pero el cost-vs-friction reasoning podría explicitarse más. Defer a comp-4 iteración. |
-| BUG-013 | `usd-routing-options.md:71` + `afip-audit-signals.md:60` | "$50K USD acumulado" Bienes Personales threshold sin cita a Ley/Decreto. Cross-file consistent. Defer hasta verificar Bienes Personales mínimo 2026 contra fuente oficial. |
-| BUG-014 | `usd-routing-options.md:235-241` | Decision tree branch ordering: VASP+USDT path skips volumen >$10K check. Recomendación correcta para low-volume + USDT-paying client pero loses generalization for high-volume same scenario. Defer restructure a v1.0.4. |
+| Bug | File:Line | Fix aplicado |
+|-----|-----------|--------------|
+| BUG-007 | `mode-triage.md:9-11` + `Routing Mode (primary)` heading | Reframed "(default)" → "(primary mode)" en table y en heading. Added nota: "primary describe frecuencia esperada (~70-80% pastes), NO una rule de 'if uncertain, route to Routing Mode'". Resuelve semantic tension con rules.md:72 "Never silently default". |
+| BUG-008 | `usd-routing-options.md:107` | Recomputé math con orden de operaciones explícito: $19.980 USD (post wire fee) × 1.418 × 0.995 = ~28.190.000 ARS netos. Wise alternativo recomputado con Wise fee 0.8%: $20.000 × 1.385 × 0.992 = ~27.478.000 ARS. Diferencia ahora ~712.000 ARS (~$502 USD), cifra correcta vs stated 520K original. |
+| BUG-011 | `usd-routing-options.md:54` | Expandí cost example con comparativa cruda contra 2 alternativas (oficial-bank-direct + MEP), explicando por qué Wise gana en cost-vs-friction <$10K NO por rate (no lo es) sino por friction (1 click, audit-clean) que supera la diferencia de spread. |
+| BUG-013 | `usd-routing-options.md:71` + `afip-audit-signals.md:60` | WebSearch verificó Bienes Personales mínimo no imponible 2026 (fiscal year 2025) = **ARS 384.728.044,57** (~$271K USD @ MEP 1.418), NO $50K USD. El número original era **wrong por factor 5x**. Updated ambos files con cifra correcta + casa habitación exenta ARS 1.346.548.155,99 + link a ARCA Bienes Personales alícuotas + vencimiento DDJJ junio 2026. |
+| BUG-014 | `usd-routing-options.md:235-241` | Decision tree restructured: volumen + recurrencia decide PRIMERO; medio de pago del cliente SEGUNDO. Esto evita el bug de rutear a Wise un consultor con >$10K/mo solo porque cliente ofrece USDT y no hay urgencia. Added nota explicativa: "$15K/mo recurrente captura ~$370 USD/invoice diferencia vs Wise via MEP; rutear a Wise por defecto en ese band tira plata". |
 
 ### FALSE POSITIVES adjudicados (18)
 
@@ -696,8 +696,10 @@ El Debunker disproved correctamente y el Referee confirmó: BUG-004, 005, 006, 0
 | 5 LOW deferred documentados arriba con razón explícita | ✅ |
 | 18 FALSE POSITIVES catalogados | ✅ |
 
-### Final verdict Phase L
+### Final verdict Phase L + v1.0.4 patch
 
-✅ **PASS post Phase L con 5 LOW deferred**. Repo en mejor estado que post-Phase-K: 13 issues fixed (3 MEDIUM + 10 LOW), 5 LOW deferred con razón documentada, 18 false positives adjudicados. Total bugs Phase K+L cycle: 9 council findings (identity.md, resolved via delete) + 18 adversarial findings (13 fixed + 5 deferred) = **22 issues addressed across 2 phases en ~3 hs wall-clock**.
+✅ **PASS post Phase L + v1.0.4**. Repo en estado óptimo: 18/18 real bugs adjudicados via adversarial-review fixed (3 MEDIUM + 15 LOW), 0 deferred residuals, 18 false positives catalogados. Total Phase K+L+v1.0.4 cycle: 9 council findings (identity.md, resolved via delete) + 18 adversarial findings (13 v1.0.3 + 5 v1.0.4) = **22 issues addressed end-to-end en ~4 hs wall-clock** (Phase K 45 min + Phase L 60 min + v1.0.4 patch ~60 min incluyendo WebSearch verification de Bienes Personales).
 
-Si próximo external review (consultor AR real, Pareto contact, judge cold-read) flagea cualquier deferred LOW, promote a v1.0.4. Mientras tanto, repo está en mejor estado factual + regulatorio + bilingüe que cualquier versión previa.
+Critical regulatory verification logged: Bienes Personales 2026 mínimo no imponible = ARS 384.728.044,57 (~$271K USD), verificado contra ARCA — corrige error factual 5x previo ("~$50K USD" en 2 files).
+
+Si próximo external review flagea algo nuevo, promote a v1.0.5. Mientras tanto, repo en mejor estado factual + regulatorio + bilingüe + structural que cualquier versión previa.

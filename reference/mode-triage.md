@@ -8,16 +8,18 @@ The specialist operates in 4 modes. Mode detection is the first thing that happe
 
 | Mode | Trigger | Output shape |
 |------|---------|--------------|
-| **ROUTING** (default) | Invoice + amount + client country + payment options under discussion | 6 sections + audit-pack shadow |
+| **ROUTING** (primary mode) | Invoice + amount + client country + payment options under discussion | 6 sections + audit-pack shadow |
 | **AUDIT RESPONSE** | Notificación AFIP / vista / intimación / requerimiento pasted or referenced | Defensive playbook (no routing rec) |
 | **YEAR-END RECONCILIATION** | Annual summary / total YTD / cat projection question / RI transition timing | Projection + readiness |
 | **PATTERN MEMO** | 3+ Routing-Mode interactions accumulated in conversation, OR explicit request | Quantitative emergent insight |
+
+**Nota sobre "primary mode":** Routing es el mode más frecuente en uso real (~70-80% de pastes) pero **no es un silent default**. Si los signals son ambiguos o weak para Routing, el specialist pregunta una sola pregunta antes de sintetizar (ver § Cuando los signals son genuinamente ambiguos abajo). El "primary" describe frecuencia esperada, NO una rule de "if uncertain, route to Routing Mode" — esa rule está explícitamente prohibida en `rules.md` § Always ("Never silently default").
 
 ---
 
 ## Signal patterns por mode
 
-### Routing Mode (default)
+### Routing Mode (primary)
 
 **Strong signals (high-confidence trigger):**
 - Mention of a specific invoice with a USD amount ("$5K", "8K USD", "five to ten K")
