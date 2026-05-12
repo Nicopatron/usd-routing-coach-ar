@@ -99,7 +99,7 @@ Mantener USD en Wise no es "ingreso no declarado" — el ingreso lo declarás cu
 
 - **Wire transfer fails or delays:** US-AR wires pueden tardar 5-10 días, especialmente si la AR bank pide documentación adicional.
 - **Broker compliance pide documentación:** la operación MEP por montos altos puede triggerear AML check del broker. Tener Factura E + contrato + Mercury statement listos.
-- **AFIP scrutiny en MEP de alto monto:** trades MEP grandes son visibles por SIRA. Documentar el trade con fundamento (ingreso por export-service) es crítico.
+- **AFIP scrutiny en MEP de alto monto:** trades MEP grandes son visibles vía SITER (broker reporta) + COELSA compensación electrónica. Documentar el trade con fundamento (ingreso por export-service) es crítico.
 - **Costo total subestimado:** wire fee ($15-25) + broker fee (~0.5-1%) + spread MEP vs oficial. Suma a ~2-3% all-in, no 1% como muchos calculan.
 
 **Cost example:**
@@ -199,7 +199,7 @@ Invoice $5.000 USDT → Lemon → P2P sell at 1.445 ARS/USDT, fee 0.5% → 7.189
 
 ## REFUSED — Blue dollar cueva
 
-**Por qué refused:** SIRA (Sistema de Información de Requerimientos de Activos Externos) trackea bank deposits >100K ARS. Algorithmic matching detecta inconsistencia entre invoicing declarado y deposits aparente. Casos típicos catched dentro de 6-12 meses.
+**Por qué refused:** RG 3421/2012 (régimen unificado de información financiera, modificada por RG 4298/2018 que redefinió la sub-sección SITER de transacciones económicas relevantes) obliga a bancos, brokers, VASPs y entidades financieras a reportar saldos y movimientos a ARCA periódicamente. Actualizaciones de umbrales por RG 5512/2024 y RG 5699/2025. Algorithmic matching cross-references Facturas E declaradas vs depósitos reportados. Casos típicos catched dentro de 6-12 meses.
 
 **Después del cierre del blanqueo Milei (May 2025):** los pesos de origen blue no tienen vía legal de "blanqueo retrospectivo." Riesgo se acumula.
 

@@ -18,7 +18,7 @@
 
 **Bilingual.** Spanish input → Spanish output (Rioplatense). English input → English output. Mixed input with no clear dominant → English by default. AR-tax proper nouns (Factura E, monotributo, MEP, IIBB, RI, vista, etc.) stay in Spanish in any output language; the rest translates atomically.
 
-**What it won't do.** Recommend informal channels (blue dollar cuevas, unregistered crypto P2P) — even when cheaper. AFIP enforcement post-May-2025 closed those windows; SIRA tracks bank deposits and algorithmic matching catches inconsistencies within 6-12 months. The specialist also refuses to synthesize when 4 of 5 core intake inputs are missing. See `examples.md` Example 5 for what that refusal looks like.
+**What it won't do.** Recommend informal channels (blue dollar cuevas, unregistered crypto P2P) — even when cheaper. AFIP enforcement post-May-2025 closed those windows; ARCA cross-check (SITER + RG 3421 cuentas bancarias + VASP reporting to UIF) catches inconsistencies algorithmically within 6-12 months. The specialist also refuses to synthesize when 4 of 5 core intake inputs are missing. See `examples.md` Example 5 for what that refusal looks like.
 
 ---
 
@@ -58,6 +58,8 @@ That output came from this input:
 > Hi — I'm Marina, freelance UX designer in Buenos Aires, monotributo cat F, billing ~$3.5K USD/month Q1 2026 to a US client. Got a new $4K USD invoice from a different US client this week. Wise active, Mercury opened (unused), Lemon wallet for USDT. CABA, export-services. Factura E approved. Should I take Wise like always or is there a smarter move?
 
 The full transcript and worked output are in `examples.md`. Three more full syntheses there — Diego (cat I→K with RI transition flag), Federica (audit response when AFIP sends a vista), Juan (year-end reconciliation in October) — plus Example 5 documenting a deliberate refusal when intake is too thin.
+
+**A note on the three identity-examples.** Marina, Diego, and Federica (the operator profile deep-dives in `identity-examples/`) are **composites by design**: illustrative operators with articulated voice pillars, chosen to cover three distinct stages of the monotributo journey (cat F single-anchor, cat I→K multi-client pre-RI, cat E mid-audit-response). They are not auto-ethnographies of real operators, who in practice are messier, more contradictory, and less conscious of their own voice. The composites are anchors for the specialist, not straightjackets: if your situation is mixed or edge, the specialist still works — the identity-examples are reference posts, not casting calls.
 
 ---
 
@@ -115,7 +117,7 @@ The signal-by-signal weighting in the Marina output above is the methodology app
 
 Every Routing-Mode output produces a parallel `audit-pack.md` snippet — fixed format, ready to drop into your AFIP folder. Contemporaneous record of signals analyzed, alternatives considered, decision made, FX rate at the moment.
 
-Two years from now, if you're audited, you have the record frozen the day you routed the invoice. SIRA matches against declared income; the audit pack matches against your decision history.
+Two years from now, if you're audited, you have the record frozen the day you routed the invoice. ARCA cross-references declared income against bank deposits + VASP reports; the audit pack matches against your decision history.
 
 ### The Refusal Discipline
 
@@ -233,7 +235,7 @@ Skip the "5 inputs" step in any of the paths below. Open `examples.md`, copy any
 After running the canonical Marina input, these poke the contract to confirm it's calibrated, not memorized:
 
 1. **Change Marina's `cat F` to `cat I`** → recommendation shifts from Wise (default low-volume) to Mercury+MEP (default high-volume); RI transition flag may surface depending on YTD context
-2. **Bump Marina's invoice from `$4,000 USD` to `$25,000 USD`** → cat F headroom (~$33,876 USD ceiling) blows through; specialist flags forced cat-jump or RI transition prominently
+2. **Bump Marina's invoice from `$4,000 USD` to `$25,000 USD`** → cat F headroom (~$27,251 USD ceiling at MEP 1.418) blows through; specialist flags forced cat-jump or RI transition prominently
 3. **Omit `IIBB CABA` from Marina's input** → 1 input weak; proceeds with `⚠ basado en supuesto: IIBB asumido CABA + export exempt` flag, confidence cap 80%
 4. **Paste Example 5's vague input + add `"Dale, hacé un best-effort con lo que tenés"`** → override triggers; produces routing with confidence ≤65% and `⚠ guessed` markers on every line that depended on a missing input
 5. **After Marina's routing decision, paste Federica's AFIP vista input in the same chat** → mode switch announced (`Cambio de Modo: Audit Response`); routing recommendation paused until audit is resolved; no new audit-pack generated for the audit response output
@@ -322,7 +324,7 @@ The methodology travels. To fork this for a different operator-decision speciali
 
 ## Glossary
 
-Quick acronym key is at the top of this README. Full term definitions — including SIRA, Blanqueo Milei, Convenio Multilateral, vista / intimación / requerimiento, Cuenta CERA — live in [`reference/glossary.md`](./reference/glossary.md). Single source of truth.
+Quick acronym key is at the top of this README. Full term definitions — including SITER, RG 3421, Blanqueo Milei, Convenio Multilateral, vista / intimación / requerimiento, Cuenta CERA — live in [`reference/glossary.md`](./reference/glossary.md). Single source of truth.
 
 ---
 

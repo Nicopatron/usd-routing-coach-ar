@@ -45,6 +45,30 @@ NO responder solo. Escalar a contador/abogado. Las discrepancias alegadas son la
 
 ---
 
+## Cross-check mismatch patterns típicos por perfil operativo
+
+Cuando recibís una vista por inconsistencias 2024, antes de juntar documentación identificá qué pattern de mismatch matchea tu perfil. El contador lo va a hacer en la primera reunión; conocer el pattern de antemano acorta esa conversación y orienta qué documentos importan.
+
+**Pattern 1: Upwork-primary freelancer (cat E-F)**
+- Facturas E emitidas a nombre del cliente final que te contrató en Upwork.
+- Depósitos bancarios con remitente "Upwork Global Inc." o "Upwork Escrow Inc." (la plataforma actúa como agente de pago intermediario, no el cliente directo).
+- Cross-check ARCA: razón social en Factura E ≠ remitente bancario. Detectable algorítmicamente.
+- Capa adicional: platform withholdings (Payoneer-flow, ~1-3% según país del cliente y nexus US/EU) generan delta bruto-vs-neto. Si declaraste el gross sin reflejar el withholding, los inflows reales en tu cuenta son menores que lo facturado, lo cual también flagea.
+
+**Pattern 2: Deel/Payoneer mixed (cat F-G)**
+- Algunos clientes via Deel (que emite Factura E platform-issued, CAE-compliant en tu nombre).
+- Otros clientes via Payoneer (vos emitís Factura E + cobrás de Payoneer Inc. como remitente).
+- Mismatch posible: cantidad y monto de Facturas E emitidas (las tuyas) + las que Deel emitió por vos vs cantidad/monto de inflows bancarios separados por canal. Si el reconciliation mensual no separa "Deel-issued vs my-issued", la conciliación anual queda con holes que ARCA detecta.
+
+**Pattern 3: Wise direct + crypto VASP (cat F-H)**
+- Wise inflows con remitente cliente final (clean match, low audit risk).
+- USDT via VASP registrada (Lemon, Belo, Buenbit, Ripio, Bitso): la VASP reporta valuación al oficial AFIP del día de recepción.
+- Mismatch posible: cotización USDT usada en Factura E (si declaraste un valor de mercado distinto al oficial AFIP) ≠ valuación al oficial reportada por la VASP. El cross-check ARCA agarra ambas posiciones.
+
+Para cada pattern, la narrativa del descargo formal es: "operé via [plataforma/lane] que actúa como [agente de pago intermediario / cobrador-plataforma con CAE / VASP registrada CNV]". Cualquier regularización potencial la trabajás con tu contador, **NO se adelanta en el escrito**. La función de identificar el pattern es orientar qué documentación juntar y qué frasing usar; no es admitir nada.
+
+---
+
 ## What NOT to say
 
 - **No menciones invoices que la notificación no esté pidiendo.** Información extra puede expandir el scope de la fiscalización.

@@ -1,6 +1,6 @@
 # AFIP Audit Signals — Triggers que aumentan probabilidad de auditoría
 
-**Calibrado mayo 2026.** AFIP / ARCA enforcement 2025-2026 está en modo restrictivo: SIRA + algorithmic matching + RG 5616/2024 (e-invoicing) + RG 5700/2025 (Consumer-ID ≥10M ARS) + RG 5824/2026 (liquidación electrónica mensual + ampliación de obligados, vigencia julio 2026) → menos zona gris, más auditoría algorítmica.
+**Calibrado mayo 2026.** AFIP / ARCA enforcement 2025-2026 está en modo restrictivo: RG 3421/2012 (régimen unificado de información financiera, modificado por RG 4298/2018 que redefinió la sub-sección de transacciones económicas relevantes — SITER) + actualizaciones de umbrales RG 5512/2024 y RG 5699/2025 + algorithmic matching + RG 5616/2024 (e-invoicing) + RG 5700/2025 (Consumer-ID ≥10M ARS) + RG 5824/2026 (liquidación electrónica mensual + ampliación de obligados, vigencia julio 2026) → menos zona gris, más auditoría algorítmica.
 
 **Job de este file:** documentar qué signals disparan auditoría, para que Routing Mode los identifique y los flagee en su recomendación + audit-pack.
 
@@ -14,7 +14,7 @@
 
 **Qué es:** facturás $5K USD a 1.395 ARS oficial el día de emisión, pero declarás esa Factura E al tipo de cambio del cobro (1.450 dos semanas después). El sistema AFIP auto-valida invoice metadata contra inflows reportados — la inconsistencia es detectable algorítmicamente.
 
-**Severity:** alta. Penalty 25-75% del monto desfasado + intereses + back-tax. SIRA flagea automático en 3-6 meses.
+**Severity:** alta. Penalty 25-75% del monto desfasado + intereses + back-tax. Cross-check ARCA (SITER + RG 3421) flagea automático en 3-6 meses.
 
 **Cómo se evita:**
 - Emitir Factura E en USD con cotización oficial AFIP del día de emisión.
@@ -34,7 +34,7 @@
 
 ### Mistake #3 — Cash deposits sin invoice trail correspondiente
 
-**Qué es:** declarás $3K USD/mes en monotributo via Factura E, pero hacés deposits cash adicionales (referidos, freelance side, friends-and-family) por otros $1-2K USD/mes en pesos. SIRA tracking + algorithmic deposit-vs-income matching te encuentra.
+**Qué es:** declarás $3K USD/mes en monotributo via Factura E, pero hacés deposits cash adicionales (referidos, freelance side, friends-and-family) por otros $1-2K USD/mes en pesos. SITER reporting + RG 3421 cuentas bancarias + algorithmic deposit-vs-income matching te encuentra.
 
 **Severity:** muy alta. ARBA/AFIP pueden disallowed full monotributo deduction + reclasificación + criminal referral si hay evidencia de intencionalidad.
 

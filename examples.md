@@ -14,6 +14,8 @@ Five worked examples covering all four operating modes plus the refusal protocol
 
 ## Example 1 — Marina (Routing Mode, EN flagship)
 
+> **Persona deep-dive:** [`identity-examples/marina.md`](./identity-examples/marina.md). Voice pillars, vocabulary, content themes, and decision posture for the Marina profile (cat F, single anchor US client, Wise default, CABA jurisdiction).
+
 **What Marina pastes:**
 
 > Hi — I'm Marina, freelance UX designer based in Buenos Aires. I'm on monotributo cat F, billing about $3.5K USD/month for the last 4 months to one US client (a Series-A SaaS).
@@ -132,6 +134,8 @@ NEXT REVIEW TRIGGER:
 
 ## Example 2 — Diego (Routing Mode, ES)
 
+> **Persona deep-dive:** [`identity-examples/diego.md`](./identity-examples/diego.md). Voice pillars, vocabulary, content themes, and decision posture for the Diego profile (cat I → K, multi-client US+EU, Mercury+MEP default, CABA jurisdiction, RI transition imminent Q3 2026).
+
 **Lo que Diego pega:**
 
 > Soy Diego, AI consultant en CABA. Cat I monotributo, llevo facturados ~$58K USD desde enero — clientes US y un par europeos. Me llegó un nuevo invoice de $8K USD de un cliente alemán (B2B SaaS, fintech regulada) que paga por wire o por Deel.
@@ -170,15 +174,18 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 
 ### Recomendación
 
-**Mercury + MEP via broker para este invoice.**
+**Mercury + MEP via broker es la lane primaria. Deel queda como alternativa defendible si Diego prioriza simplicidad operacional pre-RI transition.**
 
-**Confidence: 78%.**
+El trade-off real: Mercury+MEP captura ~$85-95 USD netos por invoice sobre Wise (después de wire fee + broker fee 0.5%), pero suma 5-7 días de procesamiento + coordinación con SBS + documentación broker. Deel cuesta más en bruto (~$80-160 USD adicionales en este invoice vs MEP) pero elimina la coordinación con broker en pleno período pre-RI transition. Si Diego ya tiene flujo MEP probado de invoices anteriores la primary stand. Si no, Deel le da timing-certainty mientras se concentra en armar el contador con experiencia RI.
+
+**Confidence: 72%.**
 - +20% porque todos los inputs core están verificados
-- +15% porque a este volumen ($8K invoice + trayectoria $13K USD/mes) el spread MEP vs oficial ($240-280 USD por invoice) supera claramente el broker overhead
 - +10% porque infraestructura está toda lista (Mercury USD activo, SBS habilitado para MEP)
+- +8% porque el operator tiene flujo MEP probado de invoices anteriores y la lane primary es operacionalmente conocida
 - −8% porque el RI transition timing es mid-Q3 — si MEP via broker se extiende >7 días, el invoice puede caer en período donde tu monotributo ya está siendo recategorizado o transicionando a RI, y la documentación queda en zona gris si el broker hace el trade el día equivocado
-- −9% porque Deel está disponible y es operativamente más simple, aunque más caro — el operator podría preferir simplicidad ante RI transition incoming
-- **Lo que cerraría el gap a 90%+**: confirmar con tu contador la timing exacta del RI transition trigger y si conviene recibir este invoice en monotributo o esperar al cambio de régimen.
+- −9% porque el margen MEP-vs-Wise neto post-fees ($85-95/invoice) es modesto: justifica ofrecer Deel como alternativa real, no descartarla con un parágrafo
+- −9% porque el contador actual de Diego NO tiene experiencia RI para AI consulting (ver `identity-examples/diego.md` § Background): la documentation playbook MEP via SBS queda mid-engagement sin sparring contable adecuado mientras la migración a un contador RI-experto está pendiente
+- **Lo que cerraría el gap a 90%+**: confirmar con tu contador (preferentemente uno con experiencia RI para AI consulting que vas a tener que conseguir esta semana) la timing exacta del RI transition trigger, y revalidar spread MEP del día de operación contra fuente live ([rueda.live](https://rueda.live/en)) antes de ejecutar el trade.
 
 **Headroom impact:** post-invoice cumulative $66K USD ya excede cat I y cat J — estás dentro de cat K con ~14% de runway antes del techo absoluto del régimen. **Recomendación crítica: NO postergues el invoice — el problema no es este invoice puntual, es la trayectoria. Postergar este $8K por 30 días no baja la trayectoria proyectada al cierre.**
 
@@ -199,10 +206,11 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 ### Trazabilidad de la Decisión
 
 - Mode detected: Routing — invoice específico + payment options + cliente country.
-- Lane chosen: Mercury + MEP via broker. Volumen ($8K invoice + $13K/mes trajectory) justifica el broker overhead vs Wise. Spread MEP vs oficial = ~$240-280 USD por invoice = más que el broker fee.
-- Confidence 78%: alta intake compliance + infraestructura lista, pero RI transition timing dentro de 60-90 días introduce documentación-uncertainty.
+- Lane chosen: Mercury + MEP via broker como primary, Deel como alternativa defendible. Volumen ($8K invoice + $13K/mes trajectory) sostiene el broker overhead vs Wise pero el margen es ajustado. Spread MEP vs Wise = ~$150 USD net por invoice antes de friction; después de wire fee ($15-25) + broker fee 0.5% (~$40) el net captured es $85-95. La diferencia bruta con Deel es ~$80-160 USD: razonable cobertura a cambio de timing-certainty + simplicidad pre-RI.
+- Confidence 72%: alta intake compliance + infraestructura lista, pero margen MEP modesto + RI transition timing dentro de 60-90 días + contador gap introducen documentación-uncertainty no trivial.
 - Crítica más importante NO es la lane — es la trayectoria. Specialist flagea RI transition como acción prioritaria, no como observación tangencial.
-- Deel descartado: cliente lo ofrece pero MEP via broker da mejor cost-of-funds y Deel puede aplicar withholdings de plataforma (lógica interna, no RG argentino específico) que reducen el net.
+- Critical context flag: Diego cita en `identity-examples/diego.md` § Background que su contador actual NO tiene experiencia en RI para AI consulting. Esta recomendación asume que Diego inicia migración a contador con experiencia RI en paralelo al engagement de este invoice, dentro de las próximas 2-4 semanas. Si no lo hace, el documentation playbook MEP via SBS queda mid-engagement sin sparring contable, lo cual aumenta el risk operacional y refuerza la viabilidad de Deel como ruta menos compleja.
+- Deel NO descartado: ofrecido como alternativa real con trade-off explícito (más caro en bruto $80-160 USD, pero menos coordinación + timing-certainty + no requiere documentación MEP via broker). Cualquier decisión final entre las dos lanes pasa por el contador.
 
 ---
 
@@ -222,19 +230,23 @@ SIGNALS ANALIZADOS:
   - Factura E aprobada y en uso
 
 ALTERNATIVAS CONSIDERADAS:
-  - Wise + Factura E — funciona pero subóptimo a este volumen (~$240 dejados sobre la mesa)
-  - Deel + ARS direct — operativamente más simple pero costo más alto + platform withholding
+  - Wise + Factura E — funciona, subóptimo a este volumen (~$85-95 net dejados sobre la mesa por invoice después de fees)
+  - Deel + ARS direct — alternativa defendible: ~$80-160 USD más caro en bruto pero
+    elimina coordinación con broker + da timing-certainty pre-RI transition
   - USDT via VASP — cliente no ofrece USDT, no aplicable
   - ❌ Blue dollar / crypto informal — REFUSED
 
-DECISIÓN: Mercury + MEP via broker (Grupo SBS)
+DECISIÓN: Mercury + MEP via broker (Grupo SBS) como primary, Deel como alternativa.
 
 RATIONALE DE DECISIÓN:
-  Volumen del invoice + trajectory mensual justifica overhead del MEP route. Spread MEP vs oficial
-  estimado $240-280 USD por invoice supera el broker fee + wire fee (~$25-90 total). Critical
-  flag adyacente: RI transition imminent — Q3 2026.
+  Volumen del invoice + trajectory mensual sostiene overhead del MEP route con margen ajustado.
+  Spread MEP vs Wise ~$150 USD por invoice antes de friction; net post-fees (wire $15-25 +
+  broker 0.5% ~$40) = $85-95 captured. Deel cuesta ~$80-160 más en bruto pero compra
+  timing-certainty + reduce documentación pre-RI. La decisión final entre las dos pasa por
+  contador con experiencia RI (que Diego todavía NO tiene — gap a cerrar esta semana).
+  Critical flag adyacente: RI transition imminent — Q3 2026.
 
-CONFIDENCE: 78%
+CONFIDENCE: 72%
 
 SNAPSHOT TIPO DE CAMBIO (calibración mayo 2026):
   Oficial 1,395 | MEP 1,418 | Wise mid 1,385 | USDT VASP 1,445
@@ -257,11 +269,13 @@ PRÓXIMO REVIEW TRIGGER:
 
 ## Example 3 — Federica (Audit Response Mode, ES)
 
+> **Persona deep-dive:** [`identity-examples/federica.md`](./identity-examples/federica.md). Voice pillars, vocabulary, content themes, and decision posture for the Federica profile (copywriter freelance Mendoza, cat E 2024, in-the-middle-of vista AFIP por inconsistencias RG 3421 + SITER, contador-first posture).
+
 **Lo que Federica pega:**
 
 > Hola, urgente. Hoy me llegó esto a mi correo asociado a CUIT (lo copio como me llegó):
 >
-> *"Vista — Sr/a contribuyente: se le notifica que en virtud del análisis efectuado sobre las declaraciones juradas del período fiscal 2024 correspondientes al régimen Simplificado para Pequeños Contribuyentes, surgen inconsistencias entre los ingresos declarados y los movimientos de fondos detectados a través de SIRA. Se intima al contribuyente a presentar dentro del plazo de 15 (quince) días hábiles administrativos la siguiente documentación: facturas emitidas, comprobantes de cobro, y conciliación bancaria del período enero-diciembre 2024."*
+> *"Vista — Sr/a contribuyente: se le notifica que en virtud del análisis efectuado sobre las declaraciones juradas del período fiscal 2024 correspondientes al régimen Simplificado para Pequeños Contribuyentes, surgen inconsistencias entre los ingresos declarados y los movimientos de fondos informados a través del régimen informativo de cuentas bancarias (RG 3421) y del Sistema Informativo de Transacciones Económicas Relevantes (SITER). Se intima al contribuyente a presentar dentro del plazo de 15 (quince) días hábiles administrativos la siguiente documentación: facturas emitidas, comprobantes de cobro, y conciliación bancaria del período enero-diciembre 2024."*
 >
 > Soy Federica, copywriter freelance Mendoza, monotributo cat E el 2024. Facturé bastante por Upwork + algunos clientes directos. Estoy hecha bolsa, qué hago? Ayudame a pensar la respuesta.
 
@@ -274,12 +288,24 @@ He detectado señales de notificación AFIP — vista por inconsistencias 2024. 
 ### Trigger Identificado
 
 - **Tipo**: Vista (comunicación inicial de revisión, NO intimación con monto reclamado todavía).
-- **Fundamento**: análisis de inconsistencias entre declaraciones juradas 2024 y movimientos bancarios detectados via SIRA.
+- **Fundamento**: análisis de inconsistencias entre declaraciones juradas 2024 y movimientos bancarios informados via RG 3421 (cuentas bancarias) + SITER (operaciones financieras relevantes).
 - **Período bajo revisión**: enero-diciembre 2024.
 - **Plazo**: 15 días hábiles administrativos para responder. Tiempo suficiente para preparar bien — pero no para postponer.
 - **Documentación pedida**: facturas emitidas, comprobantes de cobro, conciliación bancaria del período.
 
-**Severity assessment: media-alta.** Es vista (no intimación con monto), o sea AFIP está pidiendo aclaraciones — todavía no afirma evasión. Pero las inconsistencias SIRA son lo que normalmente precede a una intimación si la respuesta es débil o incompleta.
+**Severity assessment: media-alta.** Es vista (no intimación con monto), o sea AFIP está pidiendo aclaraciones — todavía no afirma evasión. Pero las inconsistencias detectadas via cross-check RG 3421 + SITER son lo que normalmente precede a una intimación si la respuesta es débil o incompleta.
+
+### Hipótesis de causa probable (Upwork-flow mismatch)
+
+Federica mencionó que "facturé bastante por Upwork + algunos clientes directos". El pattern de cross-check más común para ese perfil es Upwork-primary mismatch: Factura E al cliente final que la contrató en la plataforma vs depósitos bancarios con remitente Upwork (la plataforma actúa como agente de pago intermediario, no el cliente directo). Detalle completo de los 3 patterns de mismatch típicos por perfil operativo en [`reference/audit-response-playbook.md`](./reference/audit-response-playbook.md) § Cross-check mismatch patterns típicos.
+
+**Cómo se trabaja en la respuesta (sin admitir):**
+
+- NO se admite "emití mal las Facturas E". Esa frase, en un escrito, es confesión.
+- SÍ se documenta el flujo operativo: contratos con clientes finales (en Upwork), Facturas E al cliente final, statements Upwork con earnings + fees + withholdings, statements bancarios con depósitos remitidos por Upwork. La narrativa es "operé via plataforma intermediaria que actúa como agente de pago del cliente final."
+- Si el contador detecta que efectivamente hay delta neto-vs-bruto no declarado, esa decisión la toma el contador con vos (regularización voluntaria con menos multa, vs esperar intimación con monto), no se adelanta en el descargo a la vista.
+
+**Si esta hipótesis NO matchea el caso real de Federica** (por ejemplo, todos los clientes fueron directos sin Upwork, o la inconsistencia es por otro motivo), la documentación que se junta abajo igual cubre el caso — pero el ángulo del escrito cambia. La pregunta operativa para el contador en la primera reunión: ¿de dónde sale el delta que ARCA computó, y a qué pattern de mismatch corresponde?
 
 ### Documentos a Recopilar (orden de prioridad)
 
@@ -337,8 +363,8 @@ Empezá la respuesta formal con esto, ajustá los datos específicos:
 
 ### Trazabilidad de la Decisión
 
-- Mode switch detectado: keywords "vista", "inconsistencias", "intima", "plazo", "SIRA", "documentación".
-- Severity assessment: media-alta. Es vista (etapa inicial), no intimación con monto, pero las inconsistencias SIRA son trigger que precede a intimaciones formales.
+- Mode switch detectado: keywords "vista", "inconsistencias", "intima", "plazo", "régimen informativo", "SITER", "documentación".
+- Severity assessment: media-alta. Es vista (etapa inicial), no intimación con monto, pero las inconsistencias detectadas via cross-check (RG 3421 + SITER) son trigger que precede a intimaciones formales.
 - Contador trigger activado: sí, para revisión de la respuesta antes de presentarla.
 - Abogado trigger: NO en este momento, condicional a escalada a intimación con monto.
 - Plazo gestionable: 15 días hábiles permite preparar bien sin ahogo.
@@ -360,12 +386,12 @@ Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 20
 ### Proyección de Cat
 
 - **Techo cat G actual**: 46.211M ARS = ~$32,589 USD @ MEP 1.418.
-- **YTD a octubre**: ~$42K = **~129% del techo cat G — ya estás afuera de cat G**. Recategorización forzada inminente; deberías estar en cat H o I según trayectoria.
+- **YTD a octubre**: ~$42K = **~129% del techo cat G — ya estás afuera de cat G**. ARCA te recategorizará automáticamente en Aug 2026 a la cat real (H o I) con potencial penalización por sub-categorización de los meses previos; conviene recategorizar proactivamente antes.
 - **Proyección al cierre 2026** (manteniendo $4.2K/mes): noviembre + diciembre = +$8.4K → **cierre ~$50.4K USD = ~71.5M ARS**. Eso excede cat H (70.113M = $49,446) y se ubica dentro de cat I (78.479M = $55,345).
 - **Cat H**: techo 70.113M ARS = ~$49,446 USD. Tu cierre proyectado lo supera por ~$1K USD.
 - **Cat I**: techo 78.479M ARS = ~$55,345 USD. Tu cierre proyectado deja ~$5K USD de headroom.
 
-**Conclusión cat:** terminás el año en **cat I si recategorizás proactivamente ahora**. Cat H probablemente no alcance — tu trayectoria proyectada se cruza el techo cat H en diciembre. Si seguís en cat G hasta agosto 2026, ARCA te recategoriza a la cat real (H o I) con multa por sub-cat-ización 2026.
+**Conclusión cat:** terminás el año en **cat I si recategorizás proactivamente ahora**. Cat H probablemente no alcance — tu trayectoria proyectada se cruza el techo cat H en diciembre. Si seguís en cat G hasta agosto 2026, ARCA te recategoriza a la cat real (H o I) con penalización por sub-categorización de los meses excedidos (la penalización es práctica AR standard sin un porcentaje único por RG, el contador la calcula caso a caso según intereses + cuotas no abonadas en cat correcta).
 
 ### Análisis Trigger Transición a RI
 

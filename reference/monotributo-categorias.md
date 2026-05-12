@@ -121,7 +121,7 @@ Si facturás consultoría + venta de productos digitales + alquileres, ARCA pued
 
 ### 4. Ignorar que USD se convierte al momento de Factura E
 
-Operador emite Factura E en USD a 1.400, espera a cobrar a 1.500, y declara el monto al tipo de cambio del cobro. Eso es **incorrecto**. La cat se calcula contra el monto al momento de la factura. Diferencia detectable por SIRA.
+Operador emite Factura E en USD a 1.400, espera a cobrar a 1.500, y declara el monto al tipo de cambio del cobro. Eso es **incorrecto**. La cat se calcula contra el monto al momento de la factura. Diferencia detectable vía cross-check ARCA: Factura E reportada (con cotización emisión) vs depósito bancario reportado (RG 3421) o liquidación de broker / VASP (SITER).
 
 ### 5. Estimar mal el rolling-12
 

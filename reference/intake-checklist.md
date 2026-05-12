@@ -86,7 +86,7 @@ Mini-ejemplo de la distinción:
 > ✓ **Stripe Inc. (Delaware US)** = contraparte legal real, export-services genuina.
 > ✗ **AR-team-DBA-LLC** (LLC US fundada por el operator AR, le emite factura a un cliente AR final) = local services con foreign legal wrapper. Recategorizar a Factura A/B + IIBB jurisdiction operativa.
 
-Mis-routing en este punto = audit-pack frozen con wrong evidence (export claimed where it was local) → bomba de tiempo a 2 años cuando AFIP cross-referencia SIRA + CUIT del cliente AR final.
+Mis-routing en este punto = audit-pack frozen con wrong evidence (export claimed where it was local) → bomba de tiempo a 2 años cuando ARCA cross-referencia SITER + RG 3421 + CUIT del cliente AR final.
 
 ### Marina (Example 1) — canonical parse
 

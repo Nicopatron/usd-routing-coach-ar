@@ -28,7 +28,7 @@ Reference vocabulary for this specialist. Two layers: (1) Argentine regulatory +
 - **MEP (Mercado Electrónico de Pagos)** — Legal Argentine FX route via Argentine sovereign bonds (AL30, GD30 typical). Buy bonds in USD, sell in ARS; difference between buy and sell rate is the spread captured. Better rate than oficial; requires broker.
 - **CCL (Contado con Liquidación)** — Variant of MEP for offshore settlement (USD lands abroad, not in local Argentine bank). Used when the operator wants USD to stay in foreign account.
 - **Cueva** — Informal FX house. Operates outside legal channels (blue dollar). **The specialist refuses to recommend cueva routing under any circumstances.**
-- **Blue dollar** — Informal market USD price, traded via cuevas. Higher rate than oficial, but post-SIRA enforcement (2025+) carries severe audit risk.
+- **Blue dollar** — Informal market USD price, traded via cuevas. Higher rate than oficial, but post-blanqueo Milei enforcement (2025+) carries severe audit risk via SITER + VASP reporting.
 
 ### Banking and payment infrastructure
 
@@ -40,7 +40,11 @@ Reference vocabulary for this specialist. Two layers: (1) Argentine regulatory +
 
 ### AFIP enforcement and audit terms
 
-- **SIRA** — AFIP system that tracks bank deposits and matches against declared income via algorithmic flagging. Automated inconsistency detection. Catch-up window typically 6-12 months.
+- **Régimen información actividad financiera (RG 3421/2012)** — AFIP/ARCA régimen unificado bajo el cual bancos, entidades financieras, brokers, VASPs y otros obligados reportan saldos y movimientos a ARCA periódicamente. Es el umbrella regulation que incluye varios sub-regímenes informativos (CITI Compras, CITI Ventas, transacciones económicas relevantes, etc.).
+- **SITER (Sistema Informativo de Transacciones Económicas Relevantes, RG 4298/2018)** — Sub-régimen específico de transacciones económicas relevantes que **redefinió/sustituyó la sección homónima de la RG 3421/2012**. No es un régimen independiente sino una actualización dirigida. Cross-referenced algorithmically contra declared income (Facturas E + monotributo declaraciones). Catch-up window típicamente 6-12 meses. Reemplaza lo que el slang AR consultor a veces llamaba "el cruce SIRA" (técnicamente impreciso: SIRA fue el sistema 2022-2023 de permisos de importación, derogado dic 2023, nunca aplicó a servicios).
+- **Actualizaciones de umbrales (RG 5512/2024, RG 5699/2025)** — Ajustan los montos mínimos de reporte de la 3421/SITER. Vigentes mayo 2026.
+
+**Nota de exactitud:** RG 4815/2020 es OTRA regulación (régimen de percepción del 35% sobre compra de USD a cuenta de Ganancias / Bienes Personales), NO el régimen informativo. Confusión común; el específico que reporta movimientos bancarios es RG 3421/2012 más sus actualizaciones.
 - **Vista** — AFIP communication initiating a review. Lower severity than intimación; requests documentation without alleging a specific tax debt yet. Standard response window: 15 business days.
 - **Intimación** — AFIP communication formally claiming a tax debt or specific violation. Higher severity; requires immediate contador/abogado involvement.
 - **Requerimiento** — AFIP general request for information. Less formal than vista or intimación; usually answerable without escalation.
