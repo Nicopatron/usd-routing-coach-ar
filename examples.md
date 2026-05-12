@@ -5,9 +5,9 @@ Five worked examples covering all four operating modes plus the refusal protocol
 | # | Mode | Persona | Language | Highlights |
 |---|------|---------|----------|------------|
 | 1 | Routing | **Marina** — UX designer cat F, $4K from US client | English | Confidence 92%, Wise + Factura E, full happy path |
-| 2 | Routing | **Diego** — AI consultant cat I → K, $8K from EU client | Español | Confidence 78%, Mercury + MEP, RI transition flag |
+| 2 | Routing | **Diego** — AI consultant cat I → K, $8K from EU client | Español | Confidence 72%, Mercury + MEP o Deel (margen modesto), RI transition flag |
 | 3 | Audit Response | **Federica** — copywriter, recibió vista AFIP por 2024 | Español | Mode switch announced, defensive playbook, contador trigger |
-| 4 | Year-End | **Juan** — dev cat G, October, $42K YTD | Español | Cat projection, recategorización Aug, RI transition deferred |
+| 4 | Year-End | **Juan** — dev cat G, octubre, $42K YTD | Español | Cat projection, ventana recat Feb 2027, RI transition Q1 2027 |
 | 5 | Refusal | Vague intake, 4-5 of 5 inputs missing/weak | ES (Spanish-dominant input) + variant for mixed → EN default | Intake gate triggered, 5-input list, Decision Trace, override option |
 
 ---
@@ -28,11 +28,11 @@ Five worked examples covering all four operating modes plus the refusal protocol
 
 ### Situation
 
-Marina, UX designer in CABA, monotributo (Argentine simplified tax regime) cat F. YTD trajectory: ~$3.5K USD/month × 4 months = ~$14K USD invoiced Q1 + early Q2 2026 (~19.8M ARS at MEP 1.418). New incoming: **$4,000 USD** from a US fintech client. Payment options offered: Wise transfer or USDT to her Lemon wallet. Infrastructure: Wise active, Mercury opened (unused for invoicing yet), Lemon wallet active (VASP-registered ✓). IIBB (provincial gross-income tax) CABA + export-services = exempt. Factura E (export invoice) approved in AFIP, ~8 issued in the last 12 months.
+Marina, UX designer in CABA, monotributo (Argentine simplified tax regime) cat F. YTD trajectory: ~$3.5K USD/month × 4 months = ~$14K USD invoiced Q1 + early Q2 2026 (~19,800,000 ARS at MEP 1,418). New incoming: **$4,000 USD** from a US fintech client. Payment options offered: Wise transfer or USDT to her Lemon wallet. Infrastructure: Wise active, Mercury opened (unused for invoicing yet), Lemon wallet active (VASP-registered ✓). IIBB (provincial gross-income tax) CABA + export-services = exempt. Factura E (export invoice) approved in AFIP, ~8 issued in the last 12 months.
 
 ### Constraints Analysis
 
-- **Cat F headroom**: annual ceiling 38,642,048 ARS = ~$27,251 USD at MEP 1.418. YTD invoiced ~$14K = ~51% of ceiling. This invoice ($4K) brings cumulative to ~$18K = ~66% of ceiling. Remaining headroom: ~$9.3K USD for the rest of 2026.
+- **Cat F headroom**: annual ceiling 38,642,048 ARS = ~$27,251 USD at MEP 1,418. YTD invoiced ~$14K = ~51% of ceiling. This invoice ($4K) brings cumulative to ~$18K = ~66% of ceiling. Remaining headroom: ~$9,300 USD for the rest of 2026.
 - **Next recategorización (re-categorization)**: August 2026. If Marina sustains $3.5-4K USD/month, she closes the year at ~$32-37K USD invoiced — over cat F ($27,251), well into cat G ($32,589) and possibly cat H ($49,446). The August recategorización will absorb part of that with the IPC adjustment, but proactive recat to G is already advisable given current trajectory.
 - **IIBB**: confirmed export-services exempt (cat F monotributo CABA, services to foreign clients). No separate filing needed.
 - **Factura E**: already approved and in active use. No setup blocker.
@@ -91,7 +91,7 @@ DATE: 2026-05-08
 INVOICE: B2B Fintech LLC (US), USD $4,000
 
 SIGNALS ANALYZED:
-  - Monotributo cat F (ceiling 38.642M ARS / ~$27,251 USD @ MEP 1.418), headroom ~$9.3K USD remaining in 2026
+  - Monotributo cat F (ceiling 38,642,048 ARS / ~$27,251 USD @ MEP 1,418), headroom ~$9,300 USD remaining in 2026
   - Monthly volume ~$3.5K USD/month Q1-Q2 (stable, single-client until now)
   - This invoice from new US client (second client onboarded)
   - Payment options offered: Wise or USDT-Lemon
@@ -176,20 +176,20 @@ Diego, AI consultant en CABA, monotributo **cat I**. YTD facturado ~$58K USD des
 
 **Mercury + MEP via broker es la lane primaria. Deel queda como alternativa defendible si Diego prioriza simplicidad operacional pre-RI transition.**
 
-El trade-off real: Mercury+MEP captura ~$85-95 USD netos por invoice sobre Wise (después de wire fee + broker fee 0.5%), pero suma 5-7 días de procesamiento + coordinación con SBS + documentación broker. Deel cuesta más en bruto (~$80-160 USD adicionales en este invoice vs MEP) pero elimina la coordinación con broker en pleno período pre-RI transition. Si Diego ya tiene flujo MEP probado de invoices anteriores la primary stand. Si no, Deel le da timing-certainty mientras se concentra en armar el contador con experiencia RI.
+El trade-off real: Mercury+MEP captura ~$85-95 USD netos por factura sobre Wise (después de wire fee + broker fee 0.5%), pero suma 5-7 días de procesamiento + coordinación con SBS + documentación broker. Deel cuesta más en bruto (~$80-160 USD adicionales en esta factura vs MEP) pero elimina la coordinación con broker en pleno período pre-RI transition. Si Diego ya tiene flujo MEP probado de facturas anteriores, la lane primaria se sostiene. Si no, Deel le da certeza de timing mientras se concentra en armar el contador con experiencia RI.
 
 **Confidence: 72%.**
 - +20% porque todos los inputs core están verificados
 - +10% porque infraestructura está toda lista (Mercury USD activo, SBS habilitado para MEP)
-- +8% porque el operator tiene flujo MEP probado de invoices anteriores y la lane primary es operacionalmente conocida
+- +8% porque el operator tiene flujo MEP probado de facturas anteriores y la lane primaria es operacionalmente conocida
 - −8% porque el RI transition timing es mid-Q3 — si MEP via broker se extiende >7 días, el invoice puede caer en período donde tu monotributo ya está siendo recategorizado o transicionando a RI, y la documentación queda en zona gris si el broker hace el trade el día equivocado
-- −9% porque el margen MEP-vs-Wise neto post-fees ($85-95/invoice) es modesto: justifica ofrecer Deel como alternativa real, no descartarla con un parágrafo
+- −9% porque el margen MEP-vs-Wise neto post-fees ($85-95/factura) es modesto: justifica ofrecer Deel como alternativa real, no descartarla con un parágrafo
 - −9% porque el contador actual de Diego NO tiene experiencia RI para AI consulting (ver `identity-examples/diego.md` § Background): la documentation playbook MEP via SBS queda mid-engagement sin sparring contable adecuado mientras la migración a un contador RI-experto está pendiente
 - **Lo que cerraría el gap a 90%+**: confirmar con tu contador (preferentemente uno con experiencia RI para AI consulting que vas a tener que conseguir esta semana) la timing exacta del RI transition trigger, y revalidar spread MEP del día de operación contra fuente live ([rueda.live](https://rueda.live/en)) antes de ejecutar el trade.
 
 **Headroom impact:** post-invoice cumulative $66K USD ya excede cat I y cat J — estás dentro de cat K con ~14% de runway antes del techo absoluto del régimen. **Recomendación crítica: NO postergues el invoice — el problema no es este invoice puntual, es la trayectoria. Postergar este $8K por 30 días no baja la trayectoria proyectada al cierre.**
 
-**Próximo paso operacional crítico:** programar reunión con tu contador esta semana para iniciar transición a RI. Trigger objetivo: tu YTD ya supera cat I y cat J, y proyectás superar K en Q3 2026. Better to plan the transition than have AFIP force it.
+**Próximo paso operacional crítico:** programar reunión con tu contador esta semana para iniciar transición a RI. Trigger objetivo: tu YTD ya supera cat I y cat J, y proyectás superar K en Q3 2026. Mejor planificar la transición que tenerla forzada por AFIP.
 
 ### Checklist de Ejecución
 
@@ -205,12 +205,12 @@ El trade-off real: Mercury+MEP captura ~$85-95 USD netos por invoice sobre Wise 
 
 ### Trazabilidad de la Decisión
 
-- Mode detected: Routing — invoice específico + payment options + cliente country.
-- Lane chosen: Mercury + MEP via broker como primary, Deel como alternativa defendible. Volumen ($8K invoice + $13K/mes trajectory) sostiene el broker overhead vs Wise pero el margen es ajustado. Spread MEP vs Wise = ~$150 USD net por invoice antes de friction; después de wire fee ($15-25) + broker fee 0.5% (~$40) el net captured es $85-95. La diferencia bruta con Deel es ~$80-160 USD: razonable cobertura a cambio de timing-certainty + simplicidad pre-RI.
-- Confidence 72%: alta intake compliance + infraestructura lista, pero margen MEP modesto + RI transition timing dentro de 60-90 días + contador gap introducen documentación-uncertainty no trivial.
-- Crítica más importante NO es la lane — es la trayectoria. Specialist flagea RI transition como acción prioritaria, no como observación tangencial.
-- Critical context flag: Diego cita en `identity-examples/diego.md` § Background que su contador actual NO tiene experiencia en RI para AI consulting. Esta recomendación asume que Diego inicia migración a contador con experiencia RI en paralelo al engagement de este invoice, dentro de las próximas 2-4 semanas. Si no lo hace, el documentation playbook MEP via SBS queda mid-engagement sin sparring contable, lo cual aumenta el risk operacional y refuerza la viabilidad de Deel como ruta menos compleja.
-- Deel NO descartado: ofrecido como alternativa real con trade-off explícito (más caro en bruto $80-160 USD, pero menos coordinación + timing-certainty + no requiere documentación MEP via broker). Cualquier decisión final entre las dos lanes pasa por el contador.
+- Modo detectado: Routing — factura específica + opciones de pago + país del cliente.
+- Lane elegida: Mercury + MEP vía broker como lane primaria, Deel como alternativa defendible. Volumen ($8K factura + $13K/mes trayectoria) sostiene el overhead del broker vs Wise pero el margen es ajustado. Spread MEP vs Wise = ~$150 USD netos por factura antes de fricción; después de wire fee ($15-25) + broker fee 0.5% (~$40) el neto capturado es $85-95. La diferencia bruta con Deel es ~$80-160 USD: cobertura razonable a cambio de certeza de timing + simplicidad pre-RI.
+- Confianza 72%: alto cumplimiento de intake gate + infraestructura lista, pero margen MEP modesto + timing de RI transition dentro de 60-90 días + gap de contador introducen incertidumbre documental no trivial.
+- La crítica más importante NO es la lane — es la trayectoria. El specialist flagea RI transition como acción prioritaria, no como observación tangencial.
+- Flag crítico de contexto: Diego cita en `identity-examples/diego.md` § Background que su contador actual NO tiene experiencia en RI para AI consulting. Esta recomendación asume que Diego inicia migración a contador con experiencia RI en paralelo al trabajo de esta factura, dentro de las próximas 2-4 semanas. Si no lo hace, el playbook de documentación MEP vía SBS queda mid-engagement sin sparring contable adecuado, lo cual aumenta el riesgo operacional y refuerza la viabilidad de Deel como ruta menos compleja.
+- Deel NO descartado: ofrecido como alternativa real con trade-off explícito (más caro en bruto $80-160 USD, pero menos coordinación + certeza de timing + no requiere documentación MEP vía broker). Cualquier decisión final entre las dos lanes pasa por el contador.
 
 ---
 
@@ -218,51 +218,51 @@ El trade-off real: Mercury+MEP captura ~$85-95 USD netos por invoice sobre Wise 
 
 ```
 FECHA: 2026-05-08
-INVOICE: SaaS GmbH (DE), USD $8,000
+FACTURA: SaaS GmbH (DE), USD 8.000
 
-SIGNALS ANALIZADOS:
-  - Cat monotributo I (techo 78.479M ARS / ~$55,345 USD), YTD facturado ~$58K = 105% del techo — ya excedido
-  - Post-invoice $66K = 119% cat I, 104% cat J, 86% cat K
+SEÑALES ANALIZADAS:
+  - Cat monotributo I (techo 78.479M ARS / ~$55.345 USD), YTD facturado ~$58K = 105% del techo — ya excedido
+  - Post-factura $66K = 119% cat I, 104% cat J, 86% cat K
   - Trayectoria proyecta cierre $142-158K USD = forzada salida a RI Q3 2026
-  - Cliente alemán B2B SaaS, paga por wire bancario o Deel
+  - Cliente alemán B2B SaaS, paga por transferencia bancaria o Deel
   - Infraestructura: Mercury USD activo, Grupo SBS habilitado MEP, Wise activa, Deel configurado
-  - IIBB CABA, export-services exempt
+  - IIBB CABA, export-services exento
   - Factura E aprobada y en uso
 
 ALTERNATIVAS CONSIDERADAS:
-  - Wise + Factura E — funciona, subóptimo a este volumen (~$85-95 net dejados sobre la mesa por invoice después de fees)
+  - Wise + Factura E — funciona, subóptimo a este volumen (~$85-95 netos dejados sobre la mesa por factura después de fees)
   - Deel + ARS direct — alternativa defendible: ~$80-160 USD más caro en bruto pero
-    elimina coordinación con broker + da timing-certainty pre-RI transition
-  - USDT via VASP — cliente no ofrece USDT, no aplicable
-  - ❌ Blue dollar / crypto informal — REFUSED
+    elimina coordinación con broker + da certeza de timing pre-RI transition
+  - USDT vía VASP — cliente no ofrece USDT, no aplicable
+  - ❌ Blue dollar / crypto informal — RECHAZADO
 
-DECISIÓN: Mercury + MEP via broker (Grupo SBS) como primary, Deel como alternativa.
+DECISIÓN: Mercury + MEP vía broker (Grupo SBS) como primary, Deel como alternativa.
 
-RATIONALE DE DECISIÓN:
-  Volumen del invoice + trajectory mensual sostiene overhead del MEP route con margen ajustado.
-  Spread MEP vs Wise ~$150 USD por invoice antes de friction; net post-fees (wire $15-25 +
-  broker 0.5% ~$40) = $85-95 captured. Deel cuesta ~$80-160 más en bruto pero compra
-  timing-certainty + reduce documentación pre-RI. La decisión final entre las dos pasa por
+FUNDAMENTO DE LA DECISIÓN:
+  Volumen de la factura + trayectoria mensual sostiene el overhead del MEP route con margen ajustado.
+  Spread MEP vs Wise ~$150 USD por factura antes de fricción; neto post-fees (wire $15-25 +
+  broker 0.5% ~$40) = $85-95 capturados. Deel cuesta ~$80-160 más en bruto pero compra
+  certeza de timing + reduce documentación pre-RI. La decisión final entre las dos pasa por
   contador con experiencia RI (que Diego todavía NO tiene — gap a cerrar esta semana).
-  Critical flag adyacente: RI transition imminent — Q3 2026.
+  Flag crítico adyacente: RI transition inminente — Q3 2026.
 
-CONFIDENCE: 72%
+CONFIANZA: 72%
 
-SNAPSHOT TIPO DE CAMBIO (calibración mayo 2026):
-  Oficial 1,395 | MEP 1,418 | Wise mid 1,385 | USDT VASP 1,445
+COTIZACIÓN AL MOMENTO (calibración mayo 2026):
+  Oficial 1.395 | MEP 1.418 | Wise mid 1.385 | USDT VASP 1.445
 
 DOCUMENTOS A RETENER:
   - Factura E #N
-  - Mercury statement showing $8,000 USD inbound + outbound wire to AR bank
-  - Wire confirmation Mercury → cuenta argentina USD
-  - Grupo SBS broker statements: AL30 buy in USD + AL30 sell in ARS
+  - Mercury statement mostrando $8.000 USD entrada + salida wire a banco AR
+  - Confirmación wire Mercury → cuenta argentina USD
+  - Grupo SBS broker statements: compra AL30 en USD + venta AL30 en ARS
   - Contrato firmado con SaaS GmbH
-  - Email confirmación payment method del cliente
+  - Email confirmación método de pago del cliente
 
-PRÓXIMO REVIEW TRIGGER:
-  CRÍTICO — agendar reunión contador esta semana para RI transition. YTD post-invoice
+CRITERIO DE PRÓXIMA REVISIÓN:
+  CRÍTICO — agendar reunión con contador esta semana para RI transition. YTD post-factura
   excede cat I y cat J; trayectoria proyecta superar cat K en Q3 2026. Mejor planificar
-  la transición que tener AFIP forzarla.
+  la transición que tenerla forzada por AFIP.
 ```
 
 ---
@@ -355,7 +355,7 @@ Empezá la respuesta formal con esto, ajustá los datos específicos:
 
 **Abogado tributarista (sólo si):**
 - AFIP escala a intimación con monto reclamado.
-- El monto reclamado es sustancial relativo a tu cushion personal.
+- El monto reclamado es sustancial relativo a tu colchón financiero personal.
 - Aparece mención de presunción de evasión, dolo fiscal, o defraudación.
 - Plazos perentorios menores a 5 días hábiles.
 
@@ -381,17 +381,17 @@ Empezá la respuesta formal con esto, ajustá los datos específicos:
 
 ### Resumen YTD
 
-Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 2026: **~$42,000 USD** (~59.5M ARS @ MEP 1.418). Distribución: Wise (mayoría) + algún Deel. Promedio mensual: ~$4,200 USD/mes.
+Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 2026: **~$42.000 USD (USD 42,000)** (~59.500.000 ARS @ MEP 1.418). Distribución: Wise (mayoría) + algún Deel. Promedio mensual: ~$4.200 USD/mes (USD 4,200).
 
 ### Proyección de Cat
 
-- **Techo cat G actual**: 46.211M ARS = ~$32,589 USD @ MEP 1.418.
-- **YTD a octubre**: ~$42K = **~129% del techo cat G — ya estás afuera de cat G**. ARCA te recategorizará automáticamente en Aug 2026 a la cat real (H o I) con potencial penalización por sub-categorización de los meses previos; conviene recategorizar proactivamente antes.
-- **Proyección al cierre 2026** (manteniendo $4.2K/mes): noviembre + diciembre = +$8.4K → **cierre ~$50.4K USD = ~71.5M ARS**. Eso excede cat H (70.113M = $49,446) y se ubica dentro de cat I (78.479M = $55,345).
-- **Cat H**: techo 70.113M ARS = ~$49,446 USD. Tu cierre proyectado lo supera por ~$1K USD.
-- **Cat I**: techo 78.479M ARS = ~$55,345 USD. Tu cierre proyectado deja ~$5K USD de headroom.
+- **Techo cat G actual**: 46.211.109 ARS = ~$32.589 USD (USD 32,589) @ MEP 1.418.
+- **YTD a octubre**: ~$42K = **~129% del techo cat G — ya estás afuera de cat G**. La ventana de recategorización oficial de agosto 2026 ya pasó. Si en agosto no recategorizaste proactivamente, ARCA puede aplicar penalización por sub-categorización de los meses excedidos retroactivamente; conviene regularizar AHORA (trámite proactivo fuera de ventana es permitido) y no esperar la próxima ventana forzada de febrero 2027.
+- **Proyección al cierre 2026** (manteniendo $4.200/mes): noviembre + diciembre = +$8.400 → **cierre ~$50.400 USD (USD 50,400) = ~71.500.000 ARS**. Eso excede cat H (70.113.407 ARS = ~$49.446 USD / USD 49,446) y se ubica dentro de cat I (78.479.212 ARS = ~$55.345 USD / USD 55,345).
+- **Cat H**: techo 70.113.407 ARS = ~$49.446 USD (USD 49,446). Tu cierre proyectado lo supera por ~$1.000 USD.
+- **Cat I**: techo 78.479.212 ARS = ~$55.345 USD (USD 55,345). Tu cierre proyectado deja ~$5.000 USD de headroom.
 
-**Conclusión cat:** terminás el año en **cat I si recategorizás proactivamente ahora**. Cat H probablemente no alcance — tu trayectoria proyectada se cruza el techo cat H en diciembre. Si seguís en cat G hasta agosto 2026, ARCA te recategoriza a la cat real (H o I) con penalización por sub-categorización de los meses excedidos (la penalización es práctica AR standard sin un porcentaje único por RG, el contador la calcula caso a caso según intereses + cuotas no abonadas en cat correcta).
+**Conclusión cat:** terminás el año en **cat I si recategorizás proactivamente ahora**. Cat H probablemente no alcance — tu trayectoria proyectada cruza el techo cat H en diciembre. Si esperás a la ventana forzada de febrero 2027, ARCA va a recategorizar retroactivamente desde el mes del exceso (junio-julio 2026 con tu trayectoria) y aplicar penalización por los meses sub-cat — práctica AR standard sin porcentaje único por RG; el contador la calcula caso a caso según intereses + cuotas no abonadas en la cat correcta.
 
 ### Análisis Trigger Transición a RI
 
@@ -400,21 +400,21 @@ Juan, dev backend en CABA, monotributo **cat G**. Facturado YTD enero-octubre 20
 Cálculo costo-beneficio aproximado:
 
 **Quedarte en monotributo (re-cat a I, dado que la proyección de cierre lo justifica):**
-- Cuota mensual cat I servicios: ~$824.802 ARS (~$582 USD/mes @ MEP 1.418)
-- IIBB CABA export-services: exempt
+- Cuota mensual cat I servicios: ~824.802 ARS (~$582 USD/mes @ MEP 1.418)
+- IIBB CABA export-services: exento
 - Costo administrativo total mensual: ~$582 USD + 1-2 horas tuyas
-- **Total anual proyectado (asumiendo cat I los 12 meses): ~$7.000 USD + tiempo administrativo**
-- Pero por los 2 meses que quedan: ~$1.165 USD adicionales (Nov + Dic)
+- **Total anual proyectado (asumiendo cat I los 12 meses): ~$7.000 USD (USD 7,000) + tiempo administrativo**
+- Pero por los 2 meses que quedan: ~$1.165 USD (USD 1,165) adicionales (Nov + Dic)
 
 **Saltar a RI ahora (faltan 2 meses al cierre fiscal):**
 - IVA: 0% para servicios al exterior (régimen exportación), pero hay que filing mensual
-- Ganancias: alícuota progresiva 5-35% sobre ganancia neta. Para tu nivel ($50K USD = ~$17K USD de ganancia neta después de gastos), ronda 9-15%.
+- Ganancias: alícuota progresiva 5-35% sobre ganancia neta. Para tu nivel (~$50.400 USD facturado, ~$17.000 USD de ganancia neta después de gastos), ronda 9-15%.
 - Honorarios contador: $80-150 USD/mes × 2 meses = $160-300 USD
-- IIBB CABA: exempt para export-services
+- IIBB CABA: exento para export-services
 - Costo administrativo total Q4: $160-300 USD honorarios + ~4-8 hs/mes tuyas
 - **Total Q4 estimado: $400-700 USD + tiempo significativo**
 
-**Resultado:** la cuota cat I por 2 meses ($1.165 USD) ya supera el setup RI Q4 ($400-700 USD). El cálculo se invierte respecto al caso "cat H vs RI" — para cat I, RI puede ser **más barato** los últimos 2 meses, especialmente si ya estás proyectando RI inevitable en 2027.
+**Resultado:** la cuota cat I por 2 meses (~$1.165 USD / USD 1,165) ya supera el setup RI Q4 ($400-700 USD). El cálculo se invierte respecto al caso "cat H vs RI" — para cat I, RI puede ser **más barato** los últimos 2 meses, especialmente si ya estás proyectando RI inevitable en 2027.
 
 **Recomendación matizada:** dos caminos defensibles. (a) Recategorizar a cat I ahora y saltar a RI en enero 2027 con tiempo de setup. (b) Evaluar setup RI inmediato si tu pipeline 2027 ya proyecta >$60K USD/año (techo cat I), porque ahorrás multas + el setup ya es necesario. Decisión final: con tu contador esta semana.
 
@@ -424,12 +424,12 @@ Cálculo costo-beneficio aproximado:
 2. **[Esta semana, en paralelo]** Recategorizar proactivamente al menos a cat H en AFIP (trámite online ~15 minutos) para no quedar mal-categorizado mientras se resuelve la decisión RI. Tu YTD ya supera cat G — quedarte en cat G es flag inmediato.
 3. **[Próximas 2 semanas]** Reconciliá invoicing YTD: contá Facturas E + montos + cotizaciones + Wise/Deel inflows. Confirmá que el match es 1:1 (sin gaps, sin duplicados).
 4. **[Antes de fin de año]** Empezá a juntar documentación 2026 para la liquidación anual del régimen — facturas, statements bancarios, contratos.
-5. **[Q1 2027]** Si la decisión Q4 fue quedarte en monotributo, en enero re-evaluar RI transition con tu contador antes de que sea forzada en agosto 2027.
+5. **[Q1 2027]** Si la decisión Q4 fue quedarte en monotributo, en enero re-evaluar RI transition con tu contador antes de la ventana de recategorización forzada de febrero 2027 — y proyectar si en agosto 2027 te vas a llevar otra recat automática a J o K, lo cual acelera la urgencia del salto.
 6. **[Decisión opcional]** Si querés ganar tiempo, el invoicing de noviembre-diciembre podés timear-lo: emitir facturas en diciembre que se cobran en enero significa que los inflows de enero cuentan para 2027, no 2026. Pero **no** retroactivar: emitirlas en 2027 si los servicios fueron prestados en 2026 = problema. Esto es a discutir con contador, no acción unilateral.
 
 ### Trazabilidad de la Decisión
 
-- Mode detected: Year-End Reconciliation. Strong signals: total YTD facturado, mes octubre (Q4 trigger), pregunta sobre cat de cierre + RI transition.
+- Modo detectado: Year-End Reconciliation. Señales fuertes: total YTD facturado, mes octubre (trigger Q4), pregunta sobre cat de cierre + RI transition.
 - Cat projection clara: YTD ya excede cat G (estás 29% arriba); cierre 2026 proyectado se ubica dentro de cat I. Recategorizar al menos a H esta semana es defensa básica.
 - RI transition: matizado. La cuota cat I los últimos 2 meses ($1.165 USD) ronda o supera el setup RI Q4 ($400-700 USD). Decisión final del contador, no recomendación unilateral del specialist.
 - Key acción defensiva: recategorización proactiva esta semana (mínimo a H) evita flag inmediato; reunión contador esta semana para resolver cat I vs RI.
@@ -458,13 +458,13 @@ Antes de routing necesito 4 de estos 5 inputs:
 
 Si querés un best-effort con `⚠ guessed` markers en cada supuesto, decímelo explícito — pero la respuesta estándar con este nivel de info sería inútil. Mandame los faltantes en un mensaje y arranco.
 
-## Trazabilidad de la Decisión
+### Trazabilidad de la Decisión
 
-- Mode que hubiera aplicado: Routing
-- Inputs recibidos: 0 de 5 fully specified (2 partials: #3 country-only, #5 freelance-only)
-- Inputs missing: #1, #2, #3 (specifics), #4 (specifics), #5 (specifics)
-- Output language: español por input español-dominante ("freelance designer" como loanword no shifteao el dominio)
-- Override available: sí, on explicit request
+- Modo que hubiera aplicado: Routing
+- Inputs recibidos: 0 de 5 totalmente especificados (2 parciales: #3 con "cliente externo paga USD" pero sin monto/país/opciones específicas; #4 sin provincia específica más allá de "Argentina")
+- Inputs faltantes: #1 (cat), #2 (volumen mensual), #3 (monto + país + opciones), #4 (provincia/jurisdicción IIBB específica), #5 (infraestructura bancaria)
+- Idioma de output: español por input español-dominante ("freelance designer" como loanword no cambia el dominio)
+- Override disponible: sí, bajo pedido explícito
 
 ### Variant — same scenario but truly mixed-language input → English default
 
@@ -488,10 +488,10 @@ Before routing I need 4 of these 5 inputs (defaulting to English; switch to Span
 
 If you want a best-effort guess with `⚠ guessed` markers on every assumption, say so explicitly — but the standard answer with this little context would be useless. Send me the missing inputs in one message and I'll produce the routing decision.
 
-## Decision Trace
+### Decision Trace
 
 - Mode that would have applied: Routing
-- Inputs received: 0 of 5 fully specified (3 partials: #4 region-only, #5 freelance-only, plus a compliance-preference signal)
-- Inputs missing: #1, #2, #3 (specifics), #4 (specifics), #5 (specifics)
+- Inputs received: 0 of 5 fully specified (2 partials: #3 with "foreign client paying USD" but no amount/country-specific/options; #4 with "Buenos Aires" but no province/IIBB-jurisdiction specifics; plus a compliance-preference signal that isn't itself one of the 5 inputs)
+- Inputs missing: #1 (cat), #2 (monthly volume), #3 (amount + country + payment options), #4 (specific IIBB jurisdiction), #5 (banking infrastructure)
 - Output language: English default (mixed-language input with no clear dominant — Spanish and English alternating clauses)
 - Override available: yes, on explicit request

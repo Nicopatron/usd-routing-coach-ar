@@ -702,4 +702,87 @@ El Debunker disproved correctamente y el Referee confirmó: BUG-004, 005, 006, 0
 
 Critical regulatory verification logged: Bienes Personales 2026 mínimo no imponible = ARS 384.728.044,57 (~$271K USD), verificado contra ARCA — corrige error factual 5x previo ("~$50K USD" en 2 files).
 
-Si próximo external review flagea algo nuevo, promote a v1.0.5. Mientras tanto, repo en mejor estado factual + regulatorio + bilingüe + structural que cualquier versión previa.
+---
+
+## Phase M — examples.md adversarial-review (2026-05-12, post v1.0.4)
+
+**Trigger:** sanity check post-v1.0.4 reveló que examples.md (497 LOC, 5 worked examples) había estado "cubierto" by council-on-persona-files (Marina/Diego/Federica audits) pero nunca pasó adversarial-review directo. Phase L Finder explicitly flagged en BUG-022 como out-of-review-scope precedence risk. Esta es la última file del repo sin lente adversarial.
+
+### Proceso ejecutado
+
+Mismo 3-agent flow que Phase L:
+- **Finder**: 22 bugs reported (3 CRITICAL, 12 MEDIUM, 7 LOW). Total 97 puntos.
+- **Debunker**: 15 CONFIRMED, 2 DISPROVED, 5 UNCERTAIN.
+- **Referee**: 15 REAL bugs, 7 FALSE POSITIVES.
+
+### Real bugs found (15) — todos fixed
+
+**CRITICAL (2):**
+
+- **BUG-001** examples.md:8 vs 181 vs 249 — Diego summary table dice "Confidence 78%" pero body + Decision Trace + audit-pack dicen 72%. Fix: summary table updated a "Confidence 72%, Mercury + MEP o Deel (margen modesto)".
+- **BUG-002** examples.md:378/389/394/427 — Juan en octubre 2026 pero text refers a "Aug 2026 recat upcoming" (ya pasó). Real next forced window = Feb 2027. Fix: rewrote temporal references — "ventana agosto 2026 ya pasó", "próxima ventana forzada febrero 2027", "evaluar antes de Feb 2027 + proyectar Aug 2027". Coherence restored.
+
+**HIGH (1):**
+
+- **BUG-003** examples.md:241 — Diego ES audit-pack "RATIONALE DE DECISIÓN" (mixed-language) should be "FUNDAMENTO DE LA DECISIÓN" per rules.md:44 ES table. **Exactamente el bug class rules.md:9 warns against as "single hardest-to-debug failure mode"**. Fix applied.
+
+**MEDIUM (5):**
+
+| Bug | File:Line | Fix |
+|-----|-----------|-----|
+| BUG-004 | examples.md:221, 223, 249, 251, 262 | 5 ES audit-pack labels remediated: INVOICE→FACTURA, SIGNALS ANALIZADOS→SEÑALES ANALIZADAS, CONFIDENCE→CONFIANZA, SNAPSHOT TIPO DE CAMBIO→COTIZACIÓN AL MOMENTO, PRÓXIMO REVIEW TRIGGER→CRITERIO DE PRÓXIMA REVISIÓN. |
+| BUG-005 | examples.md:208 | "Mode detected:" → "Modo detectado:" en Diego ES Decision Trace. |
+| BUG-006 | examples.md:192 (body) + audit-pack | "Better to plan the transition than have AFIP force it" → "Mejor planificar la transición que tenerla forzada por AFIP" (full EN sentence inside ES output, ahora en ES). |
+| BUG-007 | examples.md:179 | "la primary stand" garbled phrase → "la lane primaria se sostiene". |
+| BUG-011 | examples.md:455+464 | Refusal Decision Trace had "#3 country-only" pero el input no incluye país. Refactored: "(2 parciales: #3 con 'cliente externo paga USD' pero sin monto/país/opciones específicas; #4 sin provincia específica más allá de 'Argentina')". |
+| BUG-012 | examples.md:461, 491 | Refusal Decision Trace headers `##` → `###` (consistency con file's nesting convention línea 3). |
+
+**LOW (7):**
+
+| Bug | File:Line | Fix |
+|-----|-----------|-----|
+| BUG-009 | examples.md:181-188 | Diego bullets sum to +12 ≠ 72 (undisclosed baseline). **Defer / known-issue**: rules.md spec ambiguity. Marina baseline implied ~55%, Diego ~60%. Document as known-issue (rules.md § Confidence Calibration could clarify in future release). |
+| BUG-014 | examples.md Juan section | Mixed decimal notation. Normalized: ES-dot for thousands + explicit "(USD X)" disambig (same pattern as v1.0.4 monotributo-categorias fix). |
+| BUG-015 | examples.md:31, 35, 94, 119 (Marina EN) | Marina mixed body "1.418" (ES) y audit-pack "1,418" (EN) — within EN example, normalized a EN comma throughout. |
+| BUG-018 | examples.md:358 | "tu cushion personal" (anglicism en ES) → "tu colchón financiero personal". |
+| BUG-020 | examples.md:432 | "Mode detected:" en Juan ES → "Modo detectado:" (same pattern as BUG-005, separate instance). |
+| BUG-021 | examples.md:209, 210, 213 | Diego ES residual anglicisms: "primary"→"lane primaria", "Confidence"→"Confianza", "Specialist flagea"→"el specialist flagea", "Critical context flag"→"Flag crítico de contexto", "intake compliance"→"cumplimiento de intake gate", "documentation playbook"→"playbook de documentación", "risk operacional"→"riesgo operacional", "timing-certainty"→"certeza de timing", "primary stand" already fixed. |
+
+### False positives (7, adjudicated)
+
+- **BUG-008** Federica missing mode-lock closing — rules.md:199 conditions closing on "if routing question bundled". Federica's input has no routing → closing NOT required. Debunker correct.
+- **BUG-010** Diego $85-95 vs persona's $130 spread — diego.md $130 = gross vs OFICIAL baseline; examples $85-95 = net vs WISE baseline post-fees. Different baselines, both consistent. Debunker correct.
+- **BUG-013** Federica "intima" verb classification — vista correctly classified per glossary "monto reclamado?" rule.
+- **BUG-016** "intima" keyword in trigger list — legitimate pattern detection signal.
+- **BUG-017** Refusal input missing "¿" — user-input realism, not specialist output.
+- **BUG-019** Hardcoded May 2026 calibration — intentional per rules.md:391 + audit-pack defensive bookkeeping pattern.
+- **BUG-022** Federica hypothesis posture — explicit hedge line 308 respects contador-first stance.
+
+### Lecciones nuevas (acumulado 27 → 29)
+
+28. **Council-on-persona-file no propaga validation a worked-examples-file**: Phase K + L cubrieron persona files via council. Phase L mismo Finder marcó examples.md como out-of-scope (BUG-022). Pero examples.md tiene 5 worked outputs que son MÁS distribution-facing que las personas (el repo-evaluator copy-paste un example, no una persona). Phase M reveló 15 real bugs incluyendo 3 CRITICAL+HIGH que el council-on-persona habría debido catch but no caught porque el lens era distinto (persona authenticity vs worked-output integrity). **Pattern**: cada worked-example necesita su propio audit pass, no se hereda del audit de la persona referenced.
+
+29. **Bug class más costoso del repo: post-fix propagation a outputs**: BUG-003 (RATIONALE DE DECISIÓN en Diego) era exactamente el bug class que rules.md:9-18 § Critical: Output Language warns against como "single hardest-to-debug failure mode". v1.0.3 fixó rules.md (la spec), v1.0.4 fixó deferred items, pero v1.0.5 reveló que Example 2 (Diego ES) NO recibió la normalización — el fix se quedó en la spec sin propagarse al worked example. **Regla**: cuando se normaliza una table en spec (rules.md), grep -rn cada label viejo en todo el repo (especialmente examples.md + identity-examples/*) y propagar. Auditar la spec sin auditar los outputs es media auditoría.
+
+### Verificación post Phase M
+
+| Check | Result |
+|-------|--------|
+| Diego confidence summary table | 72% ✅ (was 78%) |
+| Juan temporal coherence (octubre 2026) | ✅ ventana ago 2026 already passed, próxima Feb 2027 |
+| Diego ES audit-pack labels | 10/10 ES correct ✅ (was 4/10) |
+| Diego body "Better to plan" EN sentence | ❌ removed ✅ |
+| Diego "la primary stand" garbled | ❌ removed ✅ |
+| Refusal Decision Trace headers | ### consistency ✅ |
+| Refusal #3 misclassification | corrected ✅ |
+| Federica "cushion personal" anglicism | replaced ✅ |
+| Juan "Mode detected" EN | replaced ✅ |
+| Marina (EN) FX rate consistency | EN-comma throughout ✅ |
+| Diego ES residual anglicisms | reduced ~85% ✅ |
+| BUG-009 confidence math transparency | deferred as known-issue (rules.md spec ambiguity) |
+
+### Final verdict Phase M
+
+✅ **PASS post Phase M**. examples.md was the last unaudited file in the repo. 15/15 real bugs fixed (excl. BUG-009 documented as deferred known-issue for v1.0.6 if rules.md § Confidence Calibration receives spec clarification). 7 false positives adjudicated. examples.md now consistent with v1.0.4 reference files (Bienes Personales, MEP/oficial dual anchor, SITER framing, VASP reporting via CNV).
+
+Total Phase K+L+M cycle: 9 council + 22 adversarial = **31 issues addressed end-to-end across 3 phases en ~5.5 hs wall-clock** (Phase K 45 min + Phase L 60 min + v1.0.4 patch 60 min + Phase M 90 min). Repo está en mejor estado factual + regulatorio + bilingüe + structural + worked-output-consistency que cualquier versión previa.

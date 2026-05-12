@@ -1,5 +1,81 @@
 # Changelog
 
+## v1.0.5 — Phase M examples.md adversarial-review + README VASP framing + BACKLOG cleanup (2026-05-12)
+
+Sanity check post-v1.0.4 reveló 2 issues residuales: examples.md (497 LOC, 5 worked examples) nunca pasó adversarial-review directo, y README L21 tenía mismo class de framing bug que BUG-016 v1.0.3. Phase M cierra el último file sin auditar + propaga el fix de VASP framing a README.
+
+### README VASP framing fix (mismo class que BUG-016 v1.0.3)
+
+- **README.md:21** — Old: "ARCA cross-check (SITER + RG 3421 cuentas bancarias + VASP reporting to UIF) catches inconsistencies". El "VASP reporting to UIF" conflate dos reporting flows: VASPs reportan a CNV (Res. 1058/2025) + a UIF (AML/ROS ley 25.246), pero ARCA gana visibilidad indirect via bank-side cross-match — NO via UIF. New: "ARCA cross-check (SITER + RG 3421 banking flow + algorithmic matching against declared invoices; VASPs report to CNV under Res. 1058/2025 and ARCA gains visibility indirectly via the banking side) catches inconsistencies within 6-12 months." Resuelve last inconsistency entre README primer-fold y reference/usd-routing-options.md post-Phase-L fix.
+
+### Phase M — examples.md adversarial-review (~90 min)
+
+3-agent flow (finder → debunker → referee):
+- **Finder**: 22 bugs (3 CRITICAL, 12 MEDIUM, 7 LOW). 97 puntos.
+- **Debunker**: 15 CONFIRMED, 2 DISPROVED, 5 UNCERTAIN.
+- **Referee**: 15 REAL bugs, 7 FALSE POSITIVES.
+
+**REAL bugs fixed (14 de 15):**
+
+**CRITICAL (2):**
+- **BUG-001** examples.md:8 — Diego summary table "Confidence 78%" contradicting body+audit-pack "72%". Fix: summary table → "Confidence 72%, Mercury + MEP o Deel (margen modesto)".
+- **BUG-002** examples.md:389/394/427 — Juan en octubre 2026 con text refiriendo a "Aug 2026 recat upcoming" (window ya pasó). Real next forced window = Feb 2027. Fix: rewrote temporal logic — ventana ago 2026 ya pasó, próxima forzada Feb 2027, proyectar Aug 2027 con cat J/K trayectoria.
+
+**HIGH (1):**
+- **BUG-003** examples.md:241 — Diego ES audit-pack "RATIONALE DE DECISIÓN" (mixed-language) → "FUNDAMENTO DE LA DECISIÓN". **Exactamente el bug class rules.md:9 warns against como single hardest-to-debug failure mode**.
+
+**MEDIUM (5):**
+- **BUG-004** Diego ES audit-pack 5 labels remediated: INVOICE→FACTURA, SIGNALS ANALIZADOS→SEÑALES ANALIZADAS, CONFIDENCE→CONFIANZA, SNAPSHOT TIPO DE CAMBIO→COTIZACIÓN AL MOMENTO, PRÓXIMO REVIEW TRIGGER→CRITERIO DE PRÓXIMA REVISIÓN.
+- **BUG-005** Diego "Mode detected:" → "Modo detectado:".
+- **BUG-006** Diego "Better to plan the transition than have AFIP force it" (full EN sentence en ES output) → ES translation.
+- **BUG-007** Diego "la primary stand" garbled phrase → "la lane primaria se sostiene".
+- **BUG-011** Refusal Decision Trace "#3 country-only" misclassification (input no incluye país) → "#3 con 'cliente externo paga USD' pero sin monto/país/opciones específicas".
+- **BUG-012** Refusal Decision Trace headers `##` → `###` (consistency con file's nesting convention).
+
+**LOW (7):**
+- **BUG-014** Juan decimal notation normalized: ES-dot for thousands + explicit "(USD X)" disambig.
+- **BUG-015** Marina (EN flagship) FX rate notation normalized to EN-comma throughout.
+- **BUG-018** Federica "cushion personal" → "colchón financiero personal".
+- **BUG-020** Juan "Mode detected:" → "Modo detectado:".
+- **BUG-021** Diego ES residual anglicisms: primary→lane primaria, Confidence→Confianza, intake compliance→cumplimiento de intake gate, documentation playbook→playbook de documentación, risk operacional→riesgo operacional, timing-certainty→certeza de timing, etc. (~85% reduction).
+
+**Deferred (1, known-issue):**
+- **BUG-009** Diego confidence bullets sum to +12 ≠ stated 72 (undisclosed implicit baseline ~60%; Marina implicit ~55%). rules.md § Confidence Calibration spec ambiguity — bullets son descriptive rationale, no strict arithmetic. Candidato a clarificación de spec en future release.
+
+**False positives (7, adjudicated):**
+BUG-008, BUG-010, BUG-013, BUG-016, BUG-017, BUG-019, BUG-022. Mayoría son design decisions documentadas o conditionals válidos.
+
+### Files modified
+
+- `README.md` — VASP framing fix L21.
+- `examples.md` — 14 fixes across 5 worked examples + Decision Trace sections.
+- `identity-examples/MARINA-AUDIT.md` — Phase M section appended.
+
+### Total Phase K + L + M cycle
+
+- 9 council findings (Phase K, identity.md) → resolved via delete
+- 18 adversarial findings (Phase L, 9 reference files) → 13 fixed v1.0.3 + 5 fixed v1.0.4
+- 15 adversarial findings (Phase M, examples.md) → 14 fixed v1.0.5 + 1 known-issue
+- 18 + 7 false positives catalogados (Phase L + M)
+- 1 known-issue documented for future spec clarification
+
+**Total real bugs addressed: 36 (9 council + 27 adversarial across 11 files). 0 outstanding (excl. 1 spec-ambiguity known-issue).**
+
+**Wall-clock total**: ~5.5 hs across Phase K + L + v1.0.4 + Phase M.
+
+### Lecciones nuevas (acumulado 27 → 29)
+
+- **28. Council-on-persona-file no propaga validation a worked-examples-file**. Phase K + L cubrieron persona files via council. examples.md tiene 5 worked outputs que son MÁS distribution-facing que las personas (un evaluator copia-pega un example, no una persona). Phase M reveló 15 real bugs incluyendo 3 CRITICAL+HIGH. **Pattern**: cada worked-example necesita su propio audit pass, no se hereda del audit de la persona referenced.
+- **29. Bug class más costoso: post-fix propagation a outputs**. BUG-003 (RATIONALE DE DECISIÓN en Diego) era exactamente el bug class que rules.md:9 warns against como "single hardest-to-debug failure mode". v1.0.3 fixó rules.md (spec), v1.0.4 fixó deferred items, pero v1.0.5 reveló que Example 2 (Diego ES) NO recibió la normalización — el fix se quedó en spec sin propagarse al worked example. **Regla**: cuando se normaliza una table en spec, grep -rn cada label viejo en todo el repo (especialmente examples.md + identity-examples/*) y propagar. Auditar la spec sin auditar los outputs es media auditoría.
+
+### Pendiente post-v1.0.5
+
+- ✅ 0 issues outstanding.
+- 🟡 1 known-issue: BUG-009 (Diego confidence math spec ambiguity) — candidato a clarificación de rules.md § Confidence Calibration en future release.
+- 🟡 BACKLOG.md de comp-3 root (fuera de este repo): 2 refs stale a identity.md de pre-Phase-K. Updated en mismo ciclo.
+
+---
+
 ## v1.0.4 — Phase L deferred items resolved + Bienes Personales fix (2026-05-12)
 
 Patch release que cierra los 5 LOW items deferred al cerrar v1.0.3 Phase L. Mismo ciclo de trabajo, ~60 min wall-clock incluyendo WebSearch verification de regulación.

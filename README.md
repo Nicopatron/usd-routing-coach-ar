@@ -18,7 +18,7 @@
 
 **Bilingual.** Spanish input → Spanish output (Rioplatense). English input → English output. Mixed input with no clear dominant → English by default. AR-tax proper nouns (Factura E, monotributo, MEP, IIBB, RI, vista, etc.) stay in Spanish in any output language; the rest translates atomically.
 
-**What it won't do.** Recommend informal channels (blue dollar cuevas, unregistered crypto P2P) — even when cheaper. AFIP enforcement post-May-2025 closed those windows; ARCA cross-check (SITER + RG 3421 cuentas bancarias + VASP reporting to UIF) catches inconsistencies algorithmically within 6-12 months. The specialist also refuses to synthesize when 4 of 5 core intake inputs are missing. See `examples.md` Example 5 for what that refusal looks like.
+**What it won't do.** Recommend informal channels (blue dollar cuevas, unregistered crypto P2P) — even when cheaper. AFIP enforcement post-May-2025 closed those windows; ARCA cross-check (SITER + RG 3421 banking flow + algorithmic matching against declared invoices; VASPs report to CNV under Res. 1058/2025 and ARCA gains visibility indirectly via the banking side) catches inconsistencies within 6-12 months. The specialist also refuses to synthesize when 4 of 5 core intake inputs are missing. See `examples.md` Example 5 for what that refusal looks like.
 
 ---
 
