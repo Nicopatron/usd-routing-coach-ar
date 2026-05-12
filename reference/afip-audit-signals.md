@@ -19,7 +19,7 @@
 **Cómo se evita:**
 - Emitir Factura E en USD con cotización oficial AFIP del día de emisión.
 - Reconciliar el dato del Wise statement contra la Factura E al cierre de mes.
-- Si hay diferencia FX entre emisión y cobro, eso es ganancia/pérdida de cambio (renglón aparte para Bienes Personales/Ganancias en RI; en monotributo no afecta directamente la cat pero requiere registro en libro IVA digital opcional).
+- Si hay diferencia FX entre emisión y cobro, eso es ganancia/pérdida de cambio. En RI se imputa como renglón aparte de Ganancias / Bienes Personales (y el RI con Libro IVA Digital obligatorio lo registra ahí). En monotributo no afecta directamente la cat porque la cat se calcula sobre el monto de Factura E al tipo de cambio del día de emisión (no sobre el cobro real); el desvío FX queda en tu reconciliación interna, no en un libro contable AFIP — el monotributista no está obligado a Libro IVA Digital.
 
 ### Mistake #2 — Factura C (doméstica) a cliente foreign
 

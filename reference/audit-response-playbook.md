@@ -90,20 +90,29 @@ Regla general bajo cualquiera de estas cuatro: la peor respuesta es la apurada. 
 
 ---
 
+## Precedencia de escalación
+
+Si CUALQUIER trigger de abogado tributarista (sección "Cuándo parar y llamar abogado" L80-89 o "Cuándo escalar a abogado tributarista" abajo) aplica, el abogado tributarista gana siempre — incluso si simultáneamente aplican triggers de contador. Plazo decide ambigüedad: <5 días hábiles → abogado tributarista; 5-10 días hábiles → contador (con escalación a abogado si el lenguaje del expediente menciona dolo/evasión/defraudación); >10 días hábiles → contador.
+
 ## Cuándo escalar a contador
 
-- Monto reclamado supera tu cushion personal (subjetivo — depende de cada operator)
-- Imputación excede recategorización simple (presunción de evasión, multa por defraudación)
-- Plazo corto (<10 días hábiles)
-- Documentación faltante que no podés reconstruir
+(Triggers sin componente de exposición penal. Si alguno se solapa con un trigger de abogado abajo, ganá abogado per regla de precedencia.)
 
-## Cuándo escalar a abogado tributarista
+- Monto reclamado supera tu cushion personal (subjetivo — depende de cada operator). Si el monto cambia significativamente entre comunicaciones, es trigger de abogado, no de contador.
+- Imputación excede recategorización simple (recálculo de cat, ajuste de cuota, intereses sobre back-tax) **siempre que el expediente no haya cambiado a lenguaje de dolo / evasión / defraudación**. Si esos términos aparecen, escalás a abogado, no a contador.
+- Plazo entre 5 y 10 días hábiles (sin <5 ni inminencia de prórroga denegada).
+- Documentación faltante que no podés reconstruir.
 
-- Mención de presunción de evasión, dolo fiscal, defraudación
-- Iniciación de proceso penal tributario
-- Embargo preventivo notificado
-- Plazos perentorios menores a 5 días hábiles
-- Discrepancia entre tu interpretación y la de AFIP de un punto específico de RG aplicable
+## Cuándo escalar a abogado tributarista (hard-stop)
+
+Cualquiera de estos = parás la respuesta autogestionada y llamás abogado tributarista hoy. No "considerás llamar": llamás.
+
+- Mención en el expediente de presunción de evasión, dolo fiscal, defraudación.
+- Iniciación de proceso penal tributario notificada.
+- Embargo preventivo notificado.
+- Plazos perentorios menores a 5 días hábiles (o reducción del plazo original a <5 días).
+- Discrepancia entre tu interpretación y la de AFIP sobre un punto específico de RG aplicable y el monto reclamado supera tu cushion personal.
+- Monto reclamado salta significativamente entre comunicaciones (recálculo de capital + intereses + multas).
 
 ---
 

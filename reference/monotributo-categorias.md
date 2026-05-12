@@ -8,21 +8,23 @@ Fuente primaria: [ARCA / AFIP — Monotributo Categorías](https://www.afip.gob.
 
 ## Categorías y límites (mayo 2026)
 
-Valores oficiales ARCA vigentes desde febrero 2026, confirmados para mayo 2026 (ajuste 14,28% IPC 2H 2025; próxima actualización agosto 2026).
+Valores oficiales ARCA vigentes desde febrero 2026, confirmados para mayo 2026 (ajuste 14,28% IPC 2H 2025 — la fila K refleja la 14,30% aritmética post-redondeo; próxima actualización agosto 2026).
 
-| Cat | Límite anual ARS | USD equiv. @ MEP 1.418 | Cuota mensual servicios ARS |
-|-----|------------------|------------------------|----------------------------|
-| **A** | 10.277.988 | ~$7.250 | ~42.386 |
-| **B** | 15.375.757 | ~$10.844 | ~48.250 |
-| **C** | 21.521.795 | ~$15.178 | ~56.501 |
-| **D** | 26.734.386 | ~$18.855 | ~72.414 |
-| **E** | 31.427.408 | ~$22.164 | ~102.548 |
-| **F** | 38.642.048 | ~$27.251 | ~129.045 |
-| **G** | 46.211.109 | ~$32.589 | ~197.108 |
-| **H** | 70.113.407 | ~$49.446 | ~447.300 |
-| **I** | 78.479.212 | ~$55.345 | ~824.802 |
-| **J** | 89.872.640 | ~$63.381 | ~874.069 |
-| **K (máxima)** | **108.357.084** | **~$76.415** | **~1.381.687** |
+| Cat | Límite anual ARS | USD equiv. operativo @ MEP 1.418 | Cuota mensual servicios ARS |
+|-----|------------------|----------------------------------|----------------------------|
+| **A** | 10.277.988 | ~$7.250 (USD 7,250) | ~42.386 |
+| **B** | 15.375.757 | ~$10.844 (USD 10,844) | ~48.250 |
+| **C** | 21.521.795 | ~$15.178 (USD 15,178) | ~56.501 |
+| **D** | 26.734.386 | ~$18.855 (USD 18,855) | ~72.414 |
+| **E** | 31.427.408 | ~$22.164 (USD 22,164) | ~102.548 |
+| **F** | 38.642.048 | ~$27.251 (USD 27,251) | ~129.045 |
+| **G** | 46.211.109 | ~$32.589 (USD 32,589) | ~197.108 |
+| **H** | 70.113.407 | ~$49.446 (USD 49,446) | ~447.300 |
+| **I** | 78.479.212 | ~$55.345 (USD 55,345) | ~824.802 |
+| **J** | 89.872.640 | ~$63.381 (USD 63,381) | ~874.069 |
+| **K (máxima)** | **108.357.084** | **~$76.415 (USD 76,415)** | **~1.381.687** |
+
+> **Nota sobre el USD equiv.** La columna "USD equiv. operativo @ MEP 1.418" usa MEP para que el operator pueda estimar cuánto USD le entran a su bolsillo por límite (si rutea por Mercury+MEP, ese es el rate que captura). **AFIP no calcula el cat headroom con MEP**: usa el tipo de cambio del momento de emisión de Factura E, que es **BCRA Comunicación A 3500 (~oficial mayorista, ~1.395 mayo 2026)** — ver § Cómo se calcula el límite abajo. Diferencia operacional: el USD equiv. operativo @ MEP es ~1,6% más conservador que el USD equiv. @ oficial (cat F: $27,251 USD @ MEP vs $27,701 USD @ oficial). Usá la columna MEP para planning de bolsillo; para cross-check exacto contra la cifra que AFIP va a sumar, dividí ARS / BCRA A3500 del día de emisión.
 
 Fuentes verificadas: [ARCA — Categorías oficiales](https://www.afip.gob.ar/monotributo/categorias.asp) · [iProfesional mayo 2026](https://www.iprofesional.com/impuestos/454000-monotributo-mayo-2026-arca-confirmo-cuanto-paga-cada-categoria-y-de-cuanto-son-cuotas) · [Ámbito mayo 2026](https://www.ambito.com/informacion-general/arca-confirmo-los-nuevos-topes-del-monotributo-y-cuanto-se-paga-mayo-2026-n6271407).
 

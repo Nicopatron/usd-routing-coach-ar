@@ -42,7 +42,7 @@ Items captured during use of the specialist with operators matching one of the t
 **Tic / phrase:** Marcelo: "los tres tienen el mismo nivel de articulación sobre su propia operación. En la vida real, nadie es tan consciente de su propio voice pillar. Falta uno que sea más caótico, más contradictorio."
 **Context:** meta-finding sobre el formato Voiceprint identity-file aplicado a operator profiles. Los 11 secciones template fuerzan articulación uniforme — Marina puede decirlo en su martes-a-la-tarde, Diego en su pricing-aware, Federica en su contador-first. En operadores reales esa coherencia es rara: la mayoría tiene un voice pillar declarado y dos o tres tensiones no resueltas. Limitación del template adoptado, no de la implementación.
 **Type:** template limitation
-**Action:** wait — si próximo identity file (4to operator) puede experimentar con "voz menos articulada" (contradicciones internas, pillars vagos en algunos themes, friction no resuelta) sin perder usabilidad como composite reference, refactor template para permitir voice-incoherence intencional. Mientras tanto, los 3 actuales son ilustrativos coherentes — voicebook poligraphy, no auto-ethnography.
+**Action:** ✅ **RESOLVED via deletion (Phase K, 2026-05-13)**. ~~wait — si próximo identity file (4to operator) puede experimentar con "voz menos articulada"...~~ No aplica: identity.md (Nico-as-operator) fue deletado en Phase K post-council audit. La concern original era que faltaba un 4to operator caótico para balancear los 3 composites articulados; con identity.md deletado, los 3 composites quedan como referencia explícita ("composites by design" disclaimer en README L62) y el 4to slot ya no se necesita.
 
 ---
 
@@ -51,7 +51,7 @@ Items captured during use of the specialist with operators matching one of the t
 **Tic / phrase:** `identity.md` (Nico operator) contiene 11 em-dashes pre-existentes desde antes del Phase 1 remediation. Voiceprint Rule 2 (anti em-dash) aplica enforcement-strict a `identity-examples/marina.md`, `diego.md`, `federica.md` (specs de personas distinguibles) — los 3 están en 0/0/0. Pero `identity.md` quedó con su voice narrativa original.
 **Context:** detectado durante Phase D verification. Phase D.1 limpió solo L14 (el em-dash dentro del fix de cross-reference); los otros 10 son legacy del repo pre-iteración. Decisión registrada: out-of-scope para esta closeout. Si el target audience real (consultor AR cat F→G) flagea identity.md em-dashes en futura lectura, considerarlos. Mientras tanto, Voiceprint Rule 2 enforcement queda en identity-examples/ donde fue diseñada.
 **Type:** scope decision (consistency identity-examples/ vs identity.md)
-**Action:** wait — si próximo external review (consultor AR real, Pareto contact, evaluator) menciona em-dashes en identity.md, sweep file completo. Mientras tanto, mantener Voiceprint Rule 2 boundary en identity-examples/.
+**Action:** ✅ **RESOLVED via deletion (Phase K, 2026-05-13)**. ~~wait — si próximo external review...~~ identity.md fue deletado en Phase K. Sweep de em-dashes no aplica al file que no existe. Phase I había hecho sweep 11→0; Phase K eliminó el file completo. Voiceprint Rule 2 enforcement queda en identity-examples/* (donde fue diseñada originalmente) sin conflicto cross-file.
 
 ---
 

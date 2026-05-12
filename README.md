@@ -86,15 +86,14 @@ Bilingual (English / Rioplatense Spanish). Tuned for Argentine indie consultores
 
 Folders as architecture, each file does one job well. The structure tells you what's where without needing a tour.
 
-The five-slot contract:
+The four-slot contract:
 
-- `identity.md` — *who* the operator is (Argentine indie consultor, monotributista since 2024, bilingual).
-- `rules.md` — *how* the operator responds (4 modes, output formats, confidence calibration, intake gate).
+- `rules.md` — *how* the operator responds (4 modes, output formats, confidence calibration, intake gate, refusal discipline, voice).
 - `examples.md` — *what* good looks like, including deliberate refusal and audit response.
 - `reference/` — *what* the operator knows (monotributo categories, routing lanes, audit signals, intake gate, mode triage).
-- `README.md` — *how* to use the folder (front-loaded one-paragraph primer + deeper sections).
+- `README.md` — *how* to use the folder (front-loaded one-paragraph primer + deeper sections) + *who* built it (Built by section anchors the operator perspective).
 
-That's *interpretable* in ICM — not "the model is mysterious," but "the operator's logic is visible and traceable to a regulatory source."
+That's *interpretable* in ICM — not "the model is mysterious," but "the operator's logic is visible and traceable to a regulatory source." Each file does one job; nothing duplicates another.
 
 ### The 4-Mode State Machine
 
@@ -138,8 +137,7 @@ usd-routing-coach-ar/
 ├── README.md                            ← read first (humans)
 ├── AGENTS.md                            ← agent-facing operational primer (auto-read by Codex / Cursor / Windsurf / etc.)
 ├── CLAUDE.md                            ← minimal redirect to AGENTS.md for Claude Code
-├── identity.md                          ← who the specialist is
-├── rules.md                             ← output contract: 4 modes, formats, calibration discipline
+├── rules.md                             ← output contract: 4 modes, formats, calibration discipline, voice
 ├── examples.md                          ← 5 worked examples (1 EN flagship + 3 ES + 1 refusal)
 ├── reference/
 │   ├── monotributo-categorias.md        ← cats A-K, recategorización mechanics, RI triggers
@@ -203,8 +201,7 @@ Every step is documented in `rules.md`. Nothing is hidden in prompt engineering 
 |------|-----|
 | `AGENTS.md` | Agent-facing operational primer — file-read order, default workflow, language policy, refusal discipline, confidence calibration. Auto-read by Codex / Cursor / Windsurf / Zed / Roo Code. |
 | `CLAUDE.md` | Minimal redirect to `AGENTS.md` for Claude Code (which doesn't auto-read `AGENTS.md` natively yet). |
-| `identity.md` | Who the specialist is — Argentine operator persona, point of view on routing, scope boundaries. |
-| `rules.md` | Output contract — 4-mode triage, output format per mode, confidence calibration discipline, intake gate, length caps, bilingual policy, calibration date. |
+| `rules.md` | Output contract — 4-mode triage, output format per mode, confidence calibration discipline, intake gate, length caps, bilingual policy, refusal discipline, calibration date. Canonical for runtime behavior. |
 | `examples.md` | 5 worked examples: Marina (Routing EN flagship) + Diego (Routing ES with RI transition) + Federica (Audit Response ES) + Juan (Year-End ES) + 1 deliberate refusal. |
 | `reference/monotributo-categorias.md` | Cats A-K with current ARS limits + USD-equiv at MEP, recategorización mechanics (Feb / Aug), RI transition triggers, "what's about to change Q3-Q4 2026" appendix. |
 | `reference/usd-routing-options.md` | Wise / Mercury+MEP / Deel / USDT-VASP / refused options × all-in cost / speed / tax visibility / audit risk / setup checklists / failure modes. May 2026 cost benchmarks. |
@@ -264,7 +261,7 @@ Open the folder in Claude Code. Tell it:
 
 > *"Read this folder — it's an operator system for Argentine USD invoice routing. I have a routing decision: [paste your 5 inputs + this invoice]. Synthesize it."*
 
-Claude Code reads `README.md` + `identity.md` + `rules.md` + `examples.md` + everything in `reference/` automatically. Same output contract as Path A.
+Claude Code reads `README.md` + `rules.md` + `examples.md` + everything in `reference/` automatically. Same output contract as Path A.
 
 If you don't have a real invoice handy, paste any of the four worked syntheses from `examples.md` to test cold — they're synthetic and self-contained.
 
@@ -314,11 +311,10 @@ The reference material in `reference/` is intentionally domain-dense — six cat
 
 The methodology travels. To fork this for a different operator-decision specialist (different country tax landscape, different cross-border payment mechanics, different regulated industry):
 
-- Rewrite `identity.md` for your operator persona and operating context.
-- Rewrite `rules.md` with your output contract (number of modes, sections per mode, calibration discipline).
+- Rewrite `rules.md` with your output contract (number of modes, sections per mode, calibration discipline, voice, refusal posture).
 - Replace `examples.md` with 3-5 worked examples covering each mode plus at least one refusal.
 - Repopulate `reference/` with your domain's regulatory sources (cite them, don't recite generic best practices), decision trees, intake gates, and mode triggers.
-- Update this README's first fold with your domain's specific output sample (rendered, not described).
+- Update this README's first fold with your domain's specific output sample (rendered, not described) + a "Built by" section anchoring the operator perspective.
 
 ---
 

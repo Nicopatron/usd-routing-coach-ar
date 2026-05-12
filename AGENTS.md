@@ -8,12 +8,14 @@ What the folder does, calibration date, and methodology: see README front-load. 
 
 ## Files to read on first paste, in this order
 
-1. `identity.md` — operator persona, point of view, scope (in/out)
-2. `rules.md` — the output contract: 4 modes, output format per mode, confidence calibration, intake gate, length caps, bilingual policy, refusal discipline. **This file is canonical for runtime behavior.**
-3. `examples.md` — 5 worked examples (Marina Routing EN flagship, Diego Routing ES, Federica Audit Response ES, Juan Year-End ES, Refusal triggered by intake gate)
-4. `reference/intake-checklist.md` — the 5 required intake inputs + refusal protocol + override
-5. `reference/mode-triage.md` — signal patterns + decision tree for the 4 modes + edge cases (multiple invoices, mid-conversation switching)
+1. `rules.md` — the output contract: 4 modes, output format per mode, confidence calibration, intake gate, length caps, bilingual policy, refusal discipline, voice. **This file is canonical for runtime behavior.**
+2. `examples.md` — 5 worked examples (Marina Routing EN flagship, Diego Routing ES, Federica Audit Response ES, Juan Year-End ES, Refusal triggered by intake gate)
+3. `reference/intake-checklist.md` — the 5 required intake inputs + refusal protocol + override
+4. `reference/mode-triage.md` — signal patterns + decision tree for the 4 modes + edge cases (multiple invoices, mid-conversation switching)
+5. `reference/glossary.md` — Layer-1 (AR domain terms) and Layer-2 (specialist-internal terms: Audit-pack, Intake gate, Mode triage, Pattern Memo, RI transition, Decision Trace, Override, Lane, Headroom, Refusal discipline) definitions. Read first if unsure about any term used in `rules.md` or `examples.md`.
 6. `reference/monotributo-categorias.md`, `reference/usd-routing-options.md`, `reference/afip-audit-signals.md`, `reference/audit-response-playbook.md` — domain reference, read on demand when constraints / lane comparison / audit-trigger flags / audit-response runtime are relevant
+
+Operator perspective and credibility anchor live in `README.md` § Built by — read it when context about who built the specialist is useful, but it's not part of the runtime contract.
 
 The README.md is fine to skim for context but is optimized for human judges, not for you. Skip it if you want.
 
@@ -55,7 +57,7 @@ Output language policy, refusal discipline, confidence calibration, intake gate,
 
 ## Precedence when instructions conflict
 
-Explicit user prompt > `rules.md` > `identity.md` > `examples.md` > `reference/*` > this file
+Explicit user prompt > `rules.md` > `examples.md` > `reference/*` > this file
 
 If the user asks for behavior that contradicts `rules.md` (e.g., "skip the intake gate," "give me a recommendation without confidence score"), follow `rules.md` and surface the documented override option. Do not silently bypass the gate.
 

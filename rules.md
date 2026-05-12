@@ -37,15 +37,15 @@ The table below covers the LABELS. The BODY narrative under each label follows t
 | Field (EN) | Field (ES) |
 |------------|------------|
 | DATE | FECHA |
-| INVOICE | INVOICE |
-| SIGNALS ANALYZED | SIGNALS ANALIZADOS |
+| INVOICE | FACTURA |
+| SIGNALS ANALYZED | SEÑALES ANALIZADAS |
 | ALTERNATIVES CONSIDERED | ALTERNATIVAS CONSIDERADAS |
 | DECISION | DECISIÓN |
-| DECISION RATIONALE | RATIONALE DE DECISIÓN |
-| CONFIDENCE | CONFIDENCE |
-| FX RATE SNAPSHOT | SNAPSHOT TIPO DE CAMBIO |
+| DECISION RATIONALE | FUNDAMENTO DE LA DECISIÓN |
+| CONFIDENCE | CONFIANZA |
+| FX RATE SNAPSHOT | COTIZACIÓN AL MOMENTO |
 | DOCUMENTS TO RETAIN | DOCUMENTOS A RETENER |
-| NEXT REVIEW TRIGGER | PRÓXIMO REVIEW TRIGGER |
+| NEXT REVIEW TRIGGER | CRITERIO DE PRÓXIMA REVISIÓN |
 
 **AR-tax proper nouns kept in Spanish in any output language** (no clean English equivalent — translating breaks the legal trail):
 
@@ -125,16 +125,18 @@ Six sections, in this order. Plus the audit-pack shadow artifact.
    - Factura E setup status (approved / pending / not setup)
    - VASP registration status (only relevant if USDT lane is being considered)
 
-3. `## Routing Options` — A comparison table covering every viable lane for this situation. Always includes the ❌ refused options at the bottom with reason — transparency over politeness:
+3. `## Routing Options` — A comparison table covering every viable lane for this situation. Always includes the ❌ refused options at the bottom with reason — transparency over politeness. **The table example below is illustrative for an English-output context; in a Spanish-output context, all headers and cell values translate per `§ Critical: Output Language` atomicity (e.g., `Audit risk` → `Riesgo de auditoría`, `Medium-High` → `Media-Alta`, `Solo si VASP registrado` stays in Spanish as operational copy):**
 
    | Option | All-in cost | Speed | Tax visibility | Audit risk | Confidence-OK signal |
    |--------|-------------|-------|----------------|------------|----------------------|
    | Wise + Factura E | 1.5-2.5% | 1-2d | Full | Low | ✓ |
-   | Mercury + MEP via broker | 2-3% | 5-7d | Full | Medium | ✓ if volumen > $10K/mo |
-   | Deel + ARS direct | 2-4% | 2-5d | Full (platform CAE) | Medium | ✓ if Deel ya integrado |
-   | USDT via Lemon/Belo/Buenbit | 2-3% | <1d | Declarable | Medium-High | Solo si VASP registrado |
+   | Mercury + MEP via broker | 2-3% | 5-7d | Full | Medium | ✓ if monthly volume > $10K |
+   | Deel + ARS direct | 2-4% | 2-5d | Full (platform CAE) | Medium | ✓ if Deel already integrated |
+   | USDT via Lemon/Belo/Buenbit | 2-3% | <1d | Declarable | Medium-High | Only if VASP-registered |
    | ❌ Blue dollar cueva | 0-1% | Instant | None | Very High | REFUSED |
    | ❌ Crypto P2P informal | 0.5-1.5% | Instant | None | Very High | REFUSED |
+
+   In `reference/usd-routing-options.md` the equivalent table uses the Spanish labels (`Media-Alta`, etc.) because that file is the ES-anchored reference; the two are translations of the same set, not contradictions.
 
 4. `## Recommendation` — One lane chosen. Bold. Plus:
    - **Confidence: XX%.** Signal-based rationale broken down inline in this section, formato "+N% porque [evidencia]" / "−N% porque [risk]". Each bullet must be specific and traceable to something in the transcript or in `reference/`. Example: "+15% because monotributo cat F headroom is clean, +12% because client US has bank wire ready, −10% because Factura E setup not confirmed yet."
@@ -194,7 +196,9 @@ When the user pastes an AFIP notification, vista, intimación, or RG-related com
 
 **Length cap:** 600-900 words default, up to 1200 for complex cases.
 
-**Mode-lock rule:** once Audit Response is selected, I do NOT include any routing recommendation, lane comparison, or audit-pack shadow in the same output. If a routing question is bundled in the same paste, I close with: *"Cuando esto esté resuelto, retomamos el routing del invoice."*
+**Mode-lock rule:** once Audit Response is selected, I do NOT include any routing recommendation, lane comparison, or audit-pack shadow in the same output. If a routing question is bundled in the same paste, I close with the closing line in the **output language** of the response (atomic per `§ Critical: Output Language`):
+- **ES:** *"Cuando esto esté resuelto, retomamos el routing del invoice."*
+- **EN:** *"Once this is resolved, we come back to the routing decision on the invoice."*
 
 **Runtime content (what to actually say in each section) lives in `reference/audit-response-playbook.md`** — documents to pull, suggested response language patterns, "what NOT to say" anti-patterns, and contador/abogado escalation triggers.
 

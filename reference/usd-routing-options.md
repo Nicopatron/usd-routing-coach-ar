@@ -199,7 +199,7 @@ Invoice $5.000 USDT → Lemon → P2P sell at 1.445 ARS/USDT, fee 0.5% → 7.189
 
 ## REFUSED — Blue dollar cueva
 
-**Por qué refused:** RG 3421/2012 (régimen unificado de información financiera, modificada por RG 4298/2018 que redefinió la sub-sección SITER de transacciones económicas relevantes) obliga a bancos, brokers, VASPs y entidades financieras a reportar saldos y movimientos a ARCA periódicamente. Actualizaciones de umbrales por RG 5512/2024 y RG 5699/2025. Algorithmic matching cross-references Facturas E declaradas vs depósitos reportados. Casos típicos catched dentro de 6-12 meses.
+**Por qué refused:** RG 3421/2012 (régimen unificado de información financiera, modificada por RG 4298/2018 que redefinió la sub-sección SITER de transacciones económicas relevantes) obliga a bancos, brokers y entidades financieras a reportar saldos y movimientos a ARCA periódicamente. Las VASPs (Lemon, Belo, Buenbit, etc.) son sujeto separado: registradas en CNV bajo Res. 1058/2025 y obligadas a reportar a CNV; ARCA gana visibilidad indirecta via cross-match con flujos bancarios reportados bajo RG 3421 + algorithmic matching contra Facturas E declaradas. Actualizaciones de umbrales bancarios por RG 5512/2024 y RG 5699/2025. Casos típicos detectados dentro de 6-12 meses.
 
 **Después del cierre del blanqueo Milei (May 2025):** los pesos de origen blue no tienen vía legal de "blanqueo retrospectivo." Riesgo se acumula.
 

@@ -520,3 +520,184 @@ Programatic verification PASS. Pendiente: Marcelo re-impersonation post-fix para
 18. **Sec 4 Voice in one sentence test**: si una frase del Sec 4 podría aparecer en una landing page del operator vendiendo sus services, probablemente está sobreescribiéndo voz autor sobre voz operador. La voz real es más naturalista, menos meta-frame, sin frases punchy de cierre.
 
 19. **Voiceprint Rule 2 enforcement scope**: Rule 2 (anti em-dash) debería aplicarse a todo file con voice intencional (identity.md operator único + identity-examples/* personas), no solo a los specs explícitos de personas distinguibles. Operadores reales que lean el repo van a notar em-dashes en identity.md tanto como en marina.md.
+
+---
+
+## Phase K — Identity.md Council Audit + Architectural Decision (2026-05-12)
+
+**Trigger:** identity.md era el único file operacional del repo sin council audit. Pasó solo structural audit (grep) en Phase I (em-dash sweep 11→0). v1.0.2 cerró sin council sobre identity.md per Phase I decisión "wait for next external review". Pareto contact window (Ruben's intro) en 2-7 días forzó la decisión.
+
+### Council ejecutado
+
+5 advisors paralelos + meta-reviewer + Chairman synthesis. Risk hunt explícito sobre 6 dimensions: factual/regulatory L14-L15, voice authenticity, persona coherence, routing logic claim, refusal posture, self-positioning gold-plating.
+
+### Findings clasificados
+
+| # | Severidad | File:Line | Quote | Hallazgo |
+|---|-----------|-----------|-------|----------|
+| 1 | 🔴 FATAL | identity.md:14 | `"cross-check ARCA (RG 3421 + sub-régimen SITER por RG 4298 + reportes VASP)"` | Factual inversion. SITER fue creado por RG 3421/2012 (Título II), NO por RG 4298. RG 4298/2018 *modificó* SITER (umbrales y reportables). Fraseado actual lee como si RG 4298 creó SITER como sub-régimen de RG 3421 — wrong direction. |
+| 2 | 🔴 FATAL | identity.md:15 | `"Las VASPs (Lemon, Belo, Buenbit) ahora reportan a CNV+AFIP"` | Overclaim regulatorio. VASPs son CNV-registered (Res. 1058/2025) y reportan a CNV; AFIP/ARCA gana visibilidad via cross-check SITER + RG 3421 banking flow + algorithmic matching, NO via direct VASP→AFIP reporting. Collapses dos rails distintos en uno. Internal incoherence dentro del mismo scroll que L14. |
+| 3 | 🟡 VOICE | identity.md:15 | `"cerraron como opción ética en May 2025"` | Único slip a branding-speak. Marina/Diego/Federica nunca moralize sus lane choice — cost-out audit risk. "Opción ética" es voz curada. El Outsider council lo flageó como tell de "humano editado por AI". |
+| 4 | 🟡 VOICE | identity.md:46 | `"Refusa cuevas, refusa P2P informal, refusa >90% confidence sin signals verbatim"` | "Refusa" no es vocabulario AR consultor. Real: "no toca / no recomienda". El Outsider: "ese verbo lo escribió alguien pensando en prompts de LLM, no clientes". |
+| 5 | 🔴 STRUCTURAL | identity.md (whole file) | `"Soy un operator argentino"` L5 vs `"el specialist"` L46 | Esquizofrenia de voz: primera persona ("Soy un operator") + tercera persona referencial ("el specialist refusa...") dentro del mismo file. El Outsider: "no sé si es Nico o es un agente actuando como Nico". Toca misrepresentation si Ruben lo distribuye como bio de humano vs spec de herramienta. |
+| 6 | 🟢 DUPLICATION | identity.md L19-26 | `"En qué soy bueno"` | Duplica rules.md § Mode Triage + § Confidence Calibration. ~50% del file es residuo de scope creep. |
+| 7 | 🟢 DUPLICATION | identity.md L28-37 | `"Lo que NO cubro"` | Duplica README "What it won't do" + rules.md § Refusal. |
+| 8 | 🟢 DUPLICATION | identity.md L39-48 | `"Para quién NO es este specialist"` | Positioning content que pertenece al README (sales-page level), no a un operator persona file. |
+| 9 | 🟢 DUPLICATION | identity.md L50-52 | `"Calibration"` | Viola el propio principio "single source of truth" que rules.md declara explícitamente. |
+
+### Meta-reviewer findings (peer review anónimo de las 5 respuestas)
+
+1. **Más fuerte:** El Contrario — única respuesta que produce finding bloqueante verificable (L14-L15 regulatory inversion). Exactamente el failure mode de la pregunta original.
+2. **Mayor blind spot:** El Expansionista — propone extraer L13-17 (5 beliefs) a LinkedIn post sin chequear primero si el contenido es correcto. Amplificaría el error en vez de contenerlo.
+3. **Lo que NINGUNO vio:** El supuesto de que identity.md deba existir como file separado. Si 80% es duplicación de rules.md/README y el 20% restante es 1 párrafo de credibilidad + 2 findings factuales rotos, la decisión correcta no es "auditar" sino **delete + merge a README "Built by"**. Adicional: nadie nombró el riesgo de misrepresentation por firmar en primera persona claims técnicas erradas.
+
+### Veredicto Chairman: **BLOCK**
+
+No pasa cold-read AR consultor cat F→G. Dos razones:
+1. L14-L15 factual error verificable → consultor cierra tab en 30s.
+2. Esquizofrenia de voz no resoluble con find/replace.
+
+**Recomendación arquitectural:** Opción (A) — delete identity.md + merge anchor de credibilidad a README "Built by" (que ya existe en L331-335).
+
+### Decisión del owner
+
+**Confirmada Opción (A)** via AskUserQuestion 2026-05-12. Razones:
+- Reduce superficie de ataque (9 findings → 0 findings, file no existe).
+- Alinea con pattern Voiceprint-winner comp-3 (identity mínima de Ruben).
+- README "Built by" ya tiene el anchor de credibilidad (L331-335: 1.5-2% Q1 loss + 4 invoices + April 2026 first month routing pre-emptive).
+- Upside del Expansionista (FALR + 5 beliefs como LinkedIn post / Loom guion) se captura *después* en iteración separada, no antes (Chairman: "NO extract until factual fix is done").
+
+### Remediation aplicada
+
+| Cambio | File | Acción |
+|--------|------|--------|
+| Delete | `identity.md` | Removed. Repo passa de 5-slot ICM contract a 4-slot. |
+| Reference update | `README.md` L91 | ICM 5-slot contract → 4-slot. Removed identity.md bullet. |
+| Reference update | `README.md` L141 | Directory tree: removed identity.md line. |
+| Reference update | `README.md` L206 | File table: removed identity.md row. |
+| Reference update | `README.md` L267 | Path B Claude Code: removed identity.md from auto-read list. |
+| Reference update | `README.md` L317 | Forking guide: removed "Rewrite identity.md" step. |
+| Reference update | `AGENTS.md` L11 | Read order: identity.md removed, shifted others up. |
+| Reference update | `AGENTS.md` L58 | Precedence chain: identity.md removed. |
+| Resolve | `voice-tics-pending.md` item 5 (em-dashes identity.md) | RESOLVED via deletion. Sweep no longer needed; source file no existe. |
+| Resolve | `voice-tics-pending.md` item 4 (Nico coherence vs operator chaos) | RESOLVED via deletion. Persona consistency no aplica con file deleted. |
+
+### Verificación post Phase K
+
+| Check | Result |
+|-------|--------|
+| grep -rn "identity\.md" en repo (excluding CHANGELOG historical + MARINA-AUDIT historical) | 0 references |
+| README "Built by" anchor intacto y único source de credibility | ✅ L331-335 |
+| AGENTS.md read order coherente sin identity.md | ✅ rules.md ahora #1 |
+| voice-tics-pending.md items 1, 2, 3, 6 mantenidos como deferred | ✅ |
+| voice-tics-pending.md items 4, 5 marcados RESOLVED | ✅ |
+| identity-examples/* (Marina/Diego/Federica) intactos como composites | ✅ |
+
+### Lecciones (acumulado 19 → 22)
+
+20. **Council post-write detecta architectural decisions, no solo edits**: el value highest del council Phase K no fueron los findings 🔴/🟡 — fue la "what none saw" question del meta-reviewer que cuestionó el supuesto de que identity.md deba existir. Edits sin council habrían fixeado L14-L15 sin tocar la decisión architectural. Council como regression check expande el surface de decisiones, no solo de fixes. ROI: 45 min audit → eliminó 52 LOC de superficie de ataque + 2 errores factuales + 50% duplicación + risk de misrepresentation. Negative result aprovechable: cuando el council sugiere "delete this entire artifact", aceptarlo si reduces surface es mayor que el upside marginal de mantenerlo.
+
+21. **Distribution-facing files con primera-persona claims técnicas requieren bar más alto que internal artifacts**: si un file se firma en primera persona ("Soy un operator argentino") Y se distribuye públicamente (repo público, Pareto contact, judge cold-read), las claims técnicas dentro de él dejan de ser "outputs del specialist" y pasan a ser "afirmaciones del autor". Bar de verificación factual es más alto (irreproachable) porque el reader puede inferir matrícula profesional / responsabilidad personal. Si no podés sostener ese bar, el file debe estar en tercera persona ("el specialist...") o no existir.
+
+22. **ICM 5-slot contract no es dogma**: Jake Van Clief's ICM puede leerse como "identity / rules / examples / reference / README" canonical, pero Voiceprint ganó comp-3 con identity ultra-minimal de Ruben. El bar real de ICM es "each file does one job well", no "todos los 5 slots full poblados". Si identity.md duplica 80% de rules.md + README, la decisión ICM-pura es delete, no audit. ICM honestidad > ICM completeness.
+
+### Pendiente post-Phase K
+
+- ✅ NONE blocking pre-Pareto contact.
+- 🟡 Opcional: extraer FALR framing (FX/Audit/Liquidity/Reporting) + 5 beliefs (L13-17 del identity.md deleted) a LinkedIn post separado, *con factual fix L14-L15 aplicado primero*. Iteración separada post-audit. Pattern El Expansionista capturado para futuro, no perdido.
+- 🟡 Opcional: si próximo identity-example (4to operator) destraba items 1, 2, 6 de voice-tics-pending.md, refactor template a primera persona / external rules.md / confidence-math fix. No bloquea Pareto contact.
+
+### Final verdict
+
+✅ **PASS post Phase K**. Identity.md no existe → 0 findings residuales. Repo reduce surface de ataque, mejora ICM compliance ("each file does one job"), preserva credibility anchor en README "Built by". CHANGELOG v1.0.3 documenta architectural decision con full audit trail.
+
+---
+
+## Phase L — Adversarial-review regression check (2026-05-12, post Phase K)
+
+**Trigger:** parte del plan re-auditoría comp-3 (skills aprobados: council + adversarial-review + compound). Phase K cubrió identity.md con council; Phase L cubre los 9 files restantes (reference/* las 7, AGENTS.md, rules.md) con adversarial-review (3-agent finder + debunker + referee).
+
+### Proceso ejecutado
+
+3 agents secuenciales:
+
+1. **Finder** (over-report scoring): 36 issues reported, 76 puntos. 0 CRITICAL, 10 MEDIUM, 26 LOW.
+2. **Debunker** (challenge scoring, false dismissals cost double): 13 CONFIRMED, 19 DISPROVED, 4 UNCERTAIN.
+3. **Referee** (blind X/Y assignment, ground-truth-anchored): adjudicó cada bug contra los source files + regulatory verification. Final: **18 REAL bugs, 18 FALSE POSITIVES**.
+
+**Key disagreement adjudicated**: BUG-016 (VASPs report to ARCA framing). Debunker argumentaba que VASPs SÍ reportan a ARCA directo via RG 3421 régimen informativo. Referee verificó RG 3421/2012 + RG 4298/2018 obligated-subjects text: VASPs **NO son sujeto obligado** bajo RG 3421/SITER. Reportan a CNV via Res. 1058/2025; ARCA gana visibilidad indirect via bank-side cross-match. **Verdict: BUG-016 REAL MEDIUM**. Esto valida retrospectivamente la decisión de Phase K (identity.md L15 "VASPs reportan a CNV+AFIP" era ambiguo / overclaim; phrasing correcto = CNV directo + ARCA indirect).
+
+### REAL bugs fixed (13 de 18 — los más actionable)
+
+**MEDIUM (3):**
+
+| Bug | File:Line | Fix aplicado |
+|-----|-----------|--------------|
+| BUG-010 | `monotributo-categorias.md` table header | Column renamed to "USD equiv. operativo @ MEP 1.418" + extensive footnote clarificando que AFIP cat-math usa BCRA Comunicación A 3500 (~oficial), no MEP; explicit cat F dual anchor ($27,251 @ MEP vs $27,701 @ oficial). |
+| BUG-016 | `usd-routing-options.md:202` | Rewrote RG 3421 reporting framing. Old: "RG 3421 obliga a bancos, brokers, VASPs y entidades financieras a reportar a ARCA". New: "RG 3421 obliga a bancos, brokers y entidades financieras... Las VASPs son sujeto separado: registradas en CNV bajo Res. 1058/2025 y obligadas a reportar a CNV; ARCA gana visibilidad indirecta via cross-match con flujos bancarios". |
+| BUG-031 | `rules.md:197` | Mode-lock closing line ahora tiene EN + ES variants (atomic-language compliance). |
+
+**LOW (10):**
+
+| Bug | File:Line | Fix aplicado |
+|-----|-----------|--------------|
+| BUG-001 | `audit-response-playbook.md:93+` | "Cuándo escalar a contador" reescrito con hard-stop language. |
+| BUG-002 | `audit-response-playbook.md` (new section) | Added "Precedencia de escalación" arriba de las dos listas. Resuelve overlap en "presunción de evasión" y "plazo": abogado tributarista gana siempre cuando aplica trigger; plazo decide ambigüedad (<5d → abogado, 5-10d → contador, >10d → contador). |
+| BUG-003 | `AGENTS.md` read order | Added `reference/glossary.md` como #5 con justificación. |
+| BUG-009 | `glossary.md:11` | Cat-K USD ceiling ahora cita dual anchor (MEP + oficial) con link a `monotributo-categorias.md` § Cómo se calcula el límite. |
+| BUG-017 | `rules.md:128-138` | Added "table example is illustrative for English-output context" note + cross-reference al ES-anchored equivalent en `reference/usd-routing-options.md`. |
+| BUG-019 | `rules.md:38-48` | Full audit-pack label translation: INVOICE→FACTURA, SIGNALS→SEÑALES, RATIONALE→FUNDAMENTO, CONFIDENCE→CONFIANZA, SNAPSHOT→COTIZACIÓN, TRIGGER→CRITERIO. |
+| BUG-020 | `usd-routing-options.md:202` | "catched" → "detectados" (in same edit as BUG-016). |
+| BUG-021 | `monotributo-categorias.md` table | Added explicit "USD X" notation alongside Spanish-thousands format ("~$7.250 (USD 7,250)") — disambiguates cross-locale parsing. |
+| BUG-024 | `monotributo-categorias.md:11` | Clarified "ajuste 14,28% IPC 2H 2025 — la fila K refleja la 14,30% aritmética post-redondeo". |
+| BUG-034 | `afip-audit-signals.md:22` | Rewrote "libro IVA digital opcional" clause — monotributistas NO están obligados a Libro IVA Digital; el desvío FX queda en reconciliación interna. |
+
+### REAL bugs deferred (5 de 18 — interpretive / minor)
+
+Documentados acá para promoción a v1.0.4 si surge bandwidth o si próximo external review los flagea:
+
+| Bug | File:Line | Razón de defer |
+|-----|-----------|----------------|
+| BUG-007 | `mode-triage.md:9-11` + `rules.md:72` | "Routing Mode (default)" vs "Never silently default" — interpretive semantic tension. Resolver requiere decidir si "default" significa "fallback cuando ambigüedad permanece post-clarification" (compatible con never-silently-default) o "fallback silencioso" (incompatible). Decisión de diseño, no fix mechanical. |
+| BUG-008 | `usd-routing-options.md:107` | $20K Mercury arithmetic ~7K ARS off post-recompute. Within typical rounding ("~" notation) pero math estricta no cierra exacto. Defer recomputación full a v1.0.4. |
+| BUG-011 | `usd-routing-options.md:54` | Wise mid (1.385) shown below oficial (1.395) sin explicación sobre por qué Wise sigue siendo default si oficial da más ARS. Trade-off real está documentado a la siguiente línea ("audit overhead") pero el cost-vs-friction reasoning podría explicitarse más. Defer a comp-4 iteración. |
+| BUG-013 | `usd-routing-options.md:71` + `afip-audit-signals.md:60` | "$50K USD acumulado" Bienes Personales threshold sin cita a Ley/Decreto. Cross-file consistent. Defer hasta verificar Bienes Personales mínimo 2026 contra fuente oficial. |
+| BUG-014 | `usd-routing-options.md:235-241` | Decision tree branch ordering: VASP+USDT path skips volumen >$10K check. Recomendación correcta para low-volume + USDT-paying client pero loses generalization for high-volume same scenario. Defer restructure a v1.0.4. |
+
+### FALSE POSITIVES adjudicados (18)
+
+El Debunker disproved correctamente y el Referee confirmó: BUG-004, 005, 006, 012, 015, 018, 022, 023, 025, 026, 027, 028, 029, 030, 032, 033, 035, 036. Mayoría son design decisions documentadas, redundant flags, o assumptions del Finder no válidas.
+
+### Lecciones nuevas (acumulado 22 → 26)
+
+23. **Adversarial-review como regression check post-council**: ROI confirmado pero diferente al council. Council (Phase K) detectó decisions architecturales; adversarial (Phase L) detectó issues factuales/lógicos finos que el council no surface (over-claims regulatorios sutiles, math discrepancias, cross-file inconsistencies). Los dos lentes son complementarios: council escala issues a "architecture", adversarial bajá issues a "spec-line". Usar ambos en files críticos = mejor cobertura.
+
+24. **Cross-pollination Phase K → Phase L produce valor compounding**: Phase L heredó el risk hunt explícito del Phase K (SITER framing, VASP reporting flow, RG 4815 framing). Esto permitió que el Finder Phase L detectara el mismo error VASP-reporting en usd-routing-options.md:202 que había llevado al BLOCK de identity.md. Sin esa risk hunt cross-pollinated, el Finder probablemente lo habría dejado pasar como "claim regulatorio que no entiendo bien". **Pattern**: cada audit Phase debería leer findings de Phases anteriores ANTES de hacer risk hunt — no para confirmar bias, sino para herder el lens hacia patterns confirmados.
+
+25. **Adversarial Debunker false dismissal cost real**: el Debunker disproved BUG-016 con argumento técnicamente plausible ("VASPs DO report to ARCA via RG 3421"). Si el Referee no hubiera verificado contra source regulatorio independiente, el bug se habría false-positive-dismissed. Lesson: Referee SIEMPRE necesita acceso al ground truth real, no solo a las claims de los 2 agents. WebSearch / regulatory verification es non-negotiable.
+
+26. **18/36 bugs reportados = ~50% precision del Finder**: precision rate alta sugiere que el over-report scoring funciona pero no over-shoots demasiado. False positive rate 50% es aceptable cuando Referee discriminates correctly. Pattern para próximas adversarial-reviews: si Finder reporta >40 bugs en <500 LOC, probablemente está hallucinating; <10 bugs sugiere under-coverage. 20-40 range = healthy.
+
+### Verificación post Phase L
+
+| Check | Result |
+|-------|--------|
+| BUG-016 fix aplicado: usd-routing-options.md:202 no longer says "VASPs report to ARCA" direct | ✅ |
+| BUG-010 fix aplicado: monotributo-categorias.md USD equiv has rate-anchor caveat | ✅ |
+| BUG-031 fix aplicado: rules.md mode-lock closing has EN+ES variants | ✅ |
+| BUG-001+002 fix: audit-response-playbook tiene precedence rule + hard-stop wording | ✅ |
+| BUG-019 fix: audit-pack labels fully translated ES (FACTURA, SEÑALES, FUNDAMENTO, CONFIANZA, COTIZACIÓN, CRITERIO) | ✅ |
+| BUG-003 fix: glossary.md en AGENTS.md read order como #5 | ✅ |
+| BUG-009 fix: glossary.md cat-K dual anchor (MEP + oficial) | ✅ |
+| BUG-017 fix: rules.md routing table tiene EN-context note + cross-ref al ES equivalent | ✅ |
+| BUG-020 fix: "catched" → "detectados" en usd-routing-options.md | ✅ |
+| BUG-021+024 fix: monotributo table tiene USD X notation + 14,30% post-redondeo note | ✅ |
+| BUG-034 fix: afip-audit-signals.md libro IVA digital framing corregido | ✅ |
+| 5 LOW deferred documentados arriba con razón explícita | ✅ |
+| 18 FALSE POSITIVES catalogados | ✅ |
+
+### Final verdict Phase L
+
+✅ **PASS post Phase L con 5 LOW deferred**. Repo en mejor estado que post-Phase-K: 13 issues fixed (3 MEDIUM + 10 LOW), 5 LOW deferred con razón documentada, 18 false positives adjudicados. Total bugs Phase K+L cycle: 9 council findings (identity.md, resolved via delete) + 18 adversarial findings (13 fixed + 5 deferred) = **22 issues addressed across 2 phases en ~3 hs wall-clock**.
+
+Si próximo external review (consultor AR real, Pareto contact, judge cold-read) flagea cualquier deferred LOW, promote a v1.0.4. Mientras tanto, repo está en mejor estado factual + regulatorio + bilingüe que cualquier versión previa.
